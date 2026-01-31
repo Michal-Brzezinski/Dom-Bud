@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog produktów - Dom-Bud</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Nawigacja -->
+  <nav class="flex items-center justify-between p-6 bg-black border-b border-gray-800">
+    <div class="flex items-center space-x-3">
+      <img src="img/dom-bud_logo.webp" alt="Logo Dom-Bud" class="h-10 w-auto">
+      <span class="text-2xl font-bold text-orange-400">Dom-Bud</span>
+    </div>
+    <ul class="flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+      <li><a href="index.html" class="hover:text-orange-400">Strona główna</a></li>
+      <li><a href="katalog.html" class="hover:text-orange-400">Oferta</a></li>
+      <li><a href="o-nas.html" class="hover:text-orange-400">O nas</a></li>
+      <li><a href="kontakt.html" class="hover:text-orange-400">Kontakt</a></li>
+    </ul>
+    <!-- Prawa: ikony social media -->
+    <div class="flex items-center space-x-4">
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank" class="hover:text-orange-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.507 
+          1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 
+          2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" class="hover:text-orange-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 
+          2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 
+          3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 11-3.001-.001A1.5 1.5 0 
+          0116.5 5z"/>
+        </svg>
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- Nagłówek katalogu -->
+  <section class="text-center py-12">
+    <h2 class="text-4xl font-bold mb-4">Katalog produktów</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">
+      Oferujemy szeroki wybór materiałów budowlanych najwyższej jakości.  
+      Poniżej znajdziesz przykładowe produkty dostępne w naszej ofercie.
+    </p>
+  </section>
+
+  <!-- Grid kart produktów -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 pb-20 max-w-6xl mx-auto">
+    
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/cement.webp" alt="Cement" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Cement portlandzki</h3>
+        <p class="text-gray-300 mb-2">Wysokiej jakości cement do wszelkich prac budowlanych.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/cegla.webp" alt="Cegła" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Cegła ceramiczna</h3>
+        <p class="text-gray-300 mb-2">Trwała cegła do budowy ścian i konstrukcji.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/farba.png" alt="Farba" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Farba elewacyjna</h3>
+        <p class="text-gray-300 mb-2">Odporna na warunki atmosferyczne, idealna na zewnątrz.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/stal.jpg" alt="Stal zbrojeniowa" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Stal zbrojeniowa</h3>
+        <p class="text-gray-300 mb-2">Pręty zbrojeniowe do konstrukcji żelbetowych.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/osb.jpg" alt="Płyta OSB" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Płyta OSB</h3>
+        <p class="text-gray-300 mb-2">Wytrzymała płyta drewnopochodna do wielu zastosowań.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/welna.webp" alt="Wełna mineralna" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Wełna mineralna</h3>
+        <p class="text-gray-300 mb-2">Izolacja termiczna i akustyczna najwyższej jakości.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/dachowka.jpg" alt="Dachówka ceramiczna" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Dachówka ceramiczna</h3>
+        <p class="text-gray-300 mb-2">Estetyczne i trwałe pokrycie dachowe.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+
+    <!-- Produkt -->
+    <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition">
+      <img src="img/klej.webp" alt="Klej do płytek" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-orange-400">Klej do płytek</h3>
+        <p class="text-gray-300 mb-2">Wysokiej jakości klej do klejenia płytek ceramicznych.</p>
+        <br>
+        <a href="kontakt.html" class="bg-orange-400 text-black px-4 py-2 rounded hover:bg-orange-500 transition">Dowiedz się więcej</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- Stopka -->
+  <footer class="text-center py-6 border-t border-gray-800 text-gray-400">
+    © 2026 Dom-Bud. Wszystkie prawa zastrzeżone.
+  </footer>
+</body>
+</html>

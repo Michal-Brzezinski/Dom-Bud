@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skład Budowlany Dom-Bud</title>
+  <!-- TailwindCSS przez CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Sekcja hero z tłem */
+    .hero {
+      position: relative;
+      background: url('img/sklad.jpg') center center / cover no-repeat;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.8); /* przyciemnienie */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1; /* tekst nad overlayem */
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Nawigacja -->
+  <nav class="flex items-center justify-between p-6 bg-black border-b border-gray-800 relative z-10">
+    <!-- Lewa: logo -->
+    <div class="flex items-center space-x-3">
+      <img src="img/dom-bud_logo.webp" alt="Logo Dom-Bud" class="h-10 w-auto">
+      <span class="text-2xl font-bold text-orange-400">Dom-Bud</span>
+    </div>
+
+    <!-- Środek: menu -->
+    <ul class="flex space-x-6 absolute left-1/2 transform -translate-x-1/2">
+      <li><a href="index.html" class="hover:text-orange-400">Strona główna</a></li>
+      <li><a href="katalog.html" class="hover:text-orange-400">Oferta</a></li>
+      <li><a href="o-nas.html" class="hover:text-orange-400">O nas</a></li>
+      <li><a href="kontakt.html" class="hover:text-orange-400">Kontakt</a></li>
+    </ul>
+
+    <!-- Prawa: ikony social media -->
+    <div class="flex items-center space-x-4">
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank" class="hover:text-orange-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.507 
+          1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 
+          2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" class="hover:text-orange-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 
+          2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 
+          3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 11-3.001-.001A1.5 1.5 0 
+          0116.5 5z"/>
+        </svg>
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- Hero z tłem -->
+  <section class="hero flex flex-col items-center justify-center text-center py-20 px-6">
+    <div class="hero-content">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">Dom-Bud</h2>
+      <h3 class="text-4xl md:text-4xl font-bold mb-6">Twój ulubiony skład budowlany</h3>
+      <p class="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto text-center">
+        Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości. 
+        Wspieramy klientów indywidualnych i firmy, oferując doradztwo, transport i profesjonalną obsługę.
+      </p>
+      <a href="katalog.html" class="bg-orange-400 text-black font-semibold px-6 py-3 rounded hover:bg-orange-500 transition">
+        Sprawdź ofertę
+      </a>
+    </div>
+  </section>
+
+  <!-- Dlaczego Dom-Bud -->
+  <section class="py-16 px-6 max-w-5xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-8 text-orange-400">Dlaczego warto wybrać Dom-Bud?</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-semibold mb-4">Doświadczenie</h4>
+        <p class="text-gray-300">Ponad 20 lat na rynku budowlanym — setki zadowolonych klientów.</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-semibold mb-4">Szeroka oferta</h4>
+        <p class="text-gray-300">Materiały budowlane, wykończeniowe i akcesoria w konkurencyjnych cenach.</p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-semibold mb-4">Wsparcie</h4>
+        <p class="text-gray-300">Doradztwo techniczne, transport i indywidualne podejście do klienta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Kontakt -->
+  <section class="py-16 px-6 text-center bg-gray-900">
+    <h3 class="text-3xl font-bold mb-6">Masz pytania?</h3>
+    <p class="text-gray-300 mb-8">Skontaktuj się z nami i dowiedz się więcej o naszej ofercie.</p>
+    <a href="kontakt.html" class="bg-orange-400 text-black font-semibold px-6 py-3 rounded hover:bg-orange-500 transition">
+      Przejdź do kontaktu
+    </a>
+  </section>
+
+  <!-- Stopka -->
+  <footer class="text-center py-6 border-t border-gray-800 text-gray-400">
+    © 2026 Dom-Bud. Wszystkie prawa zastrzeżone.
+  </footer>
+
+</body>
+</html>

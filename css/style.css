@@ -222,7 +222,7 @@ body.site {
 
 .products__image-wrapper {
     width: 100%;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
     background: var(--color-bg);
     display: flex;
@@ -680,9 +680,138 @@ body.site {
 }
 
 /* ========================================
-   KARTY PRODUKTÓW - WRAPPER NA ZDJĘCIE
+    ZAKŁADKA "O NAS"
    ======================================== */
 
-.products__image-wrapper {
-    height: 200px;
+/* Sekcja O nas */
+.about {
+    display: flex;
+    flex-direction: row;
+    /* zamiast column */
+    min-height: 400px;
+}
+
+.about__image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.about__content {
+    flex: 1;
+    padding: 2rem;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about__title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.about__content p {
+    color: var(--color-text2);
+    margin-bottom: 1rem;
+}
+
+.about__content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--color-text2);
+}
+
+/* Historia firmy */
+.history {
+    padding: 2rem 1.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.history__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+.history__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.history__card {
+    background: var(--color-bg2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.history__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-accent);
+}
+
+.history__year {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    min-width: 4rem;
+}
+
+/* Separator pomiędzy sekcjami */
+.section {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section:not(:first-of-type)::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 0 auto 2.5rem auto;
+    background: linear-gradient(to right,
+            transparent,
+            var(--color-border),
+            transparent);
+    opacity: 0.6;
+}
+
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        /* na małych ekranach wraca do wierszy */
+    }
+
+    .about__image {
+        min-height: 250px;
+    }
+
+    .history__card {
+        text-align: center;
+    }
+}
+
+/* Bardzo małe smartfony (do 375px) */
+@media (max-width: 375px) {
+
+    .history__card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }

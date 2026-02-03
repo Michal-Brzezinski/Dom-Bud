@@ -159,7 +159,9 @@ body.site {
     line-height: 1.7;
 }
 
-/* KATALOG */
+/* ========================================
+   -------   KATALOG PRODUKTÓW   -------
+   ======================================== */
 
 /* Catalog Header */
 .catalog-header {
@@ -184,7 +186,9 @@ body.site {
     font-size: 1.125rem;
 }
 
-/* Products Grid */
+/* ========================================
+   PRODUCTS GRID
+   ======================================== */
 .products {
     padding: 3rem 1.5rem;
     max-width: 80rem;
@@ -197,6 +201,9 @@ body.site {
     gap: 2rem;
 }
 
+/* ========================================
+   PRODUCT CARD
+   ======================================== */
 .products__card {
     background: var(--color-bg2);
     border-radius: var(--border-radius);
@@ -204,6 +211,7 @@ body.site {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--color-border);
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .products__card:hover {
@@ -212,16 +220,6 @@ body.site {
     border-color: var(--color-accent);
 }
 
-.products__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* Całe zdjęcie widoczne */
-    transition: transform 0.4s ease;
-    padding: 0.5rem;
-}
-
-/* Karty produktów - wrapper na zdjęcie */
 .products__image-wrapper {
     width: 100%;
     height: 250px;
@@ -233,9 +231,18 @@ body.site {
     position: relative;
 }
 
+.products__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* całe zdjęcie widoczne */
+    transition: transform 0.4s ease;
+    padding: 0.5rem;
+}
+
 .products__card:hover .products__image {
     transform: scale(1.1);
-    /* Zoom przy hover */
+    /* zoom przy hover */
 }
 
 .products__content {
@@ -247,6 +254,13 @@ body.site {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--color-accent);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .products__description {
@@ -254,252 +268,6 @@ body.site {
     margin-bottom: 1rem;
     line-height: 1.6;
     min-height: 3rem;
-}
-
-.products__button {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    font-weight: 600;
-    padding: 0.625rem 1.5rem;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.products__button:hover {
-    background: var(--color-accent-hover);
-    transform: translateY(-2px);
-}
-
-/* Loading state */
-.products__loading {
-    text-align: center;
-    padding: 3rem;
-    color: var(--color-text2);
-    font-size: 1.125rem;
-}
-
-.products__error {
-    text-align: center;
-    padding: 3rem;
-    color: #ef4444;
-    font-size: 1.125rem;
-}
-
-/* Media queries */
-@media (min-width: 810px) {
-    .navbar__menu {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* ========================================
-   MODAL
-   ======================================== */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal--active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.modal__content {
-    background: var(--color-bg2);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    max-width: 700px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    animation: slideUp 0.3s ease;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.modal__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-    z-index: 1;
-    line-height: 1;
-}
-
-.modal__close:hover {
-    background: var(--color-accent);
-    color: var(--color-bg);
-    border-color: var(--color-accent);
-    transform: rotate(90deg);
-}
-
-.modal__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* Całe zdjęcie widoczne */
-    transition: transform 0.3s ease;
-    padding: 1rem;
-}
-
-/* Modal - kontener na zdjęcie */
-.modal__image-container {
-    width: 100%;
-    height: 400px;
-    background: var(--color-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    cursor: zoom-in;
-}
-
-.modal__image-container:hover .modal__image {
-    transform: scale(1.05);
-}
-
-/* Tryb pełnego ekranu dla zdjęcia */
-.modal__image-container--zoomed {
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: rgba(0, 0, 0, 0.95);
-    height: 100vh;
-    cursor: zoom-out;
-}
-
-.modal__image-container--zoomed .modal__image {
-    object-fit: contain;
-    max-width: 95vw;
-    max-height: 95vh;
-    padding: 2rem;
-}
-
-.modal__body {
-    padding: 2rem;
-}
-
-.modal__title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-.modal__description {
-    color: var(--color-text2);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    font-size: 1.0625rem;
-}
-
-.modal__button {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-bg);
-    font-weight: 600;
-    padding: 0.875rem 2rem;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    transition: var(--transition);
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(251, 191, 36, 0.2);
-}
-
-.modal__button:hover {
-    background: var(--color-accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(251, 191, 36, 0.3);
-}
-
-/* Scrollbar dla modalu */
-.modal__content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal__content::-webkit-scrollbar-track {
-    background: var(--color-bg);
-}
-
-.modal__content::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 4px;
-}
-
-.modal__content::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
-}
-
-/* ========================================
-   AKTUALIZACJA KART PRODUKTÓW
-   ======================================== */
-
-.products__card {
-    cursor: pointer;
-}
-
-.products__title {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.4;
-}
-
-.products__description {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
@@ -521,10 +289,314 @@ body.site {
     transform: translateX(4px);
 }
 
-/* Responsywność modalu */
+.products__button {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.products__button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   STATES
+   ======================================== */
+.products__loading,
+.products__error {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.125rem;
+}
+
+.products__loading {
+    color: var(--color-text2);
+}
+
+.products__error {
+    color: #ef4444;
+}
+
+/* ========================================
+   MEDIA QUERIES
+   ======================================== */
+@media (min-width: 810px) {
+    .navbar__menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 400px) {
+    .products__grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* ========================================
+   MODAL - SYSTEM WYŚWIETLANIA PRODUKTÓW
+   ======================================== */
+
+/* Overlay modalu - tło ciemne na całym ekranie */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Modal aktywny - wycentrowany flex container */
+.modal--active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+/* Animacja pojawiania się modalu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Główny kontener modalu - karta produktu */
+.modal__content {
+    background: var(--color-bg2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    max-width: 700px;
+    width: calc(100% - 3rem);
+    /* Zapewnia równomierne marginesy */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* Animacja wysuwania modalu od dołu */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Przycisk zamykania (X) w prawym górnym rogu */
+.modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 1;
+    line-height: 1;
+}
+
+/* Efekt hover na przycisku zamykania */
+.modal__close:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border-color: var(--color-accent);
+    transform: rotate(90deg);
+}
+
+/* Kontener zdjęcia produktu z możliwością zoom */
+.modal__image-container {
+    width: 100%;
+    height: 400px;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+}
+
+/* Zdjęcie produktu - wyświetlane w całości bez przycinania */
+.modal__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+/* Efekt zoom przy najechaniu na zdjęcie */
+.modal__image-container:hover .modal__image {
+    transform: scale(1.05);
+}
+
+/* Tryb pełnoekranowy zdjęcia po kliknięciu */
+.modal__image-container--zoomed {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100vw !important;
+    height: 100vh !important;
+    cursor: zoom-out;
+}
+
+/* Zdjęcie w trybie pełnoekranowym */
+.modal__image-container--zoomed .modal__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 2rem;
+}
+
+/* Sekcja z treścią - tytuł, opis, przycisk */
+.modal__body {
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Tytuł produktu */
+.modal__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+/* Opis produktu */
+.modal__description {
+    color: var(--color-text2);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.0625rem;
+}
+
+/* Przycisk "Zapytaj o produkt" */
+.modal__button {
+    display: block;
+    background: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: var(--transition);
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(251, 191, 36, 0.2);
+    box-sizing: border-box;
+}
+
+/* Efekt hover na przycisku */
+.modal__button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(251, 191, 36, 0.3);
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR DLA MODALU
+   ======================================== */
+
+.modal__content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal__content::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+
+.modal__content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+/* ========================================
+   RESPONSYWNOŚĆ MODALU
+   ======================================== */
+
+/* Tablety i małe laptopy (768px - 1024px) */
+@media (max-width: 1024px) {
+    .modal--active {
+        padding: 1.5rem;
+    }
+
+    .modal__content {
+        width: calc(100% - 3rem);
+        max-width: 600px;
+    }
+
+    .modal__image-container {
+        height: 300px;
+    }
+
+    .modal__body {
+        padding: 1.75rem;
+    }
+
+    .modal__title {
+        font-size: 1.625rem;
+    }
+}
+
+/* Smartfony (375px - 768px) */
 @media (max-width: 768px) {
-    .modal__image {
+    .modal--active {
+        padding: 1rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+
+    .modal__content {
+        width: calc(100% - 2rem);
+        max-width: 100%;
+    }
+
+    .modal__image-container {
         height: 200px;
+    }
+
+    .modal__image {
+        padding: 0.5rem;
     }
 
     .modal__body {
@@ -532,26 +604,85 @@ body.site {
     }
 
     .modal__title {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
+    }
+
+    .modal__description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal__button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
     }
 
     .modal__close {
-        top: 0.75rem;
-        right: 0.75rem;
+        top: 0.5rem;
+        right: 0.5rem;
         width: 2rem;
         height: 2rem;
         font-size: 1.25rem;
     }
 
-    .products__image-wrapper {
-        height: 200px;
+    /* Tryb pełnoekranowy zdjęcia na mobile */
+    .modal__image-container--zoomed .modal__image {
+        padding: 1rem;
+    }
+
+}
+
+/* Bardzo małe smartfony (do 375px) */
+@media (max-width: 375px) {
+    .modal--active {
+        padding: 0.75rem;
+        padding-top: 1.5rem;
+    }
+
+    .modal__content {
+        width: calc(100% - 1.5rem);
     }
 
     .modal__image-container {
-        height: 250px;
+        height: 180px;
     }
 
-    .modal__image {
+    .modal__body {
+        padding: 1rem;
+    }
+
+    .modal__title {
+        font-size: 1.25rem;
+    }
+
+    .modal__description {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+
+    .modal__button {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .modal__close {
+        top: 0.375rem;
+        right: 0.375rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.125rem;
+    }
+
+    /* Tryb pełnoekranowy zdjęcia na bardzo małych ekranach */
+    .modal__image-container--zoomed .modal__image {
         padding: 0.5rem;
     }
+}
+
+/* ========================================
+   KARTY PRODUKTÓW - WRAPPER NA ZDJĘCIE
+   ======================================== */
+
+.products__image-wrapper {
+    height: 200px;
 }

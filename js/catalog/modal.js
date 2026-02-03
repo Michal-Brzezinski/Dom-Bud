@@ -5,6 +5,7 @@
 import { escapeHtml } from './utils.js';
 
 let modalElement = null;
+let imageZoomListener = null; // Przechowywanie referencji do listenera
 
 // Tworzenie struktury modalu
 export function createModal() {
@@ -35,12 +36,12 @@ export function createModal() {
   document.body.appendChild(modal);
   modalElement = modal;
   
-  // Inicjalizacja event listenerów
-  initModalEventListeners();
+  // Inicjalizacja event listenerów dla zamykania modalu
+  initModalCloseListeners();
 }
 
-// Inicjalizacja nasłuchiwaczy zdarzeń
-function initModalEventListeners() {
+// Inicjalizacja nasłuchiwaczy zamykania modalu
+function initModalCloseListeners() {
   if (!modalElement) return;
   
   const closeBtn = modalElement.querySelector('.modal__close');
@@ -67,16 +68,25 @@ function handleEscapeKey(e) {
   }
 }
 
-// Obsługa zoom na zdjęciu w modalu
+// Inicjalizacja zoom na zdjęciu - wywoływana przy każdym otwarciu modalu
 function initImageZoom() {
   const imageContainer = modalElement?.querySelector('.modal__image-container');
   
   if (!imageContainer) return;
   
-  imageContainer.addEventListener('click', (e) => {
+  // Usuń stary listener jeśli istnieje
+  if (imageZoomListener) {
+    imageContainer.removeEventListener('click', imageZoomListener);
+  }
+  
+  // Stwórz nowy listener
+  imageZoomListener = (e) => {
     e.stopPropagation();
     imageContainer.classList.toggle('modal__image-container--zoomed');
-  });
+  };
+  
+  // Dodaj nowy listener
+  imageContainer.addEventListener('click', imageZoomListener);
 }
 
 // Otwieranie modalu
@@ -91,6 +101,12 @@ export function openModal(product) {
   
   if (!modalImage || !modalTitle || !modalDescription) return;
   
+  // Upewnij się, że zoom jest wyłączony z poprzedniego użycia
+  const imageContainer = modalElement.querySelector('.modal__image-container');
+  if (imageContainer) {
+    imageContainer.classList.remove('modal__image-container--zoomed');
+  }
+  
   // Ustaw zawartość modalu
   modalImage.src = product.image;
   modalImage.alt = product.name;
@@ -101,7 +117,7 @@ export function openModal(product) {
   modalElement.classList.add('modal--active');
   document.body.style.overflow = 'hidden';
   
-  // Inicjalizuj zoom na zdjęciu
+  // WAŻNE: Inicjalizuj zoom za każdym razem gdy modal się otwiera
   initImageZoom();
 }
 
@@ -109,6 +125,20 @@ export function openModal(product) {
 export function closeModal() {
   if (!modalElement) return;
   
+  const imageContainer = modalElement.querySelector('.modal__image-container');
+  
+  // Usuń klasę zoom jeśli jest aktywna
+  if (imageContainer) {
+    imageContainer.classList.remove('modal__image-container--zoomed');
+  }
+  
+  // Usuń event listener zoom przy zamykaniu
+  if (imageZoomListener && imageContainer) {
+    imageContainer.removeEventListener('click', imageZoomListener);
+    imageZoomListener = null;
+  }
+  
+  // Zamknij modal
   modalElement.classList.remove('modal--active');
   document.body.style.overflow = '';
 }
@@ -116,7 +146,17 @@ export function closeModal() {
 // Cleanup przy usuwaniu modalu
 export function destroyModal() {
   if (modalElement) {
+    // Usuń listener ESC
     document.removeEventListener('keydown', handleEscapeKey);
+    
+    // Usuń listener zoom
+    const imageContainer = modalElement.querySelector('.modal__image-container');
+    if (imageZoomListener && imageContainer) {
+      imageContainer.removeEventListener('click', imageZoomListener);
+      imageZoomListener = null;
+    }
+    
+    // Usuń modal z DOM
     modalElement.remove();
     modalElement = null;
   }

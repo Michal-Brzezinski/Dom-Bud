@@ -1,24 +1,43 @@
+# Dom-Bud
+
+## Opis projektu
+Dom-Bud to serwis internetowy prezentujący ofertę składu budowlanego, informacje o firmie oraz dane kontaktowe. Projekt został przygotowany w oparciu o nowoczesne standardy HTML, CSS i JavaScript, z naciskiem na modularność kodu, responsywność oraz łatwość utrzymania.
+
+## Funkcjonalności
+- **Dynamiczne ładowanie produktów** z pliku JSON przy użyciu Fetch API.
+- **Modularny kod JS**:
+  - `products.js` koordynuje ładowanie danych i renderowanie.
+  - `productCard.js` odpowiada za generowanie kart produktów.
+  - `modal.js` obsługuje modal ze szczegółami produktu.
+  - `utils.js` zawiera funkcje pomocnicze (escape HTML, fetch, komunikaty).
+- **Modularny layout HTML** – wspólne elementy (navbar, footer) ładowane przez `include.js`.
+- **Responsywność** – układ dostosowany do różnych rozdzielczości.
+- **Estetyczne separatory** między sekcjami dla lepszej czytelności.
+- **Mapa Google** osadzona na stronie kontaktowej.
+- **Spójny design** – wykorzystanie zmiennych CSS (`--color-bg`, `--color-accent`, itp.) dla łatwej zmiany kolorystyki.
+
+## Technologie
+- **HTML5** – semantyczna struktura dokumentów.
+- **CSS3** – responsywne layouty, animacje, grid, flexbox.
+- **JavaScript (ES6+)** – modularny kod, Fetch API, obsługa zdarzeń.
+- **JSON** – dane produktów.
+- **Google Maps Embed API** – mapa lokalizacji firmy.
+
+## Jak uruchomić
+1. Sklonuj repozytorium lub pobierz paczkę projektu.
+2. Umieść pliki na serwerze lokalnym lub w katalogu obsługiwanym przez przeglądarkę.
+3. Otwórz `index.html` w przeglądarce.
+4. Nawigacja i stopka zostaną automatycznie załadowane dzięki `include.js`.
+
+## Rozwój projektu
+- Możliwość rozbudowy katalogu o filtrowanie i sortowanie produktów.
+- Integracja formularza kontaktowego z backendem (np. PHP, Node.js).
+- Rozszerzenie sekcji „Historia firmy” o interaktywny timeline.
+- Dodanie lazy loadingu dla obrazów produktów.
+
 # DO ZROBIENIA
 
 - strony błędów np. 404
-- favicon
-- do zmiany Dom-Bud na inny kolor w tekście żeby się wyróżniało
 - realny kontakt poprzez wysłanie wiadomości na stronie w formularzu
 - zmiana nazw plików i innych rzeczy na angielski, dla jednolitości
 - zmienić, żeby strony nie wyświetlały się w formie .html na stronie
-  
-Hosting współdzielony + PHP + MySQL + panel admina w katalogu /admin
-
-Dlaczego?
-
-najtańsze
-
-najprostsze
-
-najbardziej kompatybilne
-
-łatwe w utrzymaniu
-
-działa na każdym hostingu
-
-idealne dla katalogu produktów

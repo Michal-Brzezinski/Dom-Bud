@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="site">
 
   <!-- Nawigacja -->
@@ -20,10 +22,10 @@
       <h2 class="hero__title">Dom-Bud</h2>
       <h3 class="hero__subtitle">Twój ulubiony skład budowlany</h3>
       <p class="hero__text">
-        Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości. 
+        Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości.
         Wspieramy klientów indywidualnych i firmy, oferując doradztwo, transport i profesjonalną obsługę.
       </p>
-      <a href="katalog.html" class="hero__button">Sprawdź ofertę</a>
+      <a href="catalog.php" class="hero__button">Sprawdź ofertę</a>
     </div>
   </section>
 
@@ -50,7 +52,7 @@
   <section class="cta">
     <h3 class="cta__title">Masz pytania?</h3>
     <p class="cta__text">Skontaktuj się z nami i dowiedz się więcej o naszej ofercie.</p>
-    <a href="kontakt.html" class="cta__button">Przejdź do kontaktu</a>
+    <a href="contact.php" class="cta__button">Przejdź do kontaktu</a>
   </section>
 
   <!-- Stopka -->
@@ -58,4 +60,5 @@
 
   <script src="js/include.js"></script>
 </body>
+
 </html>

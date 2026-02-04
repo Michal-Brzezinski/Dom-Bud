@@ -26,7 +26,7 @@ Dom-Bud to serwis internetowy prezentujący ofertę składu budowlanego, informa
 ## Jak uruchomić
 1. Sklonuj repozytorium lub pobierz paczkę projektu.
 2. Umieść pliki na serwerze lokalnym lub w katalogu obsługiwanym przez przeglądarkę.
-3. Otwórz `index.html` w przeglądarce.
+3. Otwórz `index.php` w przeglądarce.
 4. Nawigacja i stopka zostaną automatycznie załadowane dzięki `include.js`.
 
 ## Rozwój projektu
@@ -35,9 +35,14 @@ Dom-Bud to serwis internetowy prezentujący ofertę składu budowlanego, informa
 - Rozszerzenie sekcji „Historia firmy” o interaktywny timeline.
 - Dodanie lazy loadingu dla obrazów produktów.
 
+## Licencja
+Kod źródłowy projektu Dom-Bud jest udostępniany na licencji MIT (patrz plik LICENSE).  
+Projekt korzysta również z biblioteki **PHPMailer** (LGPL/MIT), której licencja znajduje się w katalogu `vendor/PHPMailer/`.
+
 # DO ZROBIENIA
 
 - strony błędów np. 404
 - realny kontakt poprzez wysłanie wiadomości na stronie w formularzu
 - zmiana nazw plików i innych rzeczy na angielski, dla jednolitości
 - zmienić, żeby strony nie wyświetlały się w formie .html na stronie
+- jak przechowywać obrazy do poduktów, żeby nie zajmowało za dużo miejsca

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="site">
 
   <!-- Nawigacja -->
@@ -23,12 +25,12 @@
     <div class="about__content">
       <h2 class="about__title">Kim jesteśmy?</h2>
       <p>
-        Firma Handlowo Usługowa Dom-Bud działa od ponad 20 lat w branży budowlanej. 
+        Firma Handlowo Usługowa Dom-Bud działa od ponad 20 lat w branży budowlanej.
         Naszą misją jest dostarczanie materiałów najwyższej jakości oraz profesjonalne doradztwo
         dla klientów indywidualnych i firm.
       </p>
       <p>
-        Wyróżnia nas doświadczenie, szeroka oferta i indywidualne podejście do każdego klienta. 
+        Wyróżnia nas doświadczenie, szeroka oferta i indywidualne podejście do każdego klienta.
         Dbamy o to, aby zakupy u nas były szybkie, wygodne i satysfakcjonujące.
       </p>
       <ul>
@@ -86,7 +88,7 @@
   <section class="cta">
     <h3 class="cta__title">Chcesz dowiedzieć się więcej?</h3>
     <p class="cta__text">Skontaktuj się z nami i poznaj pełną ofertę materiałów budowlanych.</p>
-    <a href="kontakt.html" class="cta__button">Przejdź do kontaktu</a>
+    <a href="contact.php" class="cta__button">Przejdź do kontaktu</a>
   </section>
 
   <!-- Stopka -->
@@ -94,4 +96,5 @@
 
   <script src="js/include.js"></script>
 </body>
+
 </html>

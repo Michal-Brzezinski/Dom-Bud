@@ -42,11 +42,7 @@ Projekt korzysta również z biblioteki **PHPMailer** (LGPL/MIT), której licenc
 # DO ZROBIENIA
 
 - strony błędów np. 404
-- realny kontakt poprzez wysłanie wiadomości na stronie w formularzu
-- zmiana nazw plików i innych rzeczy na angielski, dla jednolitości
-- zmienić, żeby strony nie wyświetlały się w formie .html na stronie
 - jak przechowywać obrazy do poduktów, żeby nie zajmowało za dużo miejsca
-- na koniec nie pushować vendora na github
 - router.php w public mówi:
     „Jeśli plik nie istnieje → przekaż wszystko do index.php”.
     (Na prawdziwym hostingu (Apache/Nginx) ten plik nie będzie potrzebny — tam robi to .htaccess lub konfiguracja serwera.)

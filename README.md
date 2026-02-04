@@ -46,3 +46,24 @@ Projekt korzysta również z biblioteki **PHPMailer** (LGPL/MIT), której licenc
 - zmiana nazw plików i innych rzeczy na angielski, dla jednolitości
 - zmienić, żeby strony nie wyświetlały się w formie .html na stronie
 - jak przechowywać obrazy do poduktów, żeby nie zajmowało za dużo miejsca
+- na koniec nie pushować vendora na github
+
+# Ważne drobiazgi (częste pułapki)
+
+Jeśli vendor już był dodany do repo, samo .gitignore nie wystarczy. Trzeba go jeszcze usunąć z indeksu:
+
+`git rm -r --cached vendor
+git commit -m "Ignore vendor directory"`
+
+
+Jeśli chcesz ignorować vendor tylko w konkretnym miejscu, np. tylko w root:
+
+`/vendor/`
+
+
+A jeśli chcesz ignorować wszystkie katalogi vendor w projekcie (np. w monorepo):
+
+`**/vendor/`
+
+
+Jakiego typu projekt? PHP (Composer), JS, coś innego? Mogę podpowiedzieć sensowny .gitignore pod całość.

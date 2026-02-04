@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+use App\Controllers\ContactController;
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -5,40 +10,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kontakt - Dom-Bud</title>
-  <link rel="icon" href="img/dom-bud_logo.webp" type="image/webp">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="public/img/dom-bud_logo.webp" type="image/webp">
+  <link rel="stylesheet" href="public/css/navbar.css">
+  <link rel="stylesheet" href="public/css/footer.css">
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="site">
 
-  <!-- Nawigacja -->
   <div id="navbar-placeholder"></div>
 
-  <!-- Sekcja Kontakt -->
   <section class="contact section">
     <h2 class="contact__title">Skontaktuj się z nami</h2>
 
     <div class="contact__grid">
 
-      <!-- Formularz -->
       <div class="contact__form">
 
-        <!-- komunikaty -->
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          ContactController::getInstance()->handle();
+        }
+        ?>
+
         <?php if (isset($_GET['status'])): ?>
 
           <?php
-          // tłumaczenie komunikatów z URL na polski
-          $translated = "";
-
-          if ($_GET['status'] === 'ok') {
-            // komunikat sukcesu
-            $translated = "Wiadomość została wysłana.";
-          } else {
-            // komunikat błędu
-            $translated = "Wystąpił błąd podczas wysyłania wiadomości.";
-          }
+          $translated = $_GET['status'] === 'ok'
+            ? "Wiadomość została wysłana."
+            : "Wystąpił błąd podczas wysyłania wiadomości.";
           ?>
 
           <div class="form__message <?= $_GET['status'] === 'ok' ? 'success' : 'error' ?>">
@@ -47,7 +47,7 @@
 
         <?php endif; ?>
 
-        <form action="send.php" method="POST">
+        <form action="/contact.php" method="POST">
           <label for="name">Imię i nazwisko</label>
           <input type="text" id="name" name="name" required>
 
@@ -104,7 +104,6 @@
       </div>
   </section>
 
-  <!-- Mapa -->
   <section class="map section">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.123456789!2d20.634!3d49.563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715f123456789%3A0xabcdef123456789!2sTymbark%20736%2C%2034-650%20Tymbark!5e0!3m2!1spl!2spl!4v1700000000000"
@@ -112,11 +111,10 @@
     </iframe>
   </section>
 
-  <!-- Stopka -->
   <div id="footer-placeholder"></div>
 
-  <script src="js/include.js"></script>
-  <script src="js/contact-validation.js"></script>
+  <script src="public/js/include.js"></script>
+  <script src="public/js/contact-validation.js"></script>
 </body>
 
 </html>

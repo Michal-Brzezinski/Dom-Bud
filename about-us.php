@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O nas - Dom-Bud</title>
-  <link rel="icon" href="img/dom-bud_logo.webp" type="image/webp">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="public/img/dom-bud_logo.webp" type="image/webp">
+  <link rel="stylesheet" href="public/css/navbar.css">
+  <link rel="stylesheet" href="public/css/footer.css">
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body class="site">
@@ -19,7 +19,7 @@
   <!-- Sekcja O nas -->
   <section class="about section">
     <!-- Lewa połowa – zdjęcie -->
-    <div class="about__image" style="background-image: url('img/dom-bud_budynek.webp');"></div>
+    <div class="about__image" style="background-image: url('public/img/dom-bud_budynek.webp');"></div>
 
     <!-- Prawa połowa – tekst -->
     <div class="about__content">
@@ -94,7 +94,7 @@
   <!-- Stopka -->
   <div id="footer-placeholder"></div>
 
-  <script src="js/include.js"></script>
+  <script src="public/js/include.js"></script>
 </body>
 
 </html>

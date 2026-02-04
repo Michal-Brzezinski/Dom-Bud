@@ -10,7 +10,7 @@ function loadEnv($path)
     }
 }
 
-loadEnv(__DIR__ . '/.env');
+loadEnv(__DIR__ . '/../../.env');
 
 return [
     'smtp_host'   => getenv('SMTP_HOST'),

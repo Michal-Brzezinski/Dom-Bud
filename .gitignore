@@ -1,2 +1,3 @@
 # Zmienne środowiskowe i hasła
 .env
+/vendor/

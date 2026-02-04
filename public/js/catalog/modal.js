@@ -90,34 +90,35 @@ function initImageZoom() {
 }
 
 // Otwieranie modalu
+// Otwieranie modalu
 export function openModal(product) {
   if (!modalElement) {
     createModal();
   }
-  
+
   const modalImage = document.getElementById('modal-image');
   const modalTitle = document.getElementById('modal-title');
   const modalDescription = document.getElementById('modal-description');
-  
+
   if (!modalImage || !modalTitle || !modalDescription) return;
-  
+
   // Upewnij się, że zoom jest wyłączony z poprzedniego użycia
   const imageContainer = modalElement.querySelector('.modal__image-container');
   if (imageContainer) {
     imageContainer.classList.remove('modal__image-container--zoomed');
   }
-  
-  // Ustaw zawartość modalu
-  modalImage.src = product.image;
+
+  // Poprawiona ścieżka do obrazka - użyj tylko /img/products/
+  modalImage.src = `/public/${product.image}`;  // Poprawiona ścieżka
   modalImage.alt = product.name;
   modalTitle.textContent = product.name;
   modalDescription.textContent = product.description;
-  
+
   // Pokaż modal
   modalElement.classList.add('modal--active');
   document.body.style.overflow = 'hidden';
-  
-  // WAŻNE: Inicjalizuj zoom za każdym razem gdy modal się otwiera
+
+  // Inicjalizacja zoomu
   initImageZoom();
 }
 

@@ -9,10 +9,12 @@ import { openModal } from './modal.js';
 export function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'products__card';
-  
+
+  const imagePath = `public/${product.image}`;
+
   card.innerHTML = `
     <div class="products__image-wrapper">
-      <img src="${product.image}" alt="${escapeHtml(product.name)}" class="products__image">
+      <img src="${imagePath}" alt="${escapeHtml(product.name)}" class="products__image">
     </div>
     <div class="products__content">
       <h3 class="products__title">${escapeHtml(product.name)}</h3>
@@ -20,14 +22,14 @@ export function createProductCard(product) {
       <span class="products__more">Kliknij, aby zobaczyć więcej →</span>
     </div>
   `;
-  
-  // Obsługa kliknięcia w kartę
+
   card.addEventListener('click', () => {
     openModal(product);
   });
-  
+
   return card;
 }
+
 
 // Renderowanie wszystkich kart w gridzie
 export function renderProducts(products, container) {

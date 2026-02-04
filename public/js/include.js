@@ -26,6 +26,6 @@ async function loadPartial(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadPartial("navbar-placeholder", "partials/navbar.html");
-  loadPartial("footer-placeholder", "partials/footer.html");
+  loadPartial("navbar-placeholder", "public/partials/navbar.php");
+  loadPartial("footer-placeholder", "public/partials/footer.php");
 });

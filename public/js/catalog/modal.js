@@ -109,7 +109,7 @@ export function openModal(product) {
   }
 
   // Poprawiona ścieżka do obrazka - użyj tylko /img/products/
-  modalImage.src = `/public/${product.image}`;  // Poprawiona ścieżka
+  modalImage.src = `/${product.image}`;  // Poprawiona ścieżka
   modalImage.alt = product.name;
   modalTitle.textContent = product.name;
   modalDescription.textContent = product.description;

@@ -10,7 +10,7 @@ export function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'products__card';
 
-  const imagePath = `public/${product.image}`;
+  const imagePath = `/${product.image}`;
 
   card.innerHTML = `
     <div class="products__image-wrapper">

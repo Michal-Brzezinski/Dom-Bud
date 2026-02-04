@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="navbar__logo">
-    <img src="public/img/dom-bud_logo.webp" alt="Logo Dom-Bud" class="navbar__logo-img">
+    <img src="/img/dom-bud_logo.webp" alt="Logo Dom-Bud" class="navbar__logo-img">
     <span class="navbar__logo-text">Dom-Bud</span>
   </div>
 
@@ -10,10 +10,10 @@
   </button>
 
   <ul class="navbar__menu">
-    <li><a href="index.php" class="navbar__link">Strona główna</a></li>
-    <li><a href="catalog.php" class="navbar__link">Oferta</a></li>
-    <li><a href="about-us.php" class="navbar__link">O nas</a></li>
-    <li><a href="contact.php" class="navbar__link">Kontakt</a></li>
+    <li><a href="/" class="navbar__link">Strona główna</a></li>
+    <li><a href="/katalog" class="navbar__link">Oferta</a></li>
+    <li><a href="/o-nas" class="navbar__link">O nas</a></li>
+    <li><a href="/kontakt" class="navbar__link">Kontakt</a></li>
   </ul>
 
   <div class="navbar__social">

@@ -9,7 +9,7 @@ import { createModal } from './modal.js';
 
 // Konfiguracja
 const CONFIG = {
-  dataUrl: 'app/data/products.json',
+  dataUrl: '/data/products.json',
   gridSelector: '.products__grid'
 };
 

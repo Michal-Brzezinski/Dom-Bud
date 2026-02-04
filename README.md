@@ -58,3 +58,6 @@ Każdy, kto pobierze repo, musi wykonać:
 `composer install`
 
 (wcześniej zainstalowany composer)
+
+Następnie jeżeli używasz lokalnego serwera php, to wejdź do katalogu public:
+`cd public` a potem uruchom: `php -S localhost:8000 router.php` (potrzebne tylko dla lokalnego serwera PHP)

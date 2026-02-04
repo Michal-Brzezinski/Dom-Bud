@@ -47,23 +47,14 @@ Projekt korzysta również z biblioteki **PHPMailer** (LGPL/MIT), której licenc
 - zmienić, żeby strony nie wyświetlały się w formie .html na stronie
 - jak przechowywać obrazy do poduktów, żeby nie zajmowało za dużo miejsca
 - na koniec nie pushować vendora na github
+- router.php w public mówi:
+    „Jeśli plik nie istnieje → przekaż wszystko do index.php”.
+    (Na prawdziwym hostingu (Apache/Nginx) ten plik nie będzie potrzebny — tam robi to .htaccess lub konfiguracja serwera.)
 
 # Ważne drobiazgi (częste pułapki)
 
-Jeśli vendor już był dodany do repo, samo .gitignore nie wystarczy. Trzeba go jeszcze usunąć z indeksu:
+Każdy, kto pobierze repo, musi wykonać:
 
-`git rm -r --cached vendor
-git commit -m "Ignore vendor directory"`
+`composer install`
 
-
-Jeśli chcesz ignorować vendor tylko w konkretnym miejscu, np. tylko w root:
-
-`/vendor/`
-
-
-A jeśli chcesz ignorować wszystkie katalogi vendor w projekcie (np. w monorepo):
-
-`**/vendor/`
-
-
-Jakiego typu projekt? PHP (Composer), JS, coś innego? Mogę podpowiedzieć sensowny .gitignore pod całość.
+(wcześniej zainstalowany composer)

@@ -6,22 +6,18 @@ use App\Services\Mailer;
 
 class ContactController
 {
-    private static ?ContactController $instance = null;
     private array $config;
     private Mailer $mailer;
 
-    private function __construct()
+    public function __construct()
     {
         $this->config = require __DIR__ . '/../config/config.php';
         $this->mailer = new Mailer($this->config);
     }
 
-    public static function getInstance(): ContactController
+    public function showForm(): void
     {
-        if (self::$instance === null) {
-            self::$instance = new ContactController();
-        }
-        return self::$instance;
+        require __DIR__ . '/../views/contact.view.php';
     }
 
     public function handle(): void
@@ -43,14 +39,14 @@ class ContactController
         }
 
         if (!empty($errors)) {
-            header("Location: /contact.php?status=error&msg=" . urlencode(implode(" ", $errors)));
+            header("Location: /kontakt?status=error&msg=" . urlencode(implode(" ", $errors)));
             exit;
         }
 
         if ($this->mailer->sendContactMessage($name, $email, $message)) {
-            header("Location: /contact.php?status=ok&msg=email_sent");
+            header("Location: /kontakt?status=ok");
         } else {
-            header("Location: /contact.php?status=error&msg=delivery_error");
+            header("Location: /kontakt?status=error");
         }
     }
 }

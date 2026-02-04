@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katalog produktów - Dom-Bud</title>
-  <link rel="icon" href="public/img/dom-bud_logo.webp" type="image/webp">
-  <link rel="stylesheet" href="public/css/navbar.css">
-  <link rel="stylesheet" href="public/css/footer.css">
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="site">
@@ -35,8 +35,8 @@
   <!-- Stopka -->
   <div id="footer-placeholder"></div>
 
-  <script src="public/js/include.js"></script>
-  <script type="module" src="public/js/catalog/products.js"></script>
+  <script src="/js/include.js"></script>
+  <script type="module" src="/js/catalog/products.js"></script>
 </body>
 
 </html>

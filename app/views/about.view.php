@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O nas - Dom-Bud</title>
-  <link rel="icon" href="public/img/dom-bud_logo.webp" type="image/webp">
-  <link rel="stylesheet" href="public/css/navbar.css">
-  <link rel="stylesheet" href="public/css/footer.css">
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="site">
@@ -17,9 +17,9 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Sekcja O nas -->
-  <section class="about section">
+  <section class="about">
     <!-- Lewa połowa – zdjęcie -->
-    <div class="about__image" style="background-image: url('public/img/dom-bud_budynek.webp');"></div>
+    <div class="about__image" style="background-image: url('/img/dom-bud_budynek.webp');"></div>
 
     <!-- Prawa połowa – tekst -->
     <div class="about__content">
@@ -88,13 +88,13 @@
   <section class="cta">
     <h3 class="cta__title">Chcesz dowiedzieć się więcej?</h3>
     <p class="cta__text">Skontaktuj się z nami i poznaj pełną ofertę materiałów budowlanych.</p>
-    <a href="contact.php" class="cta__button">Przejdź do kontaktu</a>
+    <a href="/kontakt" class="cta__button">Przejdź do kontaktu</a>
   </section>
 
   <!-- Stopka -->
   <div id="footer-placeholder"></div>
 
-  <script src="public/js/include.js"></script>
+  <script src="/js/include.js"></script>
 </body>
 
 </html>

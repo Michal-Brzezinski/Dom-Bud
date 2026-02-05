@@ -1,6 +1,76 @@
 .footer {
-    text-align: center;
-    padding: 1.5rem;
+    padding: 2rem 1rem;
     border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* ładne zachowanie na mobile */
+    gap: 1rem;
+}
+
+/* Lewa kolumna — pusta, ale potrzebna do centrowania */
+.footer__left {
+    flex: 1;
+}
+
+/* Środkowa kolumna — DOM-BUD wyśrodkowane */
+.footer__center {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
     color: var(--color-muted);
+    letter-spacing: 0.5px;
+}
+
+/* Prawa kolumna — Twoje dane */
+.footer__right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 2rem;
+    font-size: 0.95rem;
+    color: var(--color-muted);
+}
+
+/* Stylowanie linku */
+.footer__author {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 600;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer__author:hover {
+    color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Ikona GitHuba */
+.footer__icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
+}
+
+.footer__author:hover .footer__icon {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        padding-bottom: 3rem;
+    }
+
+    .footer__right {
+        margin-right: 0rem;
+    }
 }

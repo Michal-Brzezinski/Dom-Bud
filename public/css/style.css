@@ -99,8 +99,12 @@ body.site {
     font-weight: 700;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
-    color: var(--color-accent);
+    color: var(--color-text);
     letter-spacing: -0.02em;
+}
+
+.features__title .highlight {
+    color: var(--color-accent);
 }
 
 .features__grid {
@@ -849,6 +853,11 @@ body.site {
         min-height: 250px;
     }
 
+    .about__image::after {
+
+        background: unset;
+    }
+
     .history__card {
         text-align: center;
         flex-direction: column;
@@ -860,9 +869,14 @@ body.site {
 /* Bardzo małe smartfony (do 375px) */
 @media (max-width: 375px) {
 
+    .about__image {
+        min-height: 160px;
+    }
+
     .history__card {
         flex-direction: column;
         gap: 0.5rem;
+        padding: 1rem 1.5rem;
     }
 }
 

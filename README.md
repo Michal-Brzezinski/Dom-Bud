@@ -1,7 +1,7 @@
-# Dom-Bud
+# DOM-BUD
 
 ## Opis projektu
-Dom-Bud to serwis internetowy prezentujący ofertę składu budowlanego, informacje o firmie oraz dane kontaktowe. Projekt został przygotowany w oparciu o nowoczesne standardy HTML, CSS i JavaScript, z naciskiem na modularność kodu, responsywność oraz łatwość utrzymania.
+DOM-BUD to serwis internetowy prezentujący ofertę składu budowlanego, informacje o firmie oraz dane kontaktowe. Projekt został przygotowany w oparciu o nowoczesne standardy HTML, CSS i JavaScript, z naciskiem na modularność kodu, responsywność oraz łatwość utrzymania.
 
 ## Funkcjonalności
 - **Dynamiczne ładowanie produktów** z pliku JSON przy użyciu Fetch API.
@@ -36,7 +36,7 @@ Dom-Bud to serwis internetowy prezentujący ofertę składu budowlanego, informa
 - Dodanie lazy loadingu dla obrazów produktów.
 
 ## Licencja
-Kod źródłowy projektu Dom-Bud jest udostępniany na licencji MIT (patrz plik LICENSE).  
+Kod źródłowy projektu DOM-BUD jest udostępniany na licencji MIT (patrz plik LICENSE).  
 Projekt korzysta również z biblioteki **PHPMailer** (LGPL/MIT), której licencja znajduje się w katalogu `vendor/PHPMailer/`.
 
 # DO ZROBIENIA

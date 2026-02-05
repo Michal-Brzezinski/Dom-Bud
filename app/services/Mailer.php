@@ -37,7 +37,7 @@ class Mailer
         }
 
         $mail->isHTML(false);
-        $mail->Subject = "Wiadomość z formularza kontaktowego Dom-Bud";
+        $mail->Subject = "Wiadomość z formularza kontaktowego DOM-BUD";
         $mail->Body    = "Imię i nazwisko: {$name}\nEmail: {$email}\n\nWiadomość:\n{$message}";
 
         return $mail->send();

@@ -1,3 +1,3 @@
 <footer class="footer">
-  © 2026 Dom-Bud. Wszystkie prawa zastrzeżone.
+  © 2026 DOM-BUD. Wszystkie prawa zastrzeżone.
 </footer>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skład Budowlany Dom-Bud</title>
-  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
+  <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -19,7 +19,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero__content">
-      <h2 class="hero__title">Dom-Bud</h2>
+      <h2 class="hero__title">DOM-BUD</h2>
       <h3 class="hero__subtitle">Twój ulubiony skład budowlany</h3>
       <p class="hero__text">
         Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości.
@@ -31,7 +31,7 @@
 
   <!-- Features -->
   <section class="features">
-    <h3 class="features__title">Dlaczego warto wybrać Dom-Bud?</h3>
+    <h3 class="features__title">Dlaczego warto wybrać <span class="highlight">DOM-BUD</span>?</h3>
     <div class="features__grid">
       <div class="features__box">
         <h4 class="features__box-title">Doświadczenie</h4>

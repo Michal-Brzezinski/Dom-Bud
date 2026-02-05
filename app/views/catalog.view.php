@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katalog produktów - DOM-BUD</title>
+  <title>Katalog produktów</title>
   <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
@@ -14,7 +14,7 @@
 <body class="site">
 
   <!-- Nawigacja -->
-  <div id="navbar-placeholder"></div>
+  <?php include __DIR__ . '/partials/navbar.php'; ?>
 
   <!-- Nagłówek katalogu -->
   <section class="catalog-header">
@@ -33,16 +33,12 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <h3 class="cta__title">Masz pytania?</h3>
-    <p class="cta__text">Skontaktuj się z nami! Chętnie doradzimy i przygotujemy odpowiednią ofertę.</p>
-    <a href="/kontakt" class="cta__button">Przejdź do kontaktu</a>
-  </section>
+  <?php include __DIR__ . '/partials/cta.php'; ?>
 
   <!-- Stopka -->
-  <div id="footer-placeholder"></div>
+  <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <script src="/js/include.js"></script>
+
   <script type="module" src="/js/catalog/products.js"></script>
 </body>
 

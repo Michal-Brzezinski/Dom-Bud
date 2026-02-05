@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O nas - DOM-BUD</title>
+  <title>O nas</title>
   <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
@@ -14,7 +14,7 @@
 <body class="site">
 
   <!-- Nawigacja -->
-  <div id="navbar-placeholder"></div>
+  <?php include __DIR__ . '/partials/navbar.php'; ?>
 
   <!-- Sekcja O nas -->
   <section class="about">
@@ -107,16 +107,11 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <h3 class="cta__title">Chcesz dowiedzieć się więcej?</h3>
-    <p class="cta__text">Skontaktuj się z nami! Chętnie doradzimy i przygotujemy odpowiednią ofertę.</p>
-    <a href="/kontakt" class="cta__button">Przejdź do kontaktu</a>
-  </section>
+  <?php include __DIR__ . '/partials/cta.php'; ?>
 
   <!-- Stopka -->
-  <div id="footer-placeholder"></div>
+  <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <script src="/js/include.js"></script>
 </body>
 
 </html>

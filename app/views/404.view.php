@@ -15,7 +15,7 @@
 
 <body class="site">
 
-    <div id="navbar-placeholder"></div>
+    <?php include __DIR__ . '/partials/navbar.php'; ?>
 
     <section class="error-page">
         <div class="error-page__code">404</div>
@@ -28,9 +28,9 @@
         <a href="/" class="error-page__button">Wróć do strony głównej</a>
     </section>
 
-    <div id="footer-placeholder"></div>
+    <?php include __DIR__ . '/partials/footer.php'; ?>
 
-    <script src="/js/include.js"></script>
+
 </body>
 
 </html>

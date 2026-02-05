@@ -6,6 +6,7 @@
     --color-text: #fff;
     --color-border: #333;
     --color-accent: #f8ba42;
+    --color-accent-light: #ffe6ac;
     --color-accent-hover: rgb(247, 210, 89);
     --border-radius: 0.5rem;
     --transition: all 0.3s ease;
@@ -95,7 +96,7 @@ body.site {
 
 .features__title {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
     color: var(--color-accent);
@@ -695,7 +696,36 @@ body.site {
     flex: 1;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
+
+.about__image::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    /* było 40–55%, teraz gradient zachodzi dużo dalej */
+    height: 100%;
+    pointer-events: none;
+
+    background:
+        /* główne przyciemnienie – intensywność jak wcześniej */
+        linear-gradient(to left,
+            rgba(0, 0, 0, 1) 5%,
+            rgba(0, 0, 0, 0.7) 35%,
+            rgba(0, 0, 0, 0.3) 65%,
+            rgba(0, 0, 0, 0.15) 78%,
+            rgba(0, 0, 0, 0.1) 85%,
+            rgba(0, 0, 0, 0.05) 90%,
+            rgba(0, 0, 0, 0) 100%),
+
+        /* delikatna mgiełka dla naturalności */
+        radial-gradient(circle at 90% 50%,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0) 70%);
+}
+
 
 .about__content {
     flex: 1;
@@ -709,6 +739,7 @@ body.site {
 .about__title {
     font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 700;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
     color: var(--color-accent);
 }
@@ -739,6 +770,18 @@ body.site {
     color: var(--color-accent);
 }
 
+.history__intro {
+    max-width: 60rem;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--color-text2);
+}
+
+.history__intro .highlight {
+    color: var(--color-accent);
+}
+
 .history__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -753,7 +796,7 @@ body.site {
     text-align: left;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: var(--transition);
 }
@@ -768,7 +811,11 @@ body.site {
     font-weight: 700;
     font-size: 1.25rem;
     color: var(--color-accent);
-    min-width: 4rem;
+    min-width: 10rem;
+}
+
+.history__year .highlight {
+    color: var(--color-accent-light);
 }
 
 /* Separator pomiędzy sekcjami */
@@ -804,6 +851,9 @@ body.site {
 
     .history__card {
         text-align: center;
+        flex-direction: column;
+        gap: 1.1rem;
+        padding: 2rem 3rem 2rem;
     }
 }
 
@@ -831,14 +881,14 @@ body.site {
     font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     color: var(--color-accent);
 }
 
 .contact__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .contact__form form {
@@ -954,7 +1004,7 @@ body.site {
 
 @media (min-width: 1024px) {
     .contact__grid {
-        padding: 0 6rem;
+        padding: 0 4rem;
         gap: 6rem;
     }
 }

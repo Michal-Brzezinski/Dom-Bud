@@ -51,7 +51,7 @@
   <!-- CTA -->
   <section class="cta">
     <h3 class="cta__title">Masz pytania?</h3>
-    <p class="cta__text">Skontaktuj się z nami i dowiedz się więcej o naszej ofercie.</p>
+    <p class="cta__text">Skontaktuj się z nami! Chętnie doradzimy i przygotujemy odpowiednią ofertę.</p>
     <a href="/kontakt" class="cta__button">Przejdź do kontaktu</a>
   </section>
 

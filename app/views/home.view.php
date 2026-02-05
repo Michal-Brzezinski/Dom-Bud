@@ -34,7 +34,7 @@
     <h3 class="features__title">Dlaczego warto wybrać <span class="highlight">DOM-BUD</span>?</h3>
     <div class="features__grid">
       <div class="features__box">
-        <h4 class="features__box-title">Doświadczenie</h4>
+        <h4 class="features__box-title">Renoma</h4>
         <p class="features__box-text">Ponad 20 lat na rynku budowlanym — setki zadowolonych klientów.</p>
       </div>
       <div class="features__box">

@@ -129,15 +129,17 @@ body.site {
 }
 
 .features__box-title {
-    font-size: 1.375rem;
-    font-weight: 600;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    color: var(--color-text);
+    color: var(--color-accent);
 }
 
 .features__box-text {
-    color: var(--color-text2);
+    color: var(--color-text);
     line-height: 1.7;
+    font-size: 1.1rem;
 }
 
 /* CTA */
@@ -760,21 +762,21 @@ body.site {
 }
 
 /* Historia firmy */
-.history {
+.list {
     padding: 2rem 1.5rem;
     max-width: 80rem;
     margin: 0 auto;
     text-align: center;
 }
 
-.history__title {
+.list__title {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 700;
     margin-bottom: 2rem;
     color: var(--color-accent);
 }
 
-.history__intro {
+.list__intro {
     max-width: 60rem;
     margin: 0 auto 3rem;
     font-size: 1.2rem;
@@ -782,17 +784,17 @@ body.site {
     color: var(--color-text2);
 }
 
-.history__intro .highlight {
+.list__intro .highlight {
     color: var(--color-accent);
 }
 
-.history__grid {
+.list__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-.history__card {
+.list__card {
     background: var(--color-bg2);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
@@ -805,20 +807,20 @@ body.site {
     transition: var(--transition);
 }
 
-.history__card:hover {
+.list__card:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     border-color: var(--color-accent);
 }
 
-.history__year {
+.list__year {
     font-weight: 700;
     font-size: 1.25rem;
     color: var(--color-accent);
     min-width: 10rem;
 }
 
-.history__year .highlight {
+.list__year .highlight {
     color: var(--color-accent-light);
 }
 
@@ -858,7 +860,7 @@ body.site {
         background: unset;
     }
 
-    .history__card {
+    .list__card {
         text-align: center;
         flex-direction: column;
         gap: 1.1rem;
@@ -873,7 +875,7 @@ body.site {
         min-height: 160px;
     }
 
-    .history__card {
+    .list__card {
         flex-direction: column;
         gap: 0.5rem;
         padding: 1rem 1.5rem;

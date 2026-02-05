@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O nas</title>
+  <title>DOMBUD - O nas</title>
   <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
@@ -71,37 +71,37 @@
   </section>
 
   <!-- Historia firmy -->
-  <section class="history section">
-    <h3 class="history__title">Działamy razem dla lepszych rozwiązań!</h3>
-    <p class="history__intro">
+  <section class="list section">
+    <h3 class="list__title">Działamy razem dla lepszych rozwiązań!</h3>
+    <p class="list__intro">
       Nasze podejście opieramy na <span class="highlight">trzech</span>
       wzajemnie uzupełniających się <span class="highlight">wymiarach</span>:
     </p>
-    <div class="history__grid">
-      <div class="history__card">
-        <span class="history__year"><span class="highlight">D</span>ostępność</span>
+    <div class="list__grid">
+      <div class="list__card">
+        <span class="list__year"><span class="highlight">D</span>ostępność</span>
         <p>
           Od lat współpracujemy z innymi składami oraz firmami budowlanymi,
           dzięki czemu możemy zapewnić naszym klientom dostęp do szerokiej
           oferty materiałów oraz sprawdzonych producentów.
         </p>
       </div>
-      <div class="history__card">
-        <span class="history__year"><span class="highlight">D</span>oświadczenie</span>
+      <div class="list__card">
+        <span class="list__year"><span class="highlight">D</span>oświadczenie</span>
         <p>Równolegle prowadzimy sklep z materiałami budowlanymi Chem-Bud,
           posiadający trzy oddziały w Nowym Sączu, który działa nieprzerwanie od ponad 25 lat.
           Zdobyte przez lata doświadczenie pozwala nam doskonale rozumieć
           potrzeby zarówno klientów indywidualnych, jak i wykonawców.
         </p>
       </div>
-      <div class="history__card">
-        <span class="history__year"><span class="highlight">D</span>ojrzałość</span>
+      <div class="list__card">
+        <span class="list__year"><span class="highlight">D</span>ojrzałość</span>
         <p>Stawiamy na partnerskie relacje, rzetelność oraz wiedzę,
           którą wykorzystujemy w codziennej pracy.</p>
       </div>
     </div>
     <br><br>
-    <p class="history__intro">
+    <p class="list__intro">
       To nasze <span class="highlight">3D</span>, które pozwala patrzeć szerzej, działać skuteczniej i budować trwałe relacje.
     </p>
   </section>

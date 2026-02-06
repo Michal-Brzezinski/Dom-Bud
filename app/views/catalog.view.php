@@ -40,6 +40,7 @@
 
 
   <script type="module" src="/js/catalog/products.js"></script>
+  <script type="module" src="/js/navbar.js"></script>
 </body>
 
 </html>

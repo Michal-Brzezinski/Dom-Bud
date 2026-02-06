@@ -54,6 +54,8 @@
   <!-- Stopka -->
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
+  <script type="module" src="/js/navbar.js"></script>
+
 </body>
 
 </html>

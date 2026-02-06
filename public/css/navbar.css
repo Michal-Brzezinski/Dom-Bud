@@ -190,6 +190,16 @@
     }
 }
 
+@media (max-width: 480px) {
+    .navbar__menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
 /* Bardzo małe smartfony (do 280px) */
 @media (max-width: 280px) {
 

@@ -28,7 +28,7 @@ export function createModal() {
       <div class="modal__body">
         <h3 class="modal__title" id="modal-title"></h3>
         <p class="modal__description" id="modal-description"></p>
-        <a href="contact.php" class="modal__button">Zapytaj o produkt</a>
+        <a href="/kontakt" class="modal__button">Zapytaj o produkt</a>
       </div>
     </div>
   `;

@@ -8,6 +8,7 @@
   <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/cta.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 

@@ -21,7 +21,7 @@
   <section class="hero">
     <div class="hero__content">
       <h2 class="hero__title">DOM-BUD</h2>
-      <h3 class="hero__subtitle">Twój ulubiony skład budowlany</h3>
+      <h3 class="hero__subtitle">Twój zaufany skład budowlany</h3>
       <p class="hero__text">
         Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości.
         Wspieramy klientów indywidualnych i firmy, oferując doradztwo, transport i profesjonalną obsługę.
@@ -36,7 +36,7 @@
     <div class="features__grid">
       <div class="features__box">
         <h4 class="features__box-title">Renoma</h4>
-        <p class="features__box-text">Ponad 20 lat na rynku budowlanym — setki zadowolonych klientów.</p>
+        <p class="features__box-text">Ponad 25 lat na rynku budowlanym. Nasze doświadczenie doceniły tysiące klientów z całego regionu.</p>
       </div>
       <div class="features__box">
         <h4 class="features__box-title">Szeroka oferta</h4>
@@ -44,7 +44,46 @@
       </div>
       <div class="features__box">
         <h4 class="features__box-title">Wsparcie</h4>
-        <p class="features__box-text">Doradztwo techniczne, transport i indywidualne podejście do klienta.</p>
+        <p class="features__box-text">Doradztwo techniczne, transport i indywidualne podejście do każdego klienta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands">
+    <h3 class="brands__title">Współpracujemy z najlepszymi producentami</h3>
+    <div class="brands__slider">
+      <div class="brands__track">
+        <!-- Tylko oryginalne loga - JS zduplikuje je automatycznie -->
+        <div class="brands__item">
+          <a href="https://www.atlas.com.pl" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/atlas.png" alt="Atlas">
+          </a>
+        </div>
+        <div class="brands__item">
+          <a href="https://www.knauf.pl" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/knauf.png" alt="Knauf">
+          </a>
+        </div>
+        <div class="brands__item">
+          <a href="https://www.cersanit.com" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/cersanit.png" alt="Cersanit">
+          </a>
+        </div>
+        <div class="brands__item">
+          <a href="https://www.baumit.pl" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/baumit.png" alt="Baumit">
+          </a>
+        </div>
+        <div class="brands__item">
+          <a href="https://www.sopro.com" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/sopro.png" alt="Sopro">
+          </a>
+        </div>
+        <div class="brands__item">
+          <a href="https://www.isover.pl" target="_blank" rel="noopener noreferrer">
+            <img src="/img/icons/isover.webp" alt="Isover">
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -56,6 +95,7 @@
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
   <script type="module" src="/js/navbar.js"></script>
+  <script src="/js/brands.js"></script>
 
 </body>
 

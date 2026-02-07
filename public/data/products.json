@@ -3,48 +3,56 @@
     "id": 1,
     "name": "Cement portlandzki CEM I 42,5R",
     "description": "Wysokiej jakości cement portlandzki do wszelkich prac budowlanych. Idealny do betonu konstrukcyjnego, wylewek, tynków i zapraw murarskich. Charakteryzuje się szybkim wiązaniem i wysoką wytrzymałością końcową. Spełnia normy PN-EN 197-1. Dostępny w workach 25kg i 50kg. Zalecany do robót wymagających wysokiej wytrzymałości początkowej i końcowej.",
-    "image": "img/products/cement.webp"
+    "image": "img/products/cement.webp",
+    "category": "materialy-konstrukcyjne"
   },
   {
     "id": 2,
     "name": "Cegła ceramiczna pełna klasy 15",
     "description": "Trwała cegła do budowy ścian nośnych i konstrukcji murowanych. Produkowana z najwyższej jakości gliny, wypalana w temperaturze 1000°C. Charakteryzuje się doskonałą mrozoodpornością i niską nasiąkliwością. Wymiary: 250x120x65mm. Idealna do budownictwa tradycyjnego i renowacji zabytkowych obiektów. Wytrzymałość na ściskanie min. 15 MPa.",
-    "image": "img/products/cegla.webp"
+    "image": "img/products/cegla.webp",
+    "category": "materialy-konstrukcyjne"
   },
   {
     "id": 3,
     "name": "Farba elewacyjna akrylowa",
     "description": "Odporna na warunki atmosferyczne farba elewacyjna o wysokiej elastyczności i przyczepności. Idealna do malowania elewacji budynków. Charakteryzuje się doskonałą odpornością na deszcz, mróz i promieniowanie UV. Paroprzepuszczalna, co zapewnia odpowiednie „oddychanie\" ścian. Dostępna w szerokiej gamie kolorów. Wydajność: 6-8 m²/litr.",
-    "image": "img/products/farba.png"
+    "image": "img/products/farba.png",
+    "category": "malowanie-i-wykonczenie"
   },
   {
     "id": 4,
     "name": "Stal zbrojeniowa RB500W",
     "description": "Pręty zbrojeniowe do konstrukcji żelbetowych. Stal klasy RB500W (żebrowana) o wysokiej wytrzymałości. Dostępne średnice: 6mm, 8mm, 10mm, 12mm, 16mm, 20mm, 25mm, 32mm. Długość prętów: 12m lub 6m. Spełnia normy PN-EN 10080. Idealna do zbrojenia fundamentów, stropów, słupów i ścian żelbetowych. Możliwość cięcia na wymiar.",
-    "image": "img/products/stal.jpg"
+    "image": "img/products/stal.jpg",
+    "category": "materialy-konstrukcyjne"
   },
   {
     "id": 5,
     "name": "Płyta OSB/3 wodoodporna",
     "description": "Wytrzymała płyta drewnopochodna do wielu zastosowań. OSB/3 - do stosowania w warunkach wilgotnych. Grubości: 9mm, 12mm, 15mm, 18mm, 22mm. Wymiary arkusza: 1250x2500mm. Idealna do ścianek działowych, podłóg, dachów, szalunków. Charakteryzuje się wysoką wytrzymałością mechaniczną i odpornością na wilgoć. Klasa emisji formaldehydu E1.",
-    "image": "img/products/osb.jpg"
+    "image": "img/products/osb.jpg",
+    "category": "materialy-konstrukcyjne"
   },
   {
     "id": 6,
     "name": "Wełna mineralna gr. 15cm λ=0,035",
     "description": "Izolacja termiczna i akustyczna najwyższej jakości. Wełna mineralna ze szkła, niepalna (klasa A1). Grubość: 50mm, 100mm, 150mm, 200mm. Wymiary: 1200x600mm. Współczynnik przewodzenia ciepła λ=0,035 W/(m·K). Idealna do docieplania ścian, poddaszy, stropów. Doskonałe właściwości akustyczne. Hydrofobizowana - odporna na wilgoć.",
-    "image": "img/products/welna.webp"
+    "image": "img/products/welna.webp",
+    "category": "systemy-docieplen"
   },
   {
     "id": 7,
     "name": "Dachówka ceramiczna karpiówka",
     "description": "Estetyczne i trwałe pokrycie dachowe. Dachówka ceramiczna typu karpiówka w kolorze naturalnym (czerwonym). Wymiary: ok. 465x265mm. Masa: ok. 2,6 kg/szt. Pokrycie: ok. 9-10 szt/m². Charakteryzuje się doskonałą mrozoodpornością (F2), niską nasiąkliwością i odpornością na warunki atmosferyczne. Żywotność powyżej 100 lat. Gwarancja 30 lat.",
-    "image": "img/products/dachowka.jpg"
+    "image": "img/products/dachowka.jpg",
+    "category": "pokrycia-dachowe"
   },
   {
     "id": 8,
     "name": "Klej do płytek C2TE S1",
     "description": "Wysokiej jakości klej do klejenia płytek ceramicznych, gresu i kamienia naturalnego. Klasa C2TE S1 - zwiększona przyczepność, wydłużony czas otwartości, odkształcalny. Nadaje się do prac wewnętrznych i zewnętrznych, na ściany i podłogi. Można stosować na podłogach z ogrzewaniem. Grubość warstwy: 3-10mm. Zużycie: 2,5-4 kg/m². Opakowanie 25kg.",
-    "image": "img/products/klej.webp"
+    "image": "img/products/klej.webp",
+    "category": "chemia-budowlana"
   }
 ]

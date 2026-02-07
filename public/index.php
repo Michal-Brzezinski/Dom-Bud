@@ -9,7 +9,10 @@ $router = new Router();
 // Strony statyczne
 $router->get('', 'HomeController', 'index');
 $router->get('o-nas', 'AboutController', 'index');
+
+// Katalog
 $router->get('katalog', 'CatalogController', 'index');
+$router->get('katalog/{category}', 'CatalogController', 'category');
 
 // Kontakt
 $router->get('kontakt', 'ContactController', 'showForm');

@@ -1,0 +1,21 @@
+/* ==========================================
+   CSS VARIABLES
+   ========================================== */
+
+:root {
+    /* Colors */
+    --color-bg: #000;
+    --color-bg2: #111;
+    --color-muted: #999;
+    --color-text2: #ccc;
+    --color-text: #fff;
+    --color-border: #333;
+    --color-accent: #ffd21f;
+    --color-accent-light: #f6df6e;
+    --color-accent-hover: #ef8c29;
+    
+    /* Layout */
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+    --max-width: 80rem;
+}

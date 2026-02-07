@@ -1,0 +1,169 @@
+/* ==========================================
+   ABOUT PAGE
+   ========================================== */
+
+.about {
+    display: flex;
+    flex-direction: row;
+    min-height: 400px;
+}
+
+.about__image {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.about__image::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0.7) 35%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.15) 78%, rgba(0, 0, 0, 0.1) 85%, rgba(0, 0, 0, 0.05) 90%, rgba(0, 0, 0, 0) 100%), radial-gradient(circle at 90% 50%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.about__content {
+    flex: 1;
+    padding: 2rem;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about__title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.about__content p {
+    color: var(--color-text2);
+    margin-bottom: 1rem;
+}
+
+.about__content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--color-text2);
+}
+
+/* History Section */
+.list {
+    padding: 2rem 1.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.list__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+.list__intro {
+    max-width: 60rem;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--color-text2);
+}
+
+.list__intro .highlight {
+    color: var(--color-accent);
+}
+
+.list__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.list__card {
+    background: var(--color-bg2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.list__card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-accent);
+}
+
+.list__year {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    min-width: 10rem;
+}
+
+.list__year .highlight {
+    color: var(--color-accent-light);
+}
+
+/* Section Separator */
+.section {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section:not(:first-of-type)::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 0 auto 2.5rem auto;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .about__image {
+        min-height: 250px;
+    }
+
+    .about__image::after {
+        background: unset;
+    }
+
+    .list__card {
+        text-align: center;
+        flex-direction: column;
+        gap: 1.1rem;
+        padding: 2rem 3rem 2rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .about__image {
+        min-height: 160px;
+    }
+
+    .list__card {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 1.5rem;
+    }
+}

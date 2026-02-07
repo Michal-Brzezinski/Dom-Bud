@@ -1,0 +1,17 @@
+/* ==========================================
+   FONTS
+   ========================================== */
+
+@font-face {
+    font-family: "Adumu";
+    src: url("/fonts/Adumu.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Adumu Inline";
+    src: url("/fonts/Adumu-Inline.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}

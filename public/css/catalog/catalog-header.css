@@ -1,0 +1,32 @@
+/* ==========================================
+   CATALOG HEADER
+   ========================================== */
+
+.catalog-header {
+    padding: 3rem 1.5rem 3rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-bg2) 0%, var(--color-bg) 100%);
+}
+
+.catalog-header__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+}
+
+.catalog-header__text {
+    color: var(--color-text2);
+    max-width: 40rem;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .catalog-header {
+        padding: 1.5rem 2rem;
+    }
+}

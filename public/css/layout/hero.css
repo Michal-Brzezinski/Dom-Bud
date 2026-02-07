@@ -1,0 +1,46 @@
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.hero {
+    position: relative;
+    background: url('../../img/sklad.jpg') center center / cover no-repeat;
+    padding: 1rem 1.5rem 2.5rem;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82));
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin: 0rem;
+    letter-spacing: -0.02em;
+    color: var(--color-accent);
+}
+
+.hero__subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    margin-top: 0.2rem;
+    color: var(--color-text);
+}
+
+.hero__text {
+    font-size: 1.125rem;
+    color: var(--color-text2);
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}

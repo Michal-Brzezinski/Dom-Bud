@@ -1,35 +1,41 @@
-MIT License
+Proprietary License – All Rights Reserved
 
 Copyright (c) 2026 Michał Brzeziński
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files created by Michał Brzeziński
-(the "Software"), to deal in the Software without restriction, including without
-limitation the rights to use, copy, modify, merge, publish, distribute,
-sublicense, and/or sell copies of the Software, and to permit persons to whom
-the Software is furnished to do so, subject to the following conditions:
+This software and all associated files (the "Software") are the exclusive 
+property of Michał Brzeziński. All rights are reserved.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software authored by Michał Brzeziński.
+Permission is granted to the commissioning client to use the Software for 
+internal and commercial purposes as agreed upon in the project contract. 
+No other person or entity is granted any rights to use, copy, modify, merge, 
+publish, distribute, sublicense, sell, or otherwise exploit the Software, 
+in whole or in part.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Unless explicit written permission is granted by Michał Brzeziński, 
+the following actions are strictly prohibited:
+
+- copying or redistributing the Software,
+- modifying or creating derivative works,
+- sublicensing or reselling the Software,
+- making the Software publicly available,
+- removing or altering copyright notices.
+
+The Software is provided "as is", without warranty of any kind, express or 
+implied, including but not limited to warranties of merchantability, fitness 
+for a particular purpose, or noninfringement. In no event shall the author 
+be liable for any claim, damages, or other liability arising from the use 
+of the Software.
 
 ---
 
-### Third-party components
+Third‑party components
 
-This project makes use of external libraries:
+This project includes external libraries:
 
-- **PHPMailer** (located in `vendor/PHPMailer/`)  
-  Licensed under the GNU Lesser General Public License (LGPL) and MIT.  
-  See the included `vendor/PHPMailer/LICENSE` file for details.
+- PHPMailer (located in `vendor/PHPMailer/`)
+  Licensed under the GNU Lesser General Public License (LGPL) and MIT.
+  See `vendor/PHPMailer/LICENSE` for details.
 
-All third-party components retain their original licenses. Usage of this project
-implies acceptance of both the MIT License for the original code and the
-respective licenses of third-party components.
+All third‑party components retain their original licenses. Use of this project 
+implies acceptance of both this proprietary license for the original code and 
+the respective licenses of third‑party components.

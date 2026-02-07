@@ -1,0 +1,94 @@
+/* ==========================================
+   CATALOG CONTROLS (SEARCH & SORT)
+   ========================================== */
+
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: var(--max-width);
+    margin: 0 auto 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Wrapper dla inputa + przycisku */
+.catalog-controls__search-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.catalog-controls__search {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg2);
+    color: var(--color-text);
+    font-size: 1.2rem;
+}
+
+/* Przycisk lupki */
+.catalog-controls__search-btn {
+    position: absolute;
+    right: 0rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-accent);
+    color: var(--color-bg);
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.catalog-controls__search-btn:hover {
+    opacity: 0.85;
+}
+
+.catalog-controls__sort {
+    padding: 0.85rem 3rem 0.85rem 1.25rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg2);
+    color: var(--color-text);
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.25rem center;
+    min-width: 200px;
+}
+
+.catalog-controls__search:focus,
+.catalog-controls__sort:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+}
+
+.catalog-controls__search:hover,
+.catalog-controls__sort:hover {
+    border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .catalog-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .catalog-controls__sort {
+        min-width: auto;
+    }
+}

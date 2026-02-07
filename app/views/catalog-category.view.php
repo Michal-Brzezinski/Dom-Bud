@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/cta.css">
+    <link rel="stylesheet" href="/css/scroll-up.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -47,10 +48,13 @@
 
     <?php include __DIR__ . '/partials/footer.php'; ?>
 
+    <button id="scrollUp" class="scroll-up">🢁</button>
+
     <script type="module" src="/js/catalog/category-products.js"></script>
     <script type="module" src="/js/catalog/products-search.js"></script>
     <script type="module" src="/js/catalog/products-sort.js"></script>
     <script type="module" src="/js/navbar.js"></script>
+    <script type="module" src="/js/scroll-up.js"></script>
 
 </body>
 

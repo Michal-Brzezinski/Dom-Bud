@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cta.css">
+  <link rel="stylesheet" href="/css/scroll-up.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -94,8 +95,12 @@
   <!-- Stopka -->
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
+  <button id="scrollUp" class="scroll-up">🢁</button>
+
   <script type="module" src="/js/navbar.js"></script>
-  <script src="/js/brands.js"></script>
+  <script src="/js/home/brands.js"></script>
+  <script type="module" src="/js/scroll-up.js"></script>
+
 
 </body>
 

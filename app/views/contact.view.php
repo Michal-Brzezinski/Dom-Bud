@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cta.css">
+  <link rel="stylesheet" href="/css/scroll-up.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -103,8 +104,11 @@
 
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <script src="/js/contact-validation.js"></script>
+  <button id="scrollUp" class="scroll-up">🢁</button>
+
+  <script src="/js/contact/contact-validation.js"></script>
   <script type="module" src="/js/navbar.js"></script>
+  <script type="module" src="/js/scroll-up.js"></script>
 </body>
 
 </html>

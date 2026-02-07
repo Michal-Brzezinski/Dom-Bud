@@ -2,27 +2,15 @@
 
 namespace App\Services;
 
+use App\Repositories\ProductRepository;
+
 class ProductService
 {
-    private string $file;
+    private ProductRepository $repo;
 
     public function __construct()
     {
-        $this->file = __DIR__ . '/../../public/data/products.json';
-    }
-
-    public function getAll(): array
-    {
-        return json_decode(file_get_contents($this->file), true);
-    }
-
-    public function getProductsByCategory(string $category): array
-    {
-        $products = $this->getAll();
-
-        return array_values(array_filter($products, function ($p) use ($category) {
-            return isset($p['category']) && $p['category'] === $category;
-        }));
+        $this->repo = new ProductRepository();
     }
 
     public function getCategoryName(string $slug): string
@@ -41,5 +29,14 @@ class ProductService
         ];
 
         return $map[$slug] ?? $slug;
+    }
+
+    public function getFilteredProducts(string $category, string $q, string $sort): array
+    {
+        $products = $this->repo->getByCategory($category);
+        $products = $this->repo->search($products, $q);
+        $products = $this->repo->sort($products, $sort);
+
+        return $products;
     }
 }

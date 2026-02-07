@@ -15,16 +15,28 @@ class CatalogController
     {
         $service = new ProductService();
 
-        // sprawdź czy kategoria istnieje
         $categoryName = $service->getCategoryName($category);
         if ($categoryName === $category) {
-            // nie znaleziono kategorii w mapie
             http_response_code(404);
             require __DIR__ . '/../views/404.view.php';
             return;
         }
 
-        $products = $service->getProductsByCategory($category);
+        // parametry GET
+        $page = max(1, (int)($_GET['page'] ?? 1));
+        $sort = $_GET['sort'] ?? 'az';
+        $q    = trim($_GET['q'] ?? '');
+
+        $perPage = 20;
+
+        // pobierz przefiltrowane produkty
+        $allProducts = $service->getFilteredProducts($category, $q, $sort);
+
+        $total = count($allProducts);
+        $totalPages = max(1, (int)ceil($total / $perPage));
+
+        // paginacja
+        $products = array_slice($allProducts, ($page - 1) * $perPage, $perPage);
 
         require __DIR__ . '/../views/catalog-category.view.php';
     }

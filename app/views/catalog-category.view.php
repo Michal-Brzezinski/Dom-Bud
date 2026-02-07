@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $categoryName ?></title>
+
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/cta.css">
@@ -30,29 +31,39 @@
         <?php else: ?>
             <div class="products__grid">
 
-                <!-- render kart -->
                 <?php foreach ($products as $p): ?>
                     <div class="products__card">
                         <div class="products__image-wrapper">
-                            <img src="/<?= $p['image'] ?>" class="products__image">
+                            <img src="/<?= $p['image'] ?>" loading="lazy" class="products__image" alt="<?= htmlspecialchars($p['name']) ?>">
                         </div>
+
                         <div class="products__content">
                             <h3 class="products__title"><?= $p['name'] ?></h3>
                             <p class="products__description"><?= $p['description'] ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
+
             </div>
         <?php endif; ?>
+
+        <?php
+        include __DIR__ . '/partials/pagination.php';
+
+        pagination(
+            '/katalog/' . $category,
+            $page,
+            $totalPages,
+            ['sort' => $sort, 'q' => $q]
+        );
+        ?>
+
     </section>
 
     <?php include __DIR__ . '/partials/footer.php'; ?>
 
     <button id="scrollUp" class="scroll-up">🢁</button>
-
     <script type="module" src="/js/catalog/category-products.js"></script>
-    <script type="module" src="/js/catalog/products-search.js"></script>
-    <script type="module" src="/js/catalog/products-sort.js"></script>
     <script type="module" src="/js/navbar.js"></script>
     <script type="module" src="/js/scroll-up.js"></script>
 

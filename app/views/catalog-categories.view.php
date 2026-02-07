@@ -65,6 +65,7 @@
     <button id="scrollUp" class="scroll-up">🢁</button>
 
     <script type="module" src="/js/scroll-up.js"></script>
+    <script type="module" src="/js/navbar.js"></script>
 
 </body>
 

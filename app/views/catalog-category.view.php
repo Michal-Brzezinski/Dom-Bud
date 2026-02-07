@@ -21,6 +21,9 @@
     </section>
 
     <section class="products">
+
+        <?php include __DIR__ . '/partials/catalog-controls.php'; ?>
+
         <?php if (empty($products)): ?>
             <div class="products__error">Brak produktów w tej kategorii.</div>
         <?php else: ?>
@@ -45,6 +48,8 @@
     <?php include __DIR__ . '/partials/footer.php'; ?>
 
     <script type="module" src="/js/catalog/category-products.js"></script>
+    <script type="module" src="/js/catalog/products-search.js"></script>
+    <script type="module" src="/js/catalog/products-sort.js"></script>
     <script type="module" src="/js/navbar.js"></script>
 
 </body>

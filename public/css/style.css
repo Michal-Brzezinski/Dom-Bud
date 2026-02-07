@@ -264,6 +264,53 @@ body.site {
     font-size: 1.125rem;
 }
 
+/* ===============================
+   SEARCHBAR AND SORT
+   =============================== */
+
+.catalog-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    max-width: 80rem;
+    margin: 0 auto 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.catalog-controls__search {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg2);
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.catalog-controls__sort {
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg2);
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.catalog-controls__search:focus,
+.catalog-controls__sort:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .catalog-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
 /* ========================================
    CATEGORY CARDS
    ======================================== */

@@ -26,8 +26,16 @@ class Mailer
         $mail->SMTPAuth   = true;
         $mail->Username   = $this->config['smtp_user'];
         $mail->Password   = $this->config['smtp_pass'];
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = 465;
+        $mail->SMTPSecure = $this->config['smtp_secure'] === 'tls' ? PHPMailer::ENCRYPTION_STARTTLS : PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = $this->config['smtp_port'];
+
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer'       => false,
+                'verify_peer_name'  => false,
+                'allow_self_signed' => true,
+            ],
+        ];
 
         $mail->setFrom($this->config['mail_from'], $this->config['mail_from_name']);
         $mail->addReplyTo($email, $name);

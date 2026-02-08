@@ -43,9 +43,8 @@ Projekt korzysta również z biblioteki **PHPMailer** (LGPL/MIT), której licenc
 
 - strony błędów np. 404
 - jak przechowywać obrazy do poduktów, żeby nie zajmowało za dużo miejsca
-- router.php w public mówi:
-    „Jeśli plik nie istnieje → przekaż wszystko do index.php”.
-    (Na prawdziwym hostingu (Apache/Nginx) ten plik nie będzie potrzebny — tam robi to .htaccess lub konfiguracja serwera.)
+
+# URUCHOMIENIE NA LOCALHOST PHP: php -S localhost:8000 -t public w katalogu głównym projektu
 
 # Ważne drobiazgi (częste pułapki)
 

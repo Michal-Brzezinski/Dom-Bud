@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     groupWidth += gap * itemCount; // Dodaj wszystkie gapy
     
     // Utwórz animację CSS
-    const duration = 10; // Sekundy - zmień aby przyspieszyć/zwolnić
+    const duration = 20; // Sekundy - zmień aby przyspieszyć/zwolnić
     
     const keyframes = `
       @keyframes brandScroll {

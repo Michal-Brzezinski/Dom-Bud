@@ -1,24 +1,12 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../app/bootstrap.php';
 
 use App\Core\Router;
 
 $router = new Router();
 
-// Strony statyczne
-$router->get('', 'HomeController', 'index');
-$router->get('o-nas', 'AboutController', 'index');
+require __DIR__ . '/../app/routes.php';
 
-// Katalog
-$router->get('katalog', 'CatalogController', 'index');
-$router->get('katalog/{category}', 'CatalogController', 'category');
-
-// Kontakt
-$router->get('kontakt', 'ContactController', 'showForm');
-$router->post('kontakt/send', 'ContactController', 'handle');
-
-$path = trim($_SERVER['REQUEST_URI'], '/');
-$path = parse_url($path, PHP_URL_PATH);
-
-$router->run($path);
+$router->run($_SERVER['REQUEST_URI']);

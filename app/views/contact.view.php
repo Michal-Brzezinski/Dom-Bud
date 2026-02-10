@@ -48,7 +48,7 @@
           <label for="message">Wiadomość</label>
           <textarea id="message" name="message" rows="5" required></textarea>
 
-          <button type="submit" class="cta__button">Wyślij</button>
+          <button type="submit" class="contact__button cta__button">Wyślij</button>
         </form>
       </div>
 

@@ -32,7 +32,7 @@
                 ['slug' => 'malowanie-i-wykonczenie', 'name' => 'Malowanie i wykończenie', 'desc' => 'Farby, pędzle, wałki, taśmy malarskie oraz akcesoria do prac wykończeniowych.'],
                 ['slug' => 'materialy-konstrukcyjne', 'name' => 'Materiały konstrukcyjne', 'desc' => 'Bloczki, pustaki, cegły oraz inne ciężkie materiały budowlane.'],
                 ['slug' => 'narzedzia', 'name' => 'Narzędzia', 'desc' => 'Narzędzia ręczne i akcesoria niezbędne przy pracach budowlanych i remontowych.'],
-                ['slug' => 'odziez-i-bhp', 'name' => 'Odzież i środki BHP', 'desc' => 'Odzież robocza, rękawice, kaski oraz środki ochrony osobistej na budowie.'],
+                ['slug' => 'odziez-i-srodki-bhp', 'name' => 'Odzież i środki BHP', 'desc' => 'Odzież robocza, rękawice, kaski oraz środki ochrony osobistej na budowie.'],
                 ['slug' => 'pokrycia-dachowe', 'name' => 'Pokrycia dachowe', 'desc' => 'Dachówki oraz akcesoria dachowe do kompleksowego wykonania dachu.'],
                 ['slug' => 'systemy-docieplen', 'name' => 'Systemy dociepleń', 'desc' => 'Kompletne systemy ociepleń budynków: styropian, wełna, kleje, siatki, tynki i akcesoria.'],
                 ['slug' => 'systemy-mocowan', 'name' => 'Systemy mocowań', 'desc' => 'Kołki, wkręty, śruby, kotwy oraz elementy montażowe do różnych zastosowań.'],

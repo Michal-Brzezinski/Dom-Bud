@@ -52,39 +52,35 @@
 
   <section class="brands">
     <h3 class="brands__title">Współpracujemy z najlepszymi producentami</h3>
+
     <div class="brands__slider">
       <div class="brands__track">
-        <!-- Tylko oryginalne loga - JS zduplikuje je automatycznie -->
-        <div class="brands__item">
-          <a href="https://www.atlas.com.pl" target="_blank" rel="noopener noreferrer">
-            <img src="/img/icons/atlas.png" alt="Atlas">
-          </a>
-        </div>
-        <div class="brands__item">
-          <a href="https://www.knauf.pl" target="_blank" rel="noopener noreferrer">
-            <img src="/img/icons/knauf.png" alt="Knauf">
-          </a>
-        </div>
-        <div class="brands__item">
-          <a href="https://www.cersanit.com" target="_blank" rel="noopener noreferrer">
-            <img src="/img/icons/cersanit.png" alt="Cersanit">
-          </a>
-        </div>
-        <div class="brands__item">
-          <a href="https://www.baumit.pl" target="_blank" rel="noopener noreferrer">
-            <img src="/img/icons/baumit.png" alt="Baumit">
-          </a>
-        </div>
-        <div class="brands__item">
-          <a href="https://www.sopro.com" target="_blank" rel="noopener noreferrer">
-            <img src="/img/icons/sopro.png" alt="Sopro">
-          </a>
-        </div>
-        <div class="brands__item">
-          <a href="https://www.isover.pl" target="_blank" rel="noopener noreferrer">
-            <img src="/img/icons/isover.webp" alt="Isover">
-          </a>
-        </div>
+
+        <?php
+        $brandsDir = __DIR__ . '/../../public/img/logos';
+        $brandsUrl = '/img/logos';
+
+        $files = glob($brandsDir . '/*.{png,jpg,webp,svg}', GLOB_BRACE);
+        sort($files); // opcjonalnie – stabilna kolejność
+
+        foreach ($files as $file) {
+          $filename = basename($file);
+
+          $alt = ucwords(
+            str_replace(
+              ['-', '_'],
+              ' ',
+              pathinfo($filename, PATHINFO_FILENAME)
+            )
+          );
+        ?>
+
+          <div class="brands__item">
+            <img src="<?= $brandsUrl . '/' . $filename ?>" alt="<?= $alt ?>" loading="lazy">
+          </div>
+
+        <?php } ?>
+
       </div>
     </div>
   </section>

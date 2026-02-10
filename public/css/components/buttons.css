@@ -21,3 +21,11 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(251, 191, 36, 0.3);
 }
+
+.contact__button {
+    font-weight: 550;
+    font-size: medium;
+    padding: 0.8rem 2rem;
+    border-color: transparent;
+    cursor: pointer;
+}

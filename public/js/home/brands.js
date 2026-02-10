@@ -1,92 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".brands__track");
-  
   if (!track) return;
-  
-  // Pobierz wszystkie oryginalne elementy
+
   const items = Array.from(track.children);
   const itemCount = items.length;
-  
-  // Sklonuj całą zawartość tracka wystarczająco dużo razy
-  // aby wypełnić ekran i mieć płynną pętlę
-  const cloneCount = Math.ceil(window.innerWidth / (track.offsetWidth || 1)) + 2;
-  
-  for (let i = 0; i < cloneCount; i++) {
-    items.forEach(item => {
-      track.appendChild(item.cloneNode(true));
-    });
-  }
-  
-  // Oblicz całkowitą szerokość jednej grupy (oryginalne elementy)
-  // Musimy poczekać na załadowanie obrazków
-  const images = track.querySelectorAll('img');
-  let loadedImages = 0;
-  
-  const initAnimation = () => {
-    // Oblicz szerokość jednej grupy
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    let groupWidth = 0;
-    
-    for (let i = 0; i < itemCount; i++) {
-      const item = track.children[i];
-      groupWidth += item.offsetWidth;
+
+  const images = track.querySelectorAll("img");
+  let loaded = 0;
+
+  const init = () => {
+    let totalWidth = track.offsetWidth;
+
+    // Klonuj aż przekroczy 2× szerokość ekranu
+    while (totalWidth < window.innerWidth * 2) {
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+        totalWidth += clone.offsetWidth;
+      });
     }
-    groupWidth += gap * itemCount; // Dodaj wszystkie gapy
-    
-    // Utwórz animację CSS
-    const duration = 50; // Sekundy - zmień aby przyspieszyć/zwolnić
-    
+
+    // Oblicz szerokość jednej grupy (oryginałów)
+    let groupWidth = 0;
+    for (let i = 0; i < itemCount; i++) {
+      groupWidth += track.children[i].offsetWidth;
+    }
+
     const keyframes = `
       @keyframes brandScroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-${groupWidth}px);
-        }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-${groupWidth}px); }
       }
     `;
-    
-    // Dodaj keyframes do dokumentu
-    const style = document.createElement('style');
+
+    const style = document.createElement("style");
     style.textContent = keyframes;
     document.head.appendChild(style);
-    
-    // Zastosuj animację
-    track.style.animation = `brandScroll ${duration}s linear infinite`;
+
+    track.style.animation = `brandScroll 60s linear infinite`;
   };
-  
-  // Czekaj na załadowanie wszystkich obrazków
+
   images.forEach(img => {
     if (img.complete) {
-      loadedImages++;
+      loaded++;
     } else {
-      img.addEventListener('load', () => {
-        loadedImages++;
-        if (loadedImages === images.length) {
-          initAnimation();
-        }
+      img.addEventListener("load", () => {
+        loaded++;
+        if (loaded === images.length) init();
       });
-      
-      // Fallback na wypadek błędu ładowania
-      img.addEventListener('error', () => {
-        loadedImages++;
-        if (loadedImages === images.length) {
-          initAnimation();
-        }
+      img.addEventListener("error", () => {
+        loaded++;
+        if (loaded === images.length) init();
       });
     }
   });
-  
-  // Jeśli wszystkie obrazki już załadowane
-  if (loadedImages === images.length) {
-    initAnimation();
-  }
-  
-  // Fallback - uruchom po 500ms nawet jak obrazki się nie załadowały
+
+  if (loaded === images.length) init();
+
   setTimeout(() => {
-    if (loadedImages < images.length) {
-      initAnimation();
-    }
+    if (loaded < images.length) init();
   }, 500);
 });

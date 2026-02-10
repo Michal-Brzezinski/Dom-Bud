@@ -43,6 +43,14 @@
     border-color: var(--color-accent);
 }
 
+.features__icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0rem;
+    display: inline-block;
+    fill: var(--color-accent);
+}
+
 .features__box-title {
     font-size: 1.6rem;
     font-weight: bold;

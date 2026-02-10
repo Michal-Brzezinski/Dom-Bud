@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - Kontakt</title>
-  <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp" loading="lazy">
+  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp" loading="lazy">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cta.css">
@@ -104,7 +104,7 @@
 
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <button id="scrollUp" class="scroll-up">🢁</button>
+  <button id="scrollUp" class="scroll-up">▲</button>
 
   <script src="/js/contact/contact-validation.js"></script>
   <script type="module" src="/js/navbar.js"></script>

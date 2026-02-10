@@ -15,10 +15,8 @@
 
 <body class="site">
 
-  <!-- Nawigacja -->
   <?php include __DIR__ . '/partials/navbar.php'; ?>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="hero__content">
       <h2 class="hero__title">DOM-BUD</h2>
@@ -31,7 +29,6 @@
     </div>
   </section>
 
-  <!-- Features -->
   <section class="features">
     <h3 class="features__title">Dlaczego warto wybrać <span class="highlight">DOM-BUD</span>?</h3>
     <div class="features__grid">
@@ -64,11 +61,11 @@
       <div class="brands__track">
 
         <?php
-        $brandsDir = __DIR__ . '/../../public_html/img/logos';
+        $brandsDir = __DIR__ . '/../../public/img/logos';
         $brandsUrl = '/img/logos';
 
-        $files = glob($brandsDir . '/*.{png,jpg,webp,svg}', GLOB_BRACE);
-        sort($files); // opcjonalnie – stabilna kolejność
+        $files = glob($brandsDir . '/*.{webp,png,jpg,jpeg,svg}', GLOB_BRACE);
+        sort($files);
 
         foreach ($files as $file) {
           $filename = basename($file);
@@ -92,18 +89,14 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <?php include __DIR__ . '/partials/cta.php'; ?>
-
-  <!-- Stopka -->
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <button id="scrollUp" class="scroll-up">🢁</button>
+  <button id="scrollUp" class="scroll-up">▲</button>
 
   <script type="module" src="/js/navbar.js"></script>
   <script src="/js/home/brands.js"></script>
   <script type="module" src="/js/scroll-up.js"></script>
-
 
 </body>
 

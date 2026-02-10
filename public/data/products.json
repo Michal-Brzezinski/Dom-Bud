@@ -1,3 +1,1439 @@
 [
-    
+  {
+    "id": 1,
+    "name": "Cement portlandzki CEM I 42,5R",
+    "description": "Wysokiej jakości cement portlandzki do wszelkich prac budowlanych. Idealny do betonu konstrukcyjnego, wylewek, tynków i zapraw murarskich. Charakteryzuje się szybkim wiązaniem i wysoką wytrzymałością końcową. Spełnia normy PN-EN 197-1. Dostępny w workach 25kg i 50kg. Zalecany do robót wymagających wysokiej wytrzymałości początkowej i końcowej.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 2,
+    "name": "Cegła ceramiczna pełna klasy 15",
+    "description": "Trwała cegła do budowy ścian nośnych i konstrukcji murowanych. Produkowana z najwyższej jakości gliny, wypalana w temperaturze 1000°C. Charakteryzuje się doskonałą mrozoodpornością i niską nasiąkliwością. Wymiary: 250x120x65mm. Idealna do budownictwa tradycyjnego i renowacji zabytkowych obiektów. Wytrzymałość na ściskanie min. 15 MPa.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 3,
+    "name": "Farba elewacyjna akrylowa",
+    "description": "Odporna na warunki atmosferyczne farba elewacyjna o wysokiej elastyczności i przyczepności. Idealna do malowania elewacji budynków. Charakteryzuje się doskonałą odpornością na deszcz, mróz i promieniowanie UV. Paroprzepuszczalna, co zapewnia odpowiednie „oddychanie\" ścian. Dostępna w szerokiej gamie kolorów. Wydajność: 6-8 m²/litr.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 4,
+    "name": "Stal zbrojeniowa RB500W",
+    "description": "Pręty zbrojeniowe do konstrukcji żelbetowych. Stal klasy RB500W (żebrowana) o wysokiej wytrzymałości. Dostępne średnice: 6mm, 8mm, 10mm, 12mm, 16mm, 20mm, 25mm, 32mm. Długość prętów: 12m lub 6m. Spełnia normy PN-EN 10080. Idealna do zbrojenia fundamentów, stropów, słupów i ścian żelbetowych. Możliwość cięcia na wymiar.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 5,
+    "name": "Płyta OSB/3 wodoodporna",
+    "description": "Wytrzymała płyta drewnopochodna do wielu zastosowań. OSB/3 - do stosowania w warunkach wilgotnych. Grubości: 9mm, 12mm, 15mm, 18mm, 22mm. Wymiary arkusza: 1250x2500mm. Idealna do ścianek działowych, podłóg, dachów, szalunków. Charakteryzuje się wysoką wytrzymałością mechaniczną i odpornością na wilgoć. Klasa emisji formaldehydu E1.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 6,
+    "name": "Wełna mineralna gr. 15cm λ=0,035",
+    "description": "Izolacja termiczna i akustyczna najwyższej jakości. Wełna mineralna ze szkła, niepalna (klasa A1). Grubość: 50mm, 100mm, 150mm, 200mm. Wymiary: 1200x600mm. Współczynnik przewodzenia ciepła λ=0,035 W/(m·K). Idealna do docieplania ścian, poddaszy, stropów. Doskonałe właściwości akustyczne. Hydrofobizowana - odporna na wilgoć.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 7,
+    "name": "Dachówka ceramiczna karpiówka",
+    "description": "Estetyczne i trwałe pokrycie dachowe. Dachówka ceramiczna typu karpiówka w kolorze naturalnym (czerwonym). Wymiary: ok. 465x265mm. Masa: ok. 2,6 kg/szt. Pokrycie: ok. 9-10 szt/m². Charakteryzuje się doskonałą mrozoodpornością (F2), niską nasiąkliwością i odpornością na warunki atmosferyczne. Żywotność powyżej 100 lat. Gwarancja 30 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 8,
+    "name": "Klej do płytek C2TE S1",
+    "description": "Wysokiej jakości klej do klejenia płytek ceramicznych, gresu i kamienia naturalnego. Klasa C2TE S1 - zwiększona przyczepność, wydłużony czas otwartości, odkształcalny. Nadaje się do prac wewnętrznych i zewnętrznych, na ściany i podłogi. Można stosować na podłogach z ogrzewaniem. Grubość warstwy: 3-10mm. Zużycie: 2,5-4 kg/m². Opakowanie 25kg.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 9,
+    "name": "Cement murarski CEM II/B-S 32,5R",
+    "description": "Cement do robót murowych i tynkarskich. Zawiera dodatek żużla wielkopiecowego. Charakteryzuje się niższym ciepłem hydratacji i zwiększoną odpornością na siarczany. Idealny do zapraw murarskich, tynków wewnętrznych i zewnętrznych. Opakowanie 25kg. Klasa wytrzymałości 32,5 MPa po 28 dniach.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 10,
+    "name": "Pustak ceramiczny Porotherm 25 P+W",
+    "description": "Nowoczesny pustak ceramiczny z systemem pióro-wpust. Wymiary: 250x373x238mm. Współczynnik U=0,30 W/(m²K). Doskonałe właściwości termoizolacyjne i akustyczne. Klasa wytrzymałości 10 MPa. Przeznaczony do ścian zewnętrznych jednowarstwowych. Wbudowana izolacja termiczna z wełny mineralnej.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 11,
+    "name": "Beton towarowy C20/25",
+    "description": "Gotowy beton konstrukcyjny klasy C20/25. Konsystencja S3. Klasa ekspozycji XC2. Maksymalna średnica kruszywa 16mm. Minimalny skład cementu 280 kg/m³. Dostawa samochodem-betonomieszarką. Idealny do stóp fundamentowych, ław, płyt, nadproży. Wytrzymałość charakterystyczna 25 MPa.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 12,
+    "name": "Styropian fasadowy EPS 70-040 GRAFITOWY",
+    "description": "Styropian z dodatkiem grafitu do ocieplania elewacji. Grubość: 5-30cm. Lambda λ=0,031-0,033 W/(m·K). Wymiary płyty: 500x1000mm. Klasa reakcji na ogień E. Wytrzymałość na rozciąganie 100 kPa. O 20% lepsze właściwości termoizolacyjne niż biały styropian. Stabilność wymiarowa.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 13,
+    "name": "Papa termozgrzewalna SBS V60 S4",
+    "description": "Wielowarstwowa papa asfaltowa modyfikowana. Masa powierzchniowa 4,2 kg/m². Posypka mineralna łupkowa na górze, folia PE na spodzie. Odporność na rozdzieranie min. 450N. Temperatura mięknienia ≥120°C. Do krycia dachów płaskich i stromych. Gwarancja 10 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 14,
+    "name": "Gładź szpachlowa FINISZ do 5mm",
+    "description": "Gotowa masa szpachlowa do wykończeń wewnętrznych. Nakładana ręcznie lub mechanicznie. Grubość warstwy: 0,5-5mm. Zużycie: ok. 1,2 kg/m² na 1mm. Opakowanie 17kg. Bardzo dobra przyczepność do podłoży betonowych, cementowych i gipsowych. Biała, delikatna struktura.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 15,
+    "name": "Zaprawa klejowa do siatki KLEJ-SIATKA",
+    "description": "Zaprawa mineralna do mocowania siatki zbrojącej w systemach ETICS. Zawiera dodatek włókien. Przeznaczona do wykonywania warstwy zbrojonej na styropianie lub wełnie. Grubość warstwy: 3-6mm. Czas przydatności ok. 3 godzin. Opakowanie 25kg. Mrozoodporna po związaniu.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 16,
+    "name": "Blachodachówka modułowa KLASIK",
+    "description": "Blachodachówka modułowa ze stali powlekanej. Grubość blachy 0,5mm. Powłoka: poliester, mat lub połysk. Wymiary modułu: 1190x355mm. Dostępne kolory: czerwony, brązowy, grafitowy, zielony. Łatwy montaż, estetyczny wygląd. Gwarancja 15 lat na szczelność i 30 lat na kolor.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 17,
+    "name": "Gips szpachlowy GŁADŹ Q2/Q3",
+    "description": "Gipsowa masa szpachlowa do wykańczania ścian i sufitów. Szybkoschnąca, łatwa w szlifowaniu. Grubość nakładania: 1-5mm. Zużycie: 0,8-1,2 kg/m²/mm. Powierzchnia gotowa do malowania po 24h. Opakowanie 20kg. Nie wymaga gruntowania przed malowaniem. Biała, drobnoziarnista.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 18,
+    "name": "Siatka elewacyjna zbrojąca 160g/m²",
+    "description": "Siatka z włókna szklanego odporna na alkalia. Gramatura 160g/m². Oczko 4x4mm. Rolka 50mb x 1m. Do zbrojenia tynków na systemach ociepleń ETICS. Zwiększa odporność na pękanie. Wysoka wytrzymałość na rozciąganie. Nierozpadająca się w środowisku alkalicznym zapraw.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 19,
+    "name": "Gres porcelanowy PREMIUM 60x60cm",
+    "description": "Gres techniczny szkliwiony w masie. Wymiary: 600x600x9mm. Klasa ścieralności PEI IV. Antypoślizgowość R10. Nasiąkliwość <0,5%. Odporny na mróz i czynniki chemiczne. Dostępne wykończenia: polerowany, matowy, lappato. Szeroka gama kolorów i wzorów. Pakiet 1,44m².",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 20,
+    "name": "Zaprawa cementowo-wapienna MN25",
+    "description": "Gotowa zaprawa murarska klasy M7,5. Do murowania cegły, pustaków ceramicznych i silikatowych. Worki 25kg. Zużycie: ok. 50kg/m² muru. Czas wiązania: ok. 2-3 godziny. Mrozoodporna po związaniu. Dobra przyczepność i elastyczność. Możliwość wykonywania spoin.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 21,
+    "name": "Bloczki betonowe fundamentowe 38x25x24",
+    "description": "Pustak betonowy do fundamentów. Wymiary: 380x250x240mm. Klasa wytrzymałości B20. Mrozoodporny. Do wykonywania ścian fundamentowych, ścian piwnic, ścian oporowych. Łatwy w układaniu dzięki systemowi pióro-wpust. Grubość ściany 38cm zapewnia dobrą izolację termiczną.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 22,
+    "name": "Folia paroizolacyjna PE 0,2mm",
+    "description": "Folia z polietylenu jako paroizolacja. Grubość 0,2mm (200 mikrometrów). Rolka 2x50m (100m²). Sd>100m. Do układania od strony ciepłej przegrody pod warstwą wykończeniową. Zabezpiecza przed przenikaniem pary wodnej do izolacji. Odporna na przebicie.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 23,
+    "name": "Membrana dachowa wysokoparoprzepuszczalna",
+    "description": "Membrana wstępnego krycia 3-warstwowa. Gramatura 150g/m². Sd=0,02m. Rolka 1,5x50m (75m²). Do układania bezpośrednio na krokwiach bez kontrłat. Wodoszczelność >2000mm. Odporność na rozdzieranie 200/180N. Odporna na promieniowanie UV przez 3 miesiące.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 24,
+    "name": "Tynk akrylowy baranek 2mm",
+    "description": "Gotowy tynk elewacyjny akrylowy. Faktura baranek 2mm. Opakowanie 25kg (wydajność ok. 3-3,5 kg/m²). Dostępny w palecie 200+ kolorów. Paroprzepuszalny, elastyczny, odporny na warunki atmosferyczne. Łatwy w nakładaniu. Do stosowania na systemach ociepleniowych.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 25,
+    "name": "Silikon elewacyjny neutralny 310ml",
+    "description": "Silikon do uszczelniania połączeń elewacyjnych. Tuba 310ml. Neutralne utwardzanie octanowe. Odporny na warunki atmosferyczne i promieniowanie UV. Temperatura stosowania: +5°C do +40°C. Temperatura pracy: -40°C do +150°C. Dostępne kolory: biały, szary, brązowy, przezroczysty.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 26,
+    "name": "Deska tarasowa kompozytowa CLASSIC",
+    "description": "Deska kompozytowa drewno-plastik WPC. Wymiary: 25x140x3000mm. Powierzchnia struktura drewna. Kolor: brąz, grafit, teak. Odporna na wilgoć, pleśń, owady. Nie wymaga konserwacji. Antypoślizgowa. Montaż na legarach aluminiowych lub kompozytowych. Gwarancja 10 lat.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 27,
+    "name": "Pianka montażowa niskoprężna PU",
+    "description": "Pianka poliuretanowa do montażu stolarki. Puszka 750ml (wydajność ok. 45-50l). Niskoprężna - nie rozpycha ościeżnic. Klasa ognioodporności B2. Temperatura stosowania: -10°C do +35°C. Dobra przyczepność do większości materiałów. Możliwość cięcia po 1 godzinie.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 28,
+    "name": "Grunt głęboko penetrujący AKRYL",
+    "description": "Grunt akrylowy do powierzchni chłonnych. Opakowanie 5L i 10L. Zużycie: 100-200ml/m² w zależności od chłonności. Do gruntowania przed malowaniem, szpachlowaniem, klejeniem płytek. Zwiększa przyczepność, wzmacnia podłoże, wyrównuje chłonność. Schnięcie 2-4h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 29,
+    "name": "Pustak ceramiczny wentylacyjny",
+    "description": "Pustak do budowy kominów wentylacyjnych. Wymiary: 140x140x330mm. Otwór wentylacyjny 14x14cm. Do budowy kanałów wentylacyjnych grawitacyjnych. Odporny na wysoką temperaturę i wilgoć. Łatwy montaż metodą na sucho lub mokro. Zgodny z normami bezpieczeństwa.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 30,
+    "name": "Styropian podłogowy EPS 100 PODŁOGA",
+    "description": "Styropian do izolacji podłóg. Lambda λ=0,036-0,038 W/(m·K). Wytrzymałość na ściskanie CS(10)100 kPa. Grubość: 3-20cm. Płyty 50x100cm. Do układania pod posadzkami, wylewkami, ogrzewaniem podłogowym. Obciążenie nawet do 1000 kg/m². Trudnopalny, stabilny wymiarowo.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 31,
+    "name": "Płyta G-K standardowa 12,5mm",
+    "description": "Płyta gipsowo-kartonowa zwykła typ A. Wymiary: 1200x2600mm, grubość 12,5mm. Do wykonywania ścianek działowych, sufitów podwieszanych, zabudów w pomieszczeniach suchych. Szare lico, zielona krawędź. Obustronnie okleinowana tekturą budowlaną. Łatwa w obróbce.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 32,
+    "name": "Tynk mineralny KORNIK 2mm",
+    "description": "Mineralny tynk fakturowy do elewacji. Ziarno 2mm (dostępny także 3mm). Worek 25kg (wydajność ok. 3,5-4 kg/m²). Do barwienia farbami silikonowymi. Paroprzepuszalny, odporny na zabrudzenia. Do nakładania na zaprawę klejowo-zbrojącą w systemach ociepleniowych.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 33,
+    "name": "Beton komórkowy B600 24cm P+W",
+    "description": "Bloczek z betonu komórkowego klasy 600. Wymiary: 240x240x590mm (P+W). Lambda λ=0,14 W/(m·K). Wytrzymałość na ściskanie 4,0 MPa. Do ścian zewnętrznych i wewnętrznych. Łatwy w obróbce, lekki. System pióro-wpust - cienka spoina 1-3mm. Paleta 80 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 34,
+    "name": "Rynna PVC 125mm dł. 3mb",
+    "description": "Rynna dachowa z PVC. Średnica 125mm, długość 3mb. Kolor: biały, brąz, grafitowy. System kompletny: rynny, rury spustowe, łączniki, kolana, haki. Odporność na UV i warunki atmosferyczne. Łatwy montaż. Nie wymaga konserwacji. Gwarancja 10 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 35,
+    "name": "Folia okienna paroprzepuszczalna 3-warst.",
+    "description": "Membrana okienna do montażu okien. Rolka 15cm x 25mb. Wodoszczelna z jednej strony, paroprzepuszczalna z drugiej. Samouszczelniająca się warstwa klejąca. Do uszczelniania połączenia okna z murem. Odporna na UV przez 6 miesięcy. Temperatura montażu -10°C do +40°C.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 36,
+    "name": "Farba wewnętrzna lateksowa PREMIUM",
+    "description": "Farba akrylowa lateksowa do wnętrz. Opakowanie 5L, 10L. Wysoka kryjąca moc (klasa 1). Zmywalna mokrą szmatką (klasa 1). Biała matowa. Wydajność: 10-12 m²/l. Do malowania ścian i sufitów w pomieszczeniach mieszkalnych. Bez zapachu, szybkoschnąca.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 37,
+    "name": "Zaprawa wyrównująca podłogowa 3-50mm",
+    "description": "Zaprawa cementowa do wyrównywania podłóg. Grubość warstwy: 3-50mm. Worek 25kg (wydajność ok. 18-19l). Sampoziomująca się od 3-10mm. Nadaje się pod wszystkie rodzaje wykładzin. Wytrzymałość 25 MPa. Czas schnięcia: 1mm = 1 dzień. Możliwość chodzenia po 4-6h.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 38,
+    "name": "Słupek ogrodzeniowy 60x60x2800mm",
+    "description": "Słupek stalowy ocynkowany ogniowo. Profil zamknięty 60x60mm, grubość ścianki 2mm. Długość 2800mm. Z zaślepką. Przygotowany pod montaż paneli ogrodzeniowych. Malowany proszkowo na dowolny kolor RAL. Dodatkowa ochrona antykorozyjna. Pakiet 10 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 39,
+    "name": "Wełna skalna fasadowa ELEWACJA",
+    "description": "Płyty z wełny skalnej do docieplania elewacji. Lambda λ=0,035 W/(m·K). Grubość: 5-20cm. Gęstość minimum 135 kg/m³. Wymiary: 100x60cm. Klasa reakcji na ogień A1 - niepalna. Hydrofobizowana. Wysoka wytrzymałość na odrywanie warstw. Do systemów ETICS.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 40,
+    "name": "Tynk cementowo-wapienny MN30 szary",
+    "description": "Gotowa zaprawa tynkarska do ręcznego i maszynowego nakładania. Worek 25kg. Do stosowania wewnątrz i na zewnątrz. Grubość warstwy: 5-30mm. Zużycie: ok. 16-17 kg/m²/cm. Dobra przyczepność do podłoży betonowych, cegły, pustaków. Czas wiązania 3-4h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 41,
+    "name": "Kątownik stalowy równoramienny 50x50x5",
+    "description": "Kątownik ze stali konstrukcyjnej S235JR. Wymiary: 50x50mm, grubość 5mm. Długość: 6mb lub 12mb. Do konstrukcji stalowych, wzmocnień, ram, podpór. Możliwość cięcia na wymiar. Ocynkowanie ogniowe na zamówienie. Zgodny z normami PN-EN 10056.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 42,
+    "name": "Masa uszczelniająca elastyczna MS POLYMER",
+    "description": "Klej-uszczelniacz MS Polymer. Kartusz 290ml. Neutralny dla podłoża. Przyczepność do większości materiałów budowlanych. Nadaje się do wypełniania szczelin 5-30mm. Możliwość malowania. Elastyczny po utwardzeniu. Odporny na UV i warunki atmosferyczne.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 43,
+    "name": "Płyta wiórowa V100 E1 wodoodporna",
+    "description": "Płyta wiórowa o podwyższonej wodoodporności. Grubość: 16mm, 18mm, 22mm. Wymiary: 2070x2800mm. Klasa emisji formaldehydu E1. Wytrzymałość na zginanie 15 MPa. Do mebli łazienkowych, kuchennych, podłóg. Powierzchnia surowa lub melaminowana.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 44,
+    "name": "Podkład epoksydowy 2-składnikowy",
+    "description": "Podkład żywiczny do posadzek epoksydowych. Opakowanie 5kg (A+B). Zużycie: 200-300g/m². Do gruntowania betonowych posadzek przed wykonaniem posadzki żywicznej. Zwiększa przyczepność. Wzmacnia podłoże. Czas schnięcia 12-24h. Bezrozpuszczalnikowy.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 45,
+    "name": "Pustak szalunkowy 25x25x50cm",
+    "description": "Pustak betonowy typu LEGO do budowy ścian fundamentowych. Wymiary: 250x250x500mm. Do układania na sucho bez zaprawy. Zbrojenie prętami i zalanie betonem. Wyraźne karbowanie wewnętrzne. Klasa wytrzymałości B20. Mrozoodporny. Szybki montaż.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 46,
+    "name": "Izolacja XPS podłogowa 5cm",
+    "description": "Styrodur ekstrudowany XPS do izolacji fundamentów i podłóg. Lambda λ=0,030-0,032 W/(m·K). Grubość 50mm. Wytrzymałość na ściskanie CS(10)300 kPa. Płyty 125x60cm. Niemal zerowa nasiąkliwość. Do obciążonych posadzek, cokołów, dachów odwróconych.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 47,
+    "name": "Gont bitumiczny amerykański PREMIUM",
+    "description": "Gont bitumiczny z włókna szklanego. Pokrycie 3m² na opakowanie. Dostępne kształty: prostokąt, heksagon, łuska. Kolory: czerwony, brąz, grafitowy, zielony. Odporny na UV, mróz, wiatr. Samouszczelniający. Montaż na deskowaniu pełnym. Gwarancja 25 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 48,
+    "name": "Tynk silikonowy BARANEK 2,5mm",
+    "description": "Tynk elewacyjny silikonowy. Struktura baranek 2,5mm. Wiadro 25kg (ok. 3 kg/m²). Paleta 256 kolorów. Hydrofobowy, elastyczny, samoczyszczący. Wysoka paroprzepuszczalność. Odporny na glony i grzyby. Do systemów ETICS i bezpośrednio na beton.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 49,
+    "name": "Kotwa fasadowa wbijana 10x140mm",
+    "description": "Kotwa plastikowa do mocowania systemów dociepleniowych. Długość 140mm, średnica 10mm. Z trzpieniem stalowym ocynkowanym. Strefa rozporu 50mm. Do betonu, cegły pełnej, pustaków. Opakowanie 200 szt. Dołączana jest podkładka termiczna 60mm.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 50,
+    "name": "Profil do G-K CW 100x3000mm",
+    "description": "Profil ścienny stalowy ocynkowany. Wymiary: 100mm, długość 3m. Grubość blachy 0,6mm. Do wykonywania ścianek działowych z płyt G-K. Łączony z profilami UW. Rozstaw montażowy co 60cm. Możliwość cięcia na wymiar. Pakiet 12 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 51,
+    "name": "Płyta cementowo-wiórowa BZS 12mm",
+    "description": "Płyta budowlana z wiórów drzewnych i cementu. Grubość 12mm. Wymiary: 1250x3350mm. Odporna na wilgoć, ogień (klasa A2), termity. Do elewacji, podbitki, posadzek. Możliwość tynkowania, malowania. Sztywna, stabilna wymiarowo. Klasa emisji E1.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 52,
+    "name": "Farba do drewna i metalu 3w1",
+    "description": "Farba alkidowa antykorozyjna do drewna i metalu. Opakowanie 1L, 2,5L, 5L. Zawiera podkład, farbę i lakier w jednym. Wysoki połysk. Odporność na warunki atmosferyczne. Dostępne kolory: biały, czarny, brąz, zielony, czerwony, niebieski, szary.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 53,
+    "name": "Zaprawa do klinkieru i cegły KLINKIER",
+    "description": "Zaprawa murarska klasy M10 do klinkieru. Dostępne kolory: biały, grafitowy, antracyt, jasny szary, brązowy. Worek 25kg. Zużycie ok. 25-30 kg/m². Mrozoodporna, wodoodporna. Szyba wiązanie. Do murowania i spoinowania cegły klinkierowej, licówki.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 54,
+    "name": "Izolacja PIR/PUR z okładziną ALU 100mm",
+    "description": "Płyta poliuretanowa z okładziną aluminiową. Lambda λ=0,022 W/(m·K). Grubość 100mm = zastępuje 150mm wełny. Wymiary: 60x120cm. Do dachów, ścian, podłóg. Najlepsza izolacja na rynku. Twarda, stabilna, wodoodporna. Klasa reakcji na ogień E.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 55,
+    "name": "Blacha trapezowa T-18 ocynk+lakier",
+    "description": "Blacha dachowa trapezowa. Wysokość fałdy 18mm. Grubość 0,5mm. Szerokość użytkowa 100cm. Długość na zamówienie 1-12mb. Powłoka: ocynk + lakier poliester. Kolory standardowe: biały, brązowy, grafitowy, czerwony, zielony. Do dachów i elewacji.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 56,
+    "name": "Masa szpachlowa do drewna ORZECH",
+    "description": "Gotowa masa szpachlowa akrylowa. Pojemność 0,5kg, 1kg, 2kg. Kolor orzech (dostępne: sosna, dąb, mahoń, wenge). Do wypełniania ubytków w drewnie wewnątrz pomieszczeń. Szybkoschnąca - 30 min. Łatwa w szlifowaniu. Gotowa do malowania.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 57,
+    "name": "Klej poliuretanowy do styropianu PU",
+    "description": "Klej piankowy do styropianu. Pojemność 750ml (wydajność 10-12m²). Do klejenia płyt styropianowych i XPS na elewacjach. Doskonała przyczepność. Szybkie wiązanie - 2h. Temperatura stosowania +5 do +30°C. Nie zawiera freonów. Niska rozszerzalność.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 58,
+    "name": "Cegła klinkierowa licówka MODERN",
+    "description": "Cegła klinkierowa licowa. Wymiary: 250x120x65mm. Paleta kolorów: czerwony, brązowy, grafitowy, płomienny, pstrykaty. Powierzchnia gładka lub szorstka. Klasa wytrzymałości 25 MPa. Mrozoodporność F2. Nasiąkliwość <6%. Do elewacji, murków, kominów.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 59,
+    "name": "Deska elewacyjna kompozytowa WPC",
+    "description": "Deska elewacyjna drewno-plastik. Wymiary: 20x138mm, długość 3-6m. Montaż na ruszcie aluminiowym. Kolory: jasny szary, ciemny szary, brąz, antracyt. Odporna na UV, wilgoć, pleśń. Nie wymaga malowania. Gwarancja 15 lat na kolor i strukturę.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 60,
+    "name": "Styropian podłogowy z warstwą grafitu EPS 150",
+    "description": "Styropian grafitowy o zwiększonej wytrzymałości. Lambda λ=0,031 W/(m·K). Wytrzymałość CS(10)150 kPa. Grubość 2-20cm. Do podłóg na gruncie, stropów nad piwnicami. Odporny na wilgoć, pleśń. Możliwość układania bezpośrednio wylewki.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 61,
+    "name": "Gładź szpachlowa szybkoschnąca Q4",
+    "description": "Gipsowa gładź finiszowa do najwyższych standardów wykończenia. Grubość 0,2-3mm. Zużycie 0,5-1 kg/m². Gotowa do malowania po 3-5h. Biała, bardzo drobna frakcja. Do powierzchni Q4 - najwyższa klasa. Łatwa w szlifowaniu. Opakowanie 5kg, 20kg.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 62,
+    "name": "Membrana wodochronna WEB-SELF",
+    "description": "Membrana hydroizolacyjna samoprzylepna. Rolka 1x15m. Do izolacji fundamentów, tarasów, łazienek. Grubość 1,5mm. Warstwa klejąca 100% powierzchni. Odporność na przebicie. Elastyczna w niskich temperaturach. Montaż bez ognia. Gwarancja 10 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 63,
+    "name": "Cement biały CEM I 52,5R",
+    "description": "Wysokowytrzymały cement portlandzki biały. Worek 25kg. Wytrzymałość 52,5 MPa. Szybkie wiązanie. Do betonu architektonicznego, zapraw dekoracyjnych, tynków, kamienia sztucznego. Jasny kolor - możliwość barwienia pigmentami. Niska zawartość alkaliów.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 64,
+    "name": "Profil narożny aluminiowy z siatką 10cm",
+    "description": "Narożnik aluminiowy z siatką z włókna szklanego. Długość 2,5m lub 3m. Szerokość skrzydełek: 10+10cm. Do ochrony narożników przy systemach ociepleniowych. Siatka 160g/m². Perforowany, zapewnia przyczepność. Pakiet 25 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 65,
+    "name": "Farba silikonowa elewacyjna HYDRO",
+    "description": "Farba silikonowa do elewacji. Opakowanie 5L, 10L, 15L. Zużycie 150-200ml/m². Wysoka paroprzepuszczalność, hydrofobowość. Samoczyszcząca - efekt perlenia. Odporna na pleśń, glony, grzyby. Paleta 500+ kolorów. Nie kreda, nie blaknie. Gwarancja 15 lat.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 66,
+    "name": "Zaprawa do fugowania ULTRA FLEX",
+    "description": "Elastyczna zaprawa do spoinowania. Worek 5kg. Dostępne kolory: 40+ odcieni. Do fug 1-10mm. Odporna na pękanie, wilgoć, pleśń. Dodatek mikrosrebra. Do płytek ceramicznych, gresu, mozaiki. Wewnątrz i na zewnątrz. Możliwość chodzenia po 24h.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 67,
+    "name": "Bloczki silikatowe 18cm M20",
+    "description": "Pustak silikatowy pełny. Wymiary: 180x240x190mm. Klasa M20 (20 MPa). Doskonała akumulacja ciepła. Izolacyjność akustyczna 54 dB. Do ścian wewnętrznych i zewnętrznych. Precyzyjne wymiary - cienka spoina. Ekologiczny, paroprzepuszczy. Paleta 96 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 68,
+    "name": "Taśma butylowa do połączeń dachowych",
+    "description": "Taśma uszczelniająca jednostronnie klejąca. Szerokość 50mm, długość 25m. Grubość 2mm. Do uszczelniania połączeń blachodachówki, trapezów. Doskonała przyczepność. Odporna na UV, wodę, mróz. Temperatura montażu -10 do +50°C. Kolor: czarny, szary.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 69,
+    "name": "Wełna mineralna akustyczna 50mm",
+    "description": "Płyty z wełny szklanej do izolacji akustycznej. Grubość 50mm. Gęstość 40 kg/m³. Wymiary 60x120cm. Klasa reakcji na ogień A1. Do ścianek działowych G-K, sufitów podwieszanych. Tłumienie dźwięków 38 dB. Sprężysta, łatwa w cięciu.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 70,
+    "name": "Grunt do tynków mineralnych SILIKAT",
+    "description": "Grunt silikatowy pod tynki mineralne. Opakowanie 5L, 10L. Zużycie 150-250 ml/m². Głęboko penetrujący, wzmacniający. Do podłoży mineralnych: beton, tynk cementowy, cegła. Wyrównuje nasiąkliwość. Zwiększa przyczepność. Schnięcie 4-6h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 71,
+    "name": "Łącznik do płyt G-K krzyżowy 60mm",
+    "description": "Złącze krzyżowe do profili CD 60mm. Stal ocynkowana. Do łączenia profili sufitowych pod kątem prostym. Montaż bez wkrętów - wcisk. Nośność 15kg. Do sufitów podwieszanych z płyt G-K. Opakowanie 50 szt lub 100 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 72,
+    "name": "Masa szpachlowa do rys i pęknięć ARM",
+    "description": "Masa zbrojona włóknami do naprawy rys. Pojemność 1,5kg. Do wypełniania rys, pęknięć, ubytków. Wzmocniona włóknami szklanymi. Elastyczna po wyschnięciu. Do betonu, tynków, G-K. Wewnątrz i na zewnątrz. Biała, gotowa do użycia. Malowalna po 2h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 73,
+    "name": "Beton lekki keramzytobetonowy B5",
+    "description": "Beton lekki z keramzytu klasy B5. Ciężar objętościowy 800 kg/m³. Do wykonywania wylewek wyrównujących, warstw spadkowych na dachach, podłogach. Lambda λ=0,20-0,25 W/(m·K). Dostawa betonomieszarką. Minimalne zamówienie 3m³. Izolacyjny termicznie.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 74,
+    "name": "Cegła ręcznie formowana RETRO",
+    "description": "Cegła licówka ręcznie formowana. Wymiary: 215x102x65mm. Kolor: czerwony stary, płomienny. Powierzchnia postarzana, nieregularna. Do elewacji stylowych, retro. Każda cegła unikatowa. Mrozoodporność F2. Wytrzymałość 15 MPa. Pakiet 360 szt na palecie.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 75,
+    "name": "Izolacja natryskowa pianka PUR",
+    "description": "Pianka poliuretanowa natryskowa otwarto- lub zamkniętokomórkowa. Lambda λ=0,022-0,036 W/(m·K). Aplikacja profesjonalnym agregatem. Do dachów, ścian, poddaszy. Bezspoinowa, wypełnia wszystkie szczeliny. Klasa reakcji na ogień E. Gwarancja 25 lat. Cena za m².",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 76,
+    "name": "Dachówka betonowa LINIA prosta",
+    "description": "Dachówka betonowa typu holenderka. Wymiary: 420x330mm. Masa: 4,3 kg/szt. Pokrycie: 10 szt/m². Kolory: czerwony, brązowy, grafitowy, czarny. Mrozoodporność F2. Nasiąkliwość <10%. Żywotność 50+ lat. Gwarancja 30 lat na kolor.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 77,
+    "name": "Farba do mebli kredowa VINTAGE",
+    "description": "Farba kredowa akrylowa do mebli. Pojemność 0,5L, 1L. Efekt matowy, aksamitny. Nie wymaga szlifowania, gruntowania. Dostępne 30 kolorów vintage. Do drewna, MDF, szkła, metalu. Ekologiczna, bezwonna. Schnięcie 1h. Możliwość woskowania.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 78,
+    "name": "Zaprawa klejąca do cegły licówki THIN",
+    "description": "Cienkowarstwowa zaprawa do klinkieru. Grubość spoiny 2-5mm. Worek 25kg (wydajność ok. 3-4 kg/m²). Dostępne kolory spoin. Szybkie wiązanie. Wysoka przyczepność. Do układania klinkieru, kamienia elewacyjnego. Mrozoodporna, wodoodporna.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 79,
+    "name": "Płyta warstwowa dachowa PIR 80mm",
+    "description": "Panel warstwowy dachowy z rdzeniem PIR. Grubość 80mm. Lambda λ=0,022 W/(m·K). Okładziny: blacha stalowa 0,5mm. Szerokość użytkowa 100cm. Długość na zamówienie 2-14m. System zatrzaskowy. Klasa reakcji na ogień B. Montaż bez dodatkowej izolacji.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 80,
+    "name": "Profil startowy aluminiowy 2,5m",
+    "description": "Listwa startowa aluminiowa do systemów ETICS. Długość 2,5m. Szerokość 50mm, 80mm, 100mm, 120mm, 150mm, 200mm. Perforowana. Do montażu na cokołach. Z siatką odkomarzającą. Zabezpiecza przed gryzoniami. Pakiet 20 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 81,
+    "name": "Drewno konstrukcyjne C24 KVH 60x120mm",
+    "description": "Drewno konstrukcyjne suszone kamerowo. Przekrój 60x120mm. Długość 3-6m. Klasa wytrzymałości C24. Wilgotność 15±3%. Heblowane 4-stronnie. Do więźby dachowej, słupów, belek. Łączone na mikrowczepy. Stabilne wymiarowo. Certyfikat FSC.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 82,
+    "name": "Tynk cienkowarstwowy silikatowy RUSTIC",
+    "description": "Tynk mineralny wapienno-silikatowy. Struktura baranek 2mm. Worek 25kg. Do barwienia farbami silikatowymi. Wysoka paroprzepuszczalność. Efekt samoczyszczenia. Odporny na glony, grzyby. Do zabytków, budynków o wysokich wymaganiach. Ekologiczny.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 83,
+    "name": "Bloczki betonowe akustyczne 24cm",
+    "description": "Pustak betonowy z wypełnieniem keramzytem. Wymiary: 240x240x380mm. Współczynnik izolacyjności akustycznej Rw=52 dB. Lambda λ=0,38 W/(m·K). Klasa wytrzymałości B15. Do ścian międzylokalowych, studjów nagraniowych, sal kinowych.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 84,
+    "name": "Paroizolacja z membraną aktywną INTELLO",
+    "description": "Membrana paroizolacyjna zmiennoprzepuszczalna. Rolka 1,5x50m. Współczynnik Sd zmienne 0,25-10m w zależności od wilgotności. Inteligentna - chroni zimą, wysusza latem. Do dachów, ścian szkieletowych. Najwyższa klasa paroszczelności. Gwarancja 10 lat.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 85,
+    "name": "Rura spustowa PVC 90mm dł. 3mb",
+    "description": "Rura spustowa dachowa z PVC. Średnica 90mm, długość 3m. System kielichowy. Kolor: biały, brąz, grafitowy. W zestawie: rura, łączniki, kolana 67° i 87°, obejmy. Odporność na UV. Nie wymaga konserwacji. Montaż obejm co 2m. Gwarancja 10 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 86,
+    "name": "Klej do glazury i gresu C1TE",
+    "description": "Zaprawa klejowa do płytek standardowa. Klasa C1TE - wydłużony czas otwartości. Worek 25kg. Zużycie 2-4 kg/m². Grubość warstwy 2-8mm. Do prac wewnętrznych, ściany i podłogi. Nadaje się na podłogi z ogrzewaniem. Możliwość chodzenia po 24h.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 87,
+    "name": "Farba do dachu akrylowa RAL",
+    "description": "Farba do dachówki i blachy. Opakowanie 5L, 10L. Kolory RAL standard: 3011, 8017, 7016, 6005, 9005, 9010. Elastyczna, odporna na UV i warunki atmosferyczne. Wydajność 5-7 m²/l. Zabezpiecza przed korozją. Odnawia stare pokrycia. Gwarancja 10 lat.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 88,
+    "name": "Cement szybkowiążący ekspresowy CEM I 52,5",
+    "description": "Cement portlandzki szybkowiążący. Worek 20kg. Wytrzymałość 20 MPa po 24h, 52,5 MPa po 28 dniach. Do napraw awaryjnych, zakotwień, prefabrykatów. Początek wiązania 30-45 min. Mały skurcz. Do betonów wysokiej wytrzymałości początkowej.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 89,
+    "name": "Pustak ceramiczny 44cm THERMO MAX",
+    "description": "Energooszczędny pustak ceramiczny. Wymiary: 440x248x238mm. Współczynnik U=0,18 W/(m²K). System pióro-wpust. Wbudowana izolacja termiczna z wełny mineralnej. Do ścian zewnętrznych pasywnych. Klasa wytrzymałości 10 MPa. Paleta 48 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 90,
+    "name": "Izolacja fenolowa KINGSPAN 100mm",
+    "description": "Płyta fenolowa z okładziną ALU. Lambda λ=0,018-0,020 W/(m·K). Grubość 100mm. Najlepsza izolacja - 100mm = 200mm wełny. Wymiary 60x120cm. Do dachów płaskich, podłóg, ścian. Klasa reakcji na ogień B. Niska nasiąkliwość. Stabilna wymiarowo.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 91,
+    "name": "Wkręt do blach samowiercący 4,8x35mm",
+    "description": "Wkręt samowiercący ocynkowany z podkładką EPDM. Średnica 4,8mm, długość 35mm. Do łączenia blachy trapezowej, dachówki. Wiertło Ø5,5mm. Uszczelka EPDM 14mm. Kolor łba RAL: biały, brązowy, grafitowy, zielony, czerwony. Opakowanie 250 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 92,
+    "name": "Grunt pod tynki akrylowe CONTACT",
+    "description": "Grunt akrylowy pigmentowany. Opakowanie 5L, 10L. Dostępne kolory zbliżone do tynków. Zużycie 100-200 ml/m². Zmniejsza chłonność, zwiększa przyczepność. Do podłoży betonowych, tynków cementowych, OSB, G-K. Schnięcie 4-6h. Możliwość barwienia.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 93,
+    "name": "Płyta G-K ognioodporna 12,5mm typ F",
+    "description": "Płyta gipsowo-kartonowa ogniochronna. Wymiary: 1200x2600mm, grubość 12,5mm. Typ DF - ognioodporność 60 min. Rdzeń gipsowy wzmocniony włóknami szklanymi. Różowe lico. Do ścian, sufitów w pomieszczeniach o podwyższonych wymaganiach ppoż.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 94,
+    "name": "Zaprawa do montażu bloczków CIENKA SPOINA",
+    "description": "Zaprawa klejowa do bloczków z systemem P+W. Worek 20kg (wydajność ok. 25m² przy grubości 2mm). Do montażu betonu komórkowego, silikatów. Grubość spoiny 1-3mm. Szybkie wiązanie. Wysoka przyczepność. Mrozoodporna. Zużycie ok. 1,5-2 kg/m².",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 95,
+    "name": "Blachodachówka MODUŁOWA Premium",
+    "description": "Modułowa blachodachówka ze stali 0,5mm. Moduł 1150x350mm. Pokrycie ok. 0,35m²/moduł. Powłoka: poliester matowy, HPS 200. Kolory RAL. Montaż od dołu, możliwość demontażu pojedynczych modułów. Odporna na grad. Gwarancja 30 lat na kolor, 50 lat na szczelność.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 96,
+    "name": "Styropian grafitowy FASADA EPS 031",
+    "description": "Styropian grafitowy do elewacji. Lambda λ=0,031 W/(m·K). Grubość 2-30cm. Gęstość 14 kg/m³. Wymiary 50x100cm. Kolor grafitowy. Klasa reakcji na ogień E. Stabilność wymiarowa DS(70,-)2. Wytrzymałość na zginanie 150 kPa. Do systemów ETICS.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 97,
+    "name": "Farba antykorozyjna podkładowa CYNKOWA",
+    "description": "Farba cynkowa przeciwrdzewna. Opakowanie 1L, 5L. Zawartość cynku 95%. Do gruntowania stali konstrukcyjnej, balustrad, bram. Wysoka przyczepność. Odporność na warunki atmosferyczne. Kolor jasny szary. Wydajność 8-10 m²/l. Schnięcie do przeszlifowania 4h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 98,
+    "name": "Silikon sanitarny antygrzybiczny biały",
+    "description": "Silikon sanitarny z dodatkiem fungicydów. Tuba 280ml. Do uszczelniania połączeń w łazienkach, kuchniach. Odporny na pleśń, grzyby, wilgoć. Neutralne utwardzanie. Temperatura pracy -40°C do +180°C. Możliwość kontaktu z wodą pitną. Kolory: biały, przezroczysty.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 99,
+    "name": "Bloczki betonowe systemowe 24cm TERMO",
+    "description": "Pustak betonowy z izolacją. Wymiary: 240x240x490mm. Otwory wypełnione styropianem. Lambda λ=0,30 W/(m·K). Klasa wytrzymałości B15. System P+W. Do ścian zewnętrznych. Szybki montaż. Izolacja termiczna w jednym elemencie. Paleta 60 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 100,
+    "name": "Zaprawa murarska jasna do klinkieru M10",
+    "description": "Zaprawa murarska biała klasy M10. Worek 25kg. Do murowania i spoinowania cegły klinkierowej jasnej, kamienia. Odporność na mróz, wodę, sole. Możliwość barwienia pigmentami. Grubość spoiny 10-15mm. Wytrzymałość na ściskanie 10 MPa.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 101,
+    "name": "Wełna mineralna PODDASZE 200mm",
+    "description": "Wełna szklana do izolacji poddaszy. Lambda λ=0,035 W/(m·K). Grubość 200mm. Wymiary 120x60cm. Klasa reakcji na ogień A1. Gęstość 18 kg/m³. Do układania między krokwiami. Hydrofobizowana. Sprężysta, łatwa w montażu. Pakiet 10,08 m².",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 102,
+    "name": "Membrana dachowa wzmocniona 150g/m²",
+    "description": "Membrana dachowa 3-warstwowa wzmocniona. Gramatura 150g/m². Sd=0,02m. Rolka 1,5x50m. Wodoszczelność 2500mm. Odporność na rozdzieranie 250/200N. Do układania na pełnym deskowaniu lub bezpośrednio na krokwiach. Stabilizacja UV 4 miesiące.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 103,
+    "name": "Tynk gipsowy maszynowy MP75 KNAUF",
+    "description": "Gipsowa zaprawa tynkarska do maszynowego nakładania. Worek 30kg. Grubość warstwy 5-30mm. Zużycie ok. 10 kg/m²/cm. Do tynkowania ścian i sufitów wewnątrz. Szybkie wiązanie - po 2-3h twarda powierzchnia. Nie wymaga gładzi Q2/Q3.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 104,
+    "name": "Kotwa chemiczna iniekcyjna 280ml",
+    "description": "Kotwa chemiczna dwuskładnikowa do betonu, cegły, kamienia. Kartusz 280ml + 2 pręty M10x110. Wytrzymałość na wyrwanie do 15 kN. Czas utwardzania 30-60 min. Do mocowań ciężkich konstrukcji, balustrad, regałów. Możliwość użycia przy niskiej temperaturze.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 105,
+    "name": "Łata dachowa 40x60mm DRY",
+    "description": "Łata dachowa impregnowana. Przekrój 40x60mm. Długość 5m. Klasa C24. Wilgotność <18%. Impregnacja próżniowo-ciśnieniowa. Do montażu dachówki ceramicznej, betonowej, blachodachówki. Certyfikat FSC. Pakiet 25 szt.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 106,
+    "name": "Klej do płyt G-K gotowy PERLFIX",
+    "description": "Gotowy klej gipsowy do płyt G-K. Worek 30kg. Do klejenia płyt G-K na ścianach wewnętrznych. Szybkie wiązanie 30-40 min. Nakładanie plackami lub pasmami. Grubość kleju 10-30mm. Nie wymaga mieszania, gotowy do użycia. Ekologiczny.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 107,
+    "name": "Stal zbrojeniowa RB400W pręty fi 12mm",
+    "description": "Pręty zbrojeniowe żebrowane. Średnica 12mm. Długość 12m. Klasa B400W (dawniej RB400W). Do zbrojenia konstrukcji żelbetowych. Wytrzymałość na rozciąganie 400 MPa. Zgrzewalne. Masa pręta 0,888 kg/mb. Pakiet 120 prętów. Cięcie na wymiar.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 108,
+    "name": "Farba strukturalna zewnętrzna RELIEF",
+    "description": "Farba strukturalna akrylowa do elewacji. Opakowanie 15kg. Tworzy efekt reliefowy 3D. Grubość warstwy 2-3mm. Zużycie 3-4 kg/m². Odporna na UV, deszcz, mróz. Paroprzepuszczalna. Możliwość barwienia na dowolny kolor. Nakładana pacą stalową.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 109,
+    "name": "Pustak szklany luksfer przezroczysty",
+    "description": "Pustak szklany dekoracyjny. Wymiary: 190x190x80mm lub 240x240x80mm. Przezroczysty bezbarwny lub kolorowy. Do ścian działowych świetlnych. Odporny na wilgoć. Izolacyjność cieplna U=1,9 W/(m²K). Izolacja akustyczna 38 dB. Pakiet 10 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 110,
+    "name": "Folia paroizolacyjna ALU 200 mikrometrów",
+    "description": "Folia paroizolacyjna PE z warstwą ALU. Grubość 200μm. Rolka 2x50m (100m²). Sd>200m. Odporność na przebicie 450N. Do układania od strony ciepłej jako paroizolacja pod izolację. Odbija promieniowanie cieplne. Do dachów, ścian, stropów.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 111,
+    "name": "Papa podkładowa 2,5kg/m² asfaltowa",
+    "description": "Papa asfaltowa podkładowa. Masa powierzchniowa 2,5 kg/m². Wkładka z włókniny. Rolka 10x1m. Do wstępnego krycia dachów płaskich, jako izolacja pozioma fundamentów. Temperatura układania >+5°C. Klejenie metodą termozgrzewalną lub na klej asfaltowy.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 112,
+    "name": "Zaprawa do fugowania epoksydowa KERAPOXY",
+    "description": "Zaprawa epoksydowa 2-składnikowa. Opakowanie 3kg (A+B). Dostępne 20 kolorów. Do fug 2-10mm. Odporna na kwasy, zasady, plamy. Do gresu, mozaiki, basenów. Wewnątrz i na zewnątrz. Szczelna dla wody. Możliwość mycia ciśnieniowo. Nie kreduje.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 113,
+    "name": "Blok betonowy konstrukcyjny 20cm",
+    "description": "Bloczek betonowy pełny konstrukcyjny. Wymiary: 200x190x380mm. Klasa B25 (25 MPa). Gęstość 2100 kg/m³. Do ścian fundamentowych nośnych o dużym obciążeniu. Mrozoodporny. Stabilność wymiarowa. Łatwy w obróbce. Paleta 72 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 114,
+    "name": "Cement do spoinowania flizelinowanego CEM IV",
+    "description": "Cement szybkowiążący do spoinowania. Worek 25kg. Do szybkich napraw, spoinowania ścian fundamentowych, zakotwień. Początek wiązania 20-30 min. Koniec wiązania 3-5h. Wytrzymałość 32,5 MPa. Dodatek plastyfikatorów. Kolor jasny szary.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 115,
+    "name": "Styrodur XPS fundamentowy 10cm",
+    "description": "Styrodur ekstrudowany do izolacji fundamentów. Lambda λ=0,030 W/(m·K). Grubość 100mm. Wytrzymałość CS(10)300 kPa. Płyty 125x60cm. Frezowane krawędzie L. Nasiąkliwość <0,2%. Do ścian fundamentowych, cokołów, dachów odwróconych. Stabilny wymiarowo.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 116,
+    "name": "Farba podkładowa izolacyjna BLOCK",
+    "description": "Farba izolacyjna do plam. Opakowanie 1L, 2,5L. Do blokowania plam: nikotynowych, tłuszczowych, wodnych, rdzawych. Zapobiega przebarwieniom. Do ścian, sufitów. Nadaje się pod farby lateksowe, akrylowe. Biała. Wydajność 8-10 m²/l. Schnięcie 2-4h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 117,
+    "name": "Profil systemowy do drzwi OŚCIEŻNICA",
+    "description": "Profil stalowy do wykonywania ościeżnic drzwiowych w ścianach G-K. Wymiar 100mm (dostępne 75mm, 100mm, 125mm). Długość 2,6m. Grubość 1mm. Zestaw: 2 słupki, 1 nadproże. Ocynkowany. Do montażu bez spawania. Pakiet 5 zestawów.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 118,
+    "name": "Gres porcelanowy MATOWY 120x60cm",
+    "description": "Gres techniczny rektyfikowany. Wymiary: 1200x600x10mm. Klasa ścieralności PEI V. Antypoślizgowość R11. Nasiąkliwość <0,1%. Mrozoodporny. Do pomieszczeń mieszkalnych, komercyjnych, zewnątrz. Paleta kolorów: beton, kamień, marmur. Pakiet 2,16m² (3 płyty).",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 119,
+    "name": "Tynk silikatowo-silikonowy HYBRID",
+    "description": "Tynk elewacyjny hybrydowy. Struktura kornik 2mm lub 3mm. Wiadro 25kg. Łączy zalety tynków silikatowych i silikonowych. Paroprzepuszczy, hydrofobowy, elastyczny. Samoczyszczący. Odporny na glony, grzyby. Paleta 200+ kolorów. Do ETICS i podłoży mineralnych.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 120,
+    "name": "Płyta OSB/4 konstrukcyjna 18mm",
+    "description": "Płyta OSB klasy konstrukcyjnej 4 - do obciążeń w warunkach wilgotnych. Grubość 18mm. Wymiary 1250x2500mm. Do podłóg, dachów z dużymi obciążeniami. Wytrzymałość na zginanie 30 MPa. Klasa emisji formaldehydu E1. Odporna na wilgoć.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 121,
+    "name": "Wełna mineralna AKUSTIK BOARD 50mm",
+    "description": "Płyty sztywne z wełny skalnej do izolacji akustycznej. Grubość 50mm. Gęstość 140 kg/m³. Wymiary 60x100cm. Tłumienie dźwięku 42 dB. Klasa reakcji na ogień A1. Do sufitów akustycznych, ścian działowych, sal konferencyjnych. Możliwość szpachlowania.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 122,
+    "name": "Klej montażowy SIKA-FLEX mocny 300ml",
+    "description": "Klej hybrydowy super mocny MS Polymer. Tuba 300ml. Wytrzymałość na zerwanie 3 MPa. Do klejenia ciężkich elementów: luster, płyt, kamienia. Kleisko pozostaje elastyczne. Nie wymaga podparcia. Można malować. Biały, szary, czarny. Temperatura montażu -10 do +35°C.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 123,
+    "name": "Bloczki silikatowe 24cm PREMIUM",
+    "description": "Pustaki silikatowe wapienno-piaskowe. Wymiary: 240x180x220mm. Klasa M25 (25 MPa). System P+W - cienka spoina. Lambda λ=0,80 W/(m·K). Do ścian nośnych, działowych. Wysoka akumulacja ciepła. Izolacyjność akustyczna 56 dB. Paleta 96 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 124,
+    "name": "Blacha płaska ocynkowana+lakier 0,5mm",
+    "description": "Blacha stalowa płaska powlekana. Grubość 0,5mm. Wymiary arkusza 125x200cm. Powłoka: ocynk + poliester. Kolory RAL standard. Do obróbek blacharskich, rynien, parapetów, kominów. Łatwa w obróbce. Odporność na korozję. Gwarancja 10 lat na kolor.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 125,
+    "name": "Grunt głęboko wnikający TIEFENGRUND",
+    "description": "Grunt penetrujący do chłonnych podłoży. Opakowanie 5L, 10L, 20L. Wnika do 5mm w głąb. Zużycie 100-300ml/m² w zależności od podłoża. Wzmacnia, konsoliduje, uszczelnia. Do betonu, tynków, anhydrytu. Przed szpachlowaniem, malowaniem, klejeniem. Schnięcie 4-6h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 126,
+    "name": "Zaprawa wyrównująca szybka TURBO",
+    "description": "Szybkoschnąca zaprawa wyrównująca. Worek 20kg. Grubość warstwy 2-30mm. Zużycie ok. 1,6 kg/m²/mm. Sampoziomująca 2-5mm. Możliwość chodzenia po 3h, klejenia płytek po 6h. Wytrzymałość 25 MPa. Do podłóg wewnętrznych. Nadaje się pod ogrzewanie podłogowe.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 127,
+    "name": "Płyta G-K wodoodporna 12,5mm typ H2",
+    "description": "Płyta gipsowo-kartonowa impregnowana. Wymiary: 1200x2600mm, grubość 12,5mm. Typ H2 (dawniej GKBI). Zielone lico. Odporna na wilgoć. Do łazienek, kuchni, pomieszczeń wilgotnych. Rdzeń gipsowy z dodatkiem hydrofobizującym. Do ścian i sufitów.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 128,
+    "name": "Folia drenażowa z geowłókniną kubełkowa",
+    "description": "Folia kubełkowa PE-HD z geowłókniną. Wysokość wypustek 8mm. Rolka 2x20m (40m²). Gramatura geowłókniny 200g/m². Do drenażu fundamentów, ścian oporowych. Odporna na podciśnienie gruntu. Odprowadza wodę i wilgoć. Temperatura montażu -20 do +50°C.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 129,
+    "name": "Farba do metalu MŁOTKOWA 3w1",
+    "description": "Farba młotkowa antykorozyjna akrylowa. Opakowanie 0,7L, 2,5L. Efekt dekoracyjny młotkowy - ukrywa nierówności. Zawiera podkład+farbę. Do malowania metalu, drewna. Kolory: szary, grafitowy, czarny, zielony, brązowy. Wydajność 10-12 m²/l. Wysoki połysk.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 130,
+    "name": "Kotwa rozporowa wbijana nylon 10x100mm",
+    "description": "Kołek rozporowy nylonowy z wkrętem. Średnica 10mm, długość 100mm. Do betonu, cegły pełnej, kamienia. Obciążenie 50 kg. Do montażu lekkich elementów: listew, półek, lamp. Opakowanie 100 szt. Możliwość demontażu. Montaż przez wybijanie rozporki.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 131,
+    "name": "Pustak ceramiczny AKUSTYCZNY 25cm",
+    "description": "Bloczek ceramiczny o zwiększonej izolacyjności akustycznej. Wymiary: 250x238x373mm. Współczynnik Rw=53 dB. Lambda λ=0,40 W/(m·K). Klasa wytrzymałości 10 MPa. System P+W. Do ścian działowych między lokalami, studjami nagraniowymi. Paleta 36 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 132,
+    "name": "Izolacja z wełny celulozowej dmuchana",
+    "description": "Wata celulozowa z papieru makulaturowego. Lambda λ=0,038-0,040 W/(m·K). Klasa reakcji na ogień B-s2,d0. Aplikacja metodą wdmuchiwania. Do izolacji poddaszy, stropów, ścian szkieletowych. Ekologiczna, oddychająca. Cena za m² przy grubości 20cm.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 133,
+    "name": "Papa termozgrzewalna APP V60 S42",
+    "description": "Papa asfaltowa modyfikowana APP na osnowie z włókniny poliestrowej. Grubość 4,2 mm, masa asfaltowa modyfikowana elastomerem APP zapewnia wysoką odporność na promieniowanie UV i starzenie. Przeznaczona do wykonywania warstw wierzchnich i podkładowych izolacji dachów płaskich. Aplikacja metodą zgrzewania. Odporna na wysokie i niskie temperatury, elastyczna, trwała. Cena za m².",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 134,
+    "name": "Papa termozgrzewalna APP V60 S42",
+    "description": "Papa asfaltowa modyfikowana APP (ataktyczny polipropylen). Masa powierzchniowa 4,2 kg/m². Wkładka z tkaniny poliestrowej. Posypka łupkowa na górze, folia PE na spodzie. Temperatura mięknienia ≥140°C. Do dachów płaskich i pochyłych. Wysoka elastyczność. Gwarancja 15 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 135,
+    "name": "Tynk cementowo-wapienny maszynowy MN35",
+    "description": "Zaprawa tynkarska do nakładania maszynowego. Worek 30kg. Grubość warstwy 5-35mm. Zużycie ok. 14-15 kg/m²/cm. Do tynkowania wewnątrz i na zewnątrz. Wytrzymałość na ściskanie 3,5 MPa. Dobra przyczepność. Mrozoodporna po związaniu. Czas wiązania 4-6h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 136,
+    "name": "Profil aluminiowy narożny OUTBOW 10mm",
+    "description": "Profil wykończeniowy aluminiowy wypukły. Wysokość 10mm, długość 2,5m. Do wykańczania zewnętrznych narożników płytek ceramicznych. Anodowany lub lakierowany - kolory: srebrny, złoty, czarny, biały. Łatwy montaż w kleju płytkowym. Estetyczne wykończenie. Pakiet 10 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 137,
+    "name": "Zaprawa klejowa do kamienia STONE",
+    "description": "Zaprawa do klejenia kamienia naturalnego. Klasa C2TE S1. Worek 25kg. Biała - nie przebarwia marmuru. Wzmocniona włóknami. Wysoka przyczepność do kamienia, betonu, tynków. Grubość warstwy 3-15mm. Do prac wewnętrznych i zewnętrznych. Zużycie 3-5 kg/m².",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 138,
+    "name": "Beton towarowy C25/30 XC3",
+    "description": "Beton konstrukcyjny klasy C25/30. Konsystencja S4. Klasa ekspozycji XC3 - cykliczne zamarznięcie i rozmrażanie. Maksymalna średnica kruszywa 16mm. Minimalny skład cementu 300 kg/m³. Dostawa betonomieszarką. Do konstrukcji narażonych na mróz. Wytrzymałość charakterystyczna 30 MPa.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 139,
+    "name": "Styropian fasadowy EPS 80 PREMIUM",
+    "description": "Styropian standardowy do elewacji. Lambda λ=0,036-0,038 W/(m·K). Gęstość 16 kg/m³. Grubość 2-30cm. Wymiary 50x100cm. Klasa reakcji na ogień E. Wytrzymałość na rozciąganie 150 kPa. Do systemów ETICS. Stabilny wymiarowo. Pakiet 3m² lub 5m².",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 140,
+    "name": "Rynna stalowa ocynkowana pół-okrągła 125mm",
+    "description": "Rynna dachowa ze stali ocynkowanej. Średnica 125mm, długość 2m. Grubość blachy 0,6mm. System kompletny z łącznikami, zaślepkami, hakami. Do malowania lub lakierowana fabrycznie. Kolory RAL na zamówienie. Tradycyjny system dachowy. Możliwość dodatkowego ocynku.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 141,
+    "name": "Farba akrylowa do ścien i sufitów STANDARD",
+    "description": "Farba akrylowa matowa do wnętrz. Opakowanie 5L, 10L. Klasa krycia 2. Zmywalność na sucho klasa 3. Biała. Wydajność: 8-10 m²/l. Do malowania ścian i sufitów w pomieszczeniach mieszkalnych. Ekonomiczna. Schnięcie 2-4h. Możliwość barwienia.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 142,
+    "name": "Gips szpachlowy FUGA do G-K",
+    "description": "Masa szpachlowa do spoinowania płyt G-K. Opakowanie 5kg, 25kg. Do wypełniania spoin, montażu taśm zbrojących. Szybkie wiązanie - 45-60 min. Łatwe szlifowanie. Nie kurzy się. Możliwość nakładania gładzi lub malowania bezpośrednio. Biała, drobnoziarnista.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 143,
+    "name": "Pustak wentylacyjny ceramiczny TURBO",
+    "description": "Pustak ceramiczny do kominów wentylacyjnych i spalinowych. Wymiary: 200x200x330mm. Otwór 14x14cm lub 18x18cm. Gładkie ścianki wewnętrzne. Klasa odporności ogniowej. Do systemów wentylacji grawitacyjnej i mechanicznej. Możliwość wkładów kwasoodpornych.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 144,
+    "name": "Wełna mineralna na poddasze ROLKA 150mm",
+    "description": "Mata z wełny szklanej w rolce. Lambda λ=0,037 W/(m·K). Grubość 150mm. Wymiary rolki: 6,25m x 1,2m (7,5m²). Klasa reakcji na ogień A1. Sprężysta, łatwa w układaniu między krokwiami. Hydrofobizowana. Do izolacji poddaszy użytkowych i nieużytkowych.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 145,
+    "name": "Klej montażowy SUPER MOCNY Express",
+    "description": "Klej montażowy na bazie kauczuku syntetycznego. Tuba 400ml. Natychmiastowa przyczepność - bez podpierania. Wytrzymałość 80 kg/m². Do klejenia drewna, styropianu, płyt G-K, paneli. Biały lub beżowy. Bez rozpuszczalników. Można malować.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 146,
+    "name": "Cement hutniczy CEM III/A 42,5N",
+    "description": "Cement portlandzki hutniczy z dużą zawartością żużla. Worek 25kg. Wytrzymałość 42,5 MPa. Normalne wiązanie. Niskie ciepło hydratacji. Odporny na siarczany. Do fundamentów, konstrukcji masywnych, betonu wodoszczelnego. Zwiększona trwałość betonu. Jasny kolor.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 147,
+    "name": "Cegła klinkierowa RETRO ręcznie formowana",
+    "description": "Cegła licówka klinkierowa ręcznie formowana. Wymiary nieregularne: ok. 220x105x70mm. Kolor płomienny z efektem postarzenia. Powierzchnia szorstka. Wysoka mrozoodporność. Każda cegła unikatowa. Do elewacji stylowych, budynków historycznych. Pakiet 300 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 148,
+    "name": "Płyta pilot MDF wodoodporna V100",
+    "description": "Płyta MDF o podwyższonej odporności na wilgoć. Grubość 16mm, 18mm, 22mm. Wymiary 2070x2800mm. Klasa emisji E1. Gęstość 720 kg/m³. Do mebli łazienkowych, kuchennych. Możliwość frezowania. Powierzchnia surowa lub lakierowana. Stabilna wymiarowo.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 149,
+    "name": "Folia izolacyjna DELTA-FOL PE",
+    "description": "Folia polietylenowa jako izolacja przeciwwodna i paroizolacja. Grubość 0,20mm. Rolka 4x25m (100m²). Sd=100m. Do układania pod posadzką na gruncie, jako izolacja pozioma. Spawalna gorącym powietrzem. Odporna na przebicie. Temperatura montażu -20 do +60°C.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 150,
+    "name": "Membrana dachowa PREMIUM 180g/m²",
+    "description": "Membrana dachowa 4-warstwowa wzmocniona. Gramatura 180g/m². Sd<0,02m. Rolka 1,5x50m. Wodoszczelność >3000mm. Odporność na rozdzieranie 300/280N. Do układania na pełnym deskowaniu i na krokwiach. Stabilizacja UV 6 miesięcy. Gwarancja 20 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 151,
+    "name": "Tynk mozaikowy kolorowy 1,5mm",
+    "description": "Tynk mozaikowy akrylowy. Ziarno 1,5mm (dostępny także 2mm). Opakowanie 25kg. Gotowy do użycia - 30 kolorów. Do cokołów, elewacji, wnętrz. Wysoka odporność na uszkodzenia mechaniczne. Możliwość mycia pod ciśnieniem. Zużycie ok. 3-4 kg/m². Hydrofobowy.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 152,
+    "name": "Zaprawa naprawcza do betonu PCC R4",
+    "description": "Zaprawa cementowa do napraw betonu. Worek 25kg. Klasa R4 - strukturalne naprawy nośne. Grubość warstwy 10-40mm. Wytrzymałość 40 MPa. Wzmocniona włóknami. Do napraw konstrukcji, słupów, belek. Mrozoodporna. Przyczeność >2 MPa. Możliwość natrysku.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 153,
+    "name": "Kotwa fasadowa stalowa 10x160mm",
+    "description": "Kotwa do mocowania styropianu grubego. Długość 160mm, średnica 10mm. Trzpień stalowy ocynkowany z talerzem 60mm. Do betonu, cegły pełnej. Strefa rozporu 60mm. Wraz z podkładką termiczną. Opakowanie 100 szt. Obciążenie na wyrwanie 0,8 kN.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 154,
+    "name": "Bloczki betonowe szalunkowe 50cm JUMBO",
+    "description": "Duży pustak szalunkowy do ścian fundamentowych. Wymiary: 500x250x250mm. System sucho-mokry. Zbrojenie i zalanie betonem. Klasa wytrzymałości B20. Mrozoodporny. Bardzo szybki montaż. Izolacja termiczna możliwa poprzez wkładki styropianowe. Paleta 48 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 155,
+    "name": "Izolacja XPS dachowa PODŁOGA 120mm",
+    "description": "Styrodur XPS do dachów odwróconych. Lambda λ=0,032 W/(m·K). Grubość 120mm. Wytrzymałość CS(10)300 kPa. Płyty 125x60cm z frezowanymi krawędziami. Nasiąkliwość <0,5%. Do układania na papie, pod balastem. Odporny na zamarzanie i rozmarzanie.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 156,
+    "name": "Blachodachówka MODUŁOWA z posypką",
+    "description": "Modułowa blachodachówka z posypką kamienną. Moduł 135x40cm. Stal 0,45mm + posypka bazaltowa. Tłumienie deszczu. Efekt dachówki ceramicznej. Kolory naturalne: czerwony, brązowy, grafitowy. Montaż od dołu. Odporność na grad. Gwarancja 50 lat szczelność, 30 lat kolor.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 157,
+    "name": "Farba tablicowa magnetyczna MEMO",
+    "description": "Farba magnetyczna + tablicowa 2w1. Opakowanie 0,5L, 1L. Tworzy powierzchnię, do której przyczepiają się magnesy i można pisać kredą. Czarna lub szara. Do pokoi dziecięcych, biur, kuchni. Krycie w 3 warstwach. Wydajność 3-4 m²/l. Bezpieczna, certyfikowana.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 158,
+    "name": "Silikon neutralny szybki QUICK",
+    "description": "Silikon neutralny szybkoutwardzający. Tuba 280ml. Czas do przeszlifowania 30 min. Pełne utwardzenie 12h. Do uszczelnień wewnętrznych i zewnętrznych. Przyczepność do większości materiałów. Temperatura pracy -40°C do +150°C. Kolory: biały, szary, brązowy, przezroczysty.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 159,
+    "name": "Pustak ceramiczny MEGA 30cm jednorzędowy",
+    "description": "Duży pustak ceramiczny. Wymiary: 300x248x238mm. Lambda λ=0,25 W/(m·K). Klasa wytrzymałości 10 MPa. System P+W. Do ścian zewnętrznych energooszczędnych. Szerokość muru 30cm w jednym rzędzie. Szybki montaż. Paleta 36 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 160,
+    "name": "Stal kątownik L100x100x10mm",
+    "description": "Kątownik stalowy równoramienny. Wymiary: 100x100mm, grubość 10mm. Długość: 6m lub 12m. Stal S235JR. Do konstrukcji stalowych, ram, podpór, wzmocnień. Możliwość cięcia, wiercenia, spawania. Ocynkowanie ogniowe na zamówienie. Zgodny z normami PN-EN 10056.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 161,
+    "name": "Grunt pigmentowany POD TYNK",
+    "description": "Grunt akrylowy zabarwiony pod tynki cienkowarstwowe. Opakowanie 5L, 10L. Dostępne kolory odpowiadające tynkom. Zużycie 120-180ml/m². Redukuje zużycie tynku. Wyrównuje chłonność. Zwiększa przyczepność. Do elewacji w systemach ETICS. Schnięcie 6-8h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 162,
+    "name": "Zaprawa wyrównująca anhydrytowa FLOW",
+    "description": "Bezskurczowa zaprawa anhydrytowa sampoziomująca. Worek 25kg. Grubość 3-80mm. Zużycie 1,6 kg/m²/mm. Wysoka wytrzymałość 30 MPa. Krótki czas schnięcia: 1mm = 0,5 dnia. Do podłóg z ogrzewaniem. Idealne wykończenie. Nie wymaga zacierania.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 163,
+    "name": "Płyta G-K gipsowo-włóknowa 12,5mm FERMACELL",
+    "description": "Płyta gipsowo-włóknowa (GVL). Wymiary: 1200x2500mm, grubość 12,5mm. Wysoka wytrzymałość, gęstość 1150 kg/m³. Odporna na wilgoć i uderzenia. Do ścianek działowych, podłóg suchych, zabudów. Możliwość bezpośredniego klejenia płytek bez gruntowania.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 164,
+    "name": "Wełna mineralna CLIMOWOOL 200mm poddasze",
+    "description": "Mata z wełny skalnej do poddaszy. Lambda λ=0,034 W/(m·K). Grubość 200mm. Wymiary: 8m x 1,2m (9,6m²). Klasa reakcji na ogień A1. Niepalna. Gęstość 20 kg/m³. Sprężysta, elastyczna. Hydrofobizowana. Do układania między i pod krokwiami.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 165,
+    "name": "Taśma EPDM uszczelniająca do okien",
+    "description": "Taśma uszczelniająca samoprzylepna. Szerokość 10cm, długość 25m. Grubość 1mm. Z kauczuku EPDM. Do uszczelniania połączeń okien i drzwi z murem. Paroprzepuszczalna z jednej strony. Wodoszczelna. Temperatura montażu -5 do +35°C. Kolor czarny.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 166,
+    "name": "Papa podkładowa STANDARD V60 S3",
+    "description": "Papa asfaltowa termozgrzewalna podkładowa. Masa powierzchniowa 3,0 kg/m². Wkładka z włókniny. Rolka 10x1m. Do pierwszej warstwy na dachach płaskich. Temperatura mięknienia ≥100°C. Klejenie metodą termozgrzewalną. Do podkładów pod papy wierzchniego krycia.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 167,
+    "name": "Farba lateksowa PREMIUM zmywalna",
+    "description": "Farba akrylowa lateksowa wysokiej jakości. Opakowanie 5L, 10L. Klasa krycia 1, zmywalność 1 - można szorować. Matowa, aksamitna. Wydajność: 12-14 m²/l. Do ścian w pomieszczeniach o dużym natężeniu ruchu. Odporna na plamy. 256 kolorów w systemie mieszania.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 168,
+    "name": "Gres porcelanowy WOOD 20x120cm",
+    "description": "Gres imitujący drewno. Wymiary: 200x1200x10mm. Klasa ścieralności PEI IV. Antypoślizgowość R10. Nasiąkliwość <0,3%. Rektyfikowany. Wzory: dąb, orzech, jesion. Naturalny wygląd drewna + trwałość gresu. Do wnętrz i tarasów. Pakiet 1,44m² (6 płyt).",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 169,
+    "name": "Klej do płyt G-K SIGA PRO",
+    "description": "Klej hybrydowy do płyt gipsowo-kartonowych. Worek 20kg. Do klejenia płyt G-K na ścianach. Nakładanie plackami lub pasmami. Grubość warstwy 5-30mm. Wytrzymałość na ściskanie 10 MPa. Czas przydatności 2-3h. Ekologiczny, bez rozpuszczalników.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 170,
+    "name": "Bloczki betonowe komórkowe ACC 600",
+    "description": "Bloczki z betonu komórkowego autoklawizowanego. Wymiary: 240x240x590mm. Klasa 600 (lambda λ=0,14 W/(m·K)). Wytrzymałość 4 MPa. System P+W. Do ścian zewnętrznych i wewnętrznych. Precyzyjne wymiary ±1mm. Paleta 80 szt. Pakiet folii ochronnej.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 171,
+    "name": "Cement biały dekoracyjny CEM I 42,5R",
+    "description": "Cement portlandzki biały. Worek 25kg. Wytrzymałość 42,5 MPa. Szybkie wiązanie. Do betonu architektonicznego, kamienia sztucznego, zapraw fugowych, posadzek dekoracyjnych. Jasny kolor umożliwia barwienie. Wysoka czystość. Niska zawartość alkaliów.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 172,
+    "name": "Styropian fundamentowy EPS 100 PERIMETR",
+    "description": "Styropian do izolacji fundamentów. Lambda λ=0,036 W/(m·K). Wytrzymałość CS(10)100 kPa. Grubość 5-20cm. Kolor niebieski. Płyty 50x100cm. Odporny na wilgoć gruntową, naciski gruntu. Do izolacji ścian fundamentowych, cokołów. Stabilny wymiarowo.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 173,
+    "name": "Profil listwy wykończeniowej PCV białej",
+    "description": "Listwa wykończeniowa PVC do płytek. Wysokość 8mm, 10mm, 12mm. Długość 2,5m. Kolor biały, chrom, złoty, czarny. Do wykańczania krawędzi płytek na ścianach, stopniach, cokołach. Łatwy montaż w kleju płytkowym. Estetyczne wykończenie. Pakiet 10 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 174,
+    "name": "Rynna miedziana półokrągła 125mm",
+    "description": "Rynna dachowa z blachy miedzianej. Średnica 125mm, długość 2m lub 3m. Grubość blachy 0,6mm. System kompletny z łącznikami, hakami. Naturalna patyna z czasem. Trwałość 100+ lat. Do budynków prestiżowych. Możliwość patynowania fabrycznie.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 175,
+    "name": "Farba hybrydowa SMART szybkoschnąca",
+    "description": "Farba hybrydowa akrylowo-mineralna. Opakowanie 5L, 10L. Wysoka kryjąca moc, zmywalna. Schnięcie 30 min - możliwość 2 warstw w 1 dzień. Matowa. Paroprzepuszczalna. Bez zapachu. Wydajność 10-12 m²/l. Paleta 2000 kolorów. Do ścian i sufitów.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 176,
+    "name": "Masa naprawcza epoksydowa 2-składnikowa",
+    "description": "Masa epoksydowa do napraw konstrukcyjnych. Opakowanie 1kg (A+B). Wytrzymałość na ściskanie 80 MPa. Do wypełniania ubytków w betonie, kamieniu. Możliwość szlifowania, wiercenia. Odporność na chemikalia, wodę. Czas pracy 40 min. Kolor szary.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 177,
+    "name": "Pustak ceramiczny 12cm DZIAŁÓWKA MAX",
+    "description": "Bloczek ceramiczny na ścianki działowe. Wymiary: 120x238x238mm. Lambda λ=0,45 W/(m·K). Klasa wytrzymałości 10 MPa. System P+W. Do ścian działowych nieobciążonych. Dobra izolacja akustyczna 42 dB. Szybki montaż na cienką spoinę. Paleta 96 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 178,
+    "name": "Deska elewacyjna FIBERON kompozyt PREMIUM",
+    "description": "Deska elewacyjna kompozytowa wysokiej jakości. Wymiary: 22x140mm, długość do 6m. 90% drewna + 10% polimeru. Tekstura drewna 3D. Kolory naturalne: mahoń, tek, orzech. Nie wymaga konserwacji. Odporna na UV, wilgoć. Gwarancja 25 lat. Montaż ukryty.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 179,
+    "name": "Wełna mineralna ELEWACJA LAMELLA 120mm",
+    "description": "Płyty lamelowe z wełny skalnej. Lambda λ=0,035 W/(m·K). Grubość 120mm. Gęstość 150 kg/m³. Wymiary 120x20cm. Ułożenie włókien prostopadłe - zwiększona wytrzymałość. Klasa reakcji na ogień A1. Do systemów ETICS. Wytrzymałość na odrywanie >80 kPa.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 180,
+    "name": "Tynk silikonowo-silikatowy MOSAIC struktura",
+    "description": "Tynk elewacyjny hybrydowy z wypełniaczem mozaikowym. Ziarno 2-3mm mix kolorów. Wiadro 25kg. Gotowy do użycia. Wysoka odporność na zabrudzenia i uszkodzenia mechaniczne. Do cokołów, słupów, elementów narażonych. Hydrofobowy, paroprzepuszczy. 20 kompozycji kolorystycznych.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 181,
+    "name": "Zaprawa klejowa FLEX S2 do dużych formatów",
+    "description": "Zaprawa klejowa wysokoelastyczna. Klasa C2TE S2. Worek 25kg. Do płytek dużych formatów >60x60cm. Grubość warstwy 3-15mm. Odkształcalność >5mm. Do prac wewnętrznych i zewnętrznych. Nadaje się na podłogi grzewcze, tarasy. Zużycie 2-5 kg/m².",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 182,
+    "name": "Beton samozagęszczalny SCC C30/37",
+    "description": "Beton samozagęszczalny klasy C30/37. Konsystencja SF2. Nie wymaga wibrowania. Maksymalna średnica kruszywa 16mm. Do elementów gęsto zbrojonych, cienkich elementów, trudno dostępnych miejsc. Wytrzymałość charakterystyczna 37 MPa. Dostawa betonomieszarką.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 183,
+    "name": "Bloczki silikatowe 18cm BIAŁY",
+    "description": "Pustak silikatowy biały. Wymiary: 180x220x240mm. Klasa M15 (15 MPa). Lambda λ=0,90 W/(m·K). Do ścian wewnętrznych nośnych i działowych. Biały kolor - możliwość pozostawienia bez tynku. Akumulacja ciepła. Izolacja akustyczna 50 dB. Paleta 96 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 184,
+    "name": "Membrana PVC dachowa 1,2mm szara",
+    "description": "Membrana PVC do dachów płaskich. Grubość 1,2mm. Rolka 2,05x20m (41m²). Kolor jasny szary (odbija promieniowanie). Do układania mechanicznie moczona lub klejona. Spawanie gorącym powietrzem. Odporność na UV, ozony. Trwałość 30+ lat. Gwarancja 20 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 185,
+    "name": "Farba magnetyczna podkładowa MAGNETIC",
+    "description": "Farba podkładowa magnetyczna. Opakowanie 1L. Zawiera drobiny żelaza - tworzy powierzchnię magnetyczną. Kolor ciemny szary. Do pokrycia farbą dowolnego koloru. Krycie 3-4 warstwy. Wydajność 4-5 m²/l. Do pokoi dziecięcych, biur, kuchni.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 186,
+    "name": "Silikon akwarystyczny bezpieczny",
+    "description": "Silikon neutralny octanowy bezpieczny dla ryb. Tuba 310ml. Do akwariów, terrariów, zbiorników. Neutralne utwardzanie. Nie wydziela substancji szkodliwych. Przezroczysty lub czarny. Temperatura pracy -40°C do +180°C. Pełne utwardzenie 24h.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 187,
+    "name": "Pustak keramzytowy 38cm TERMO IZOL",
+    "description": "Pustak betonowy z wypełnieniem keramzytowym. Wymiary: 380x240x240mm. Lambda λ=0,22 W/(m·K). Klasa wytrzymałości B15. System P+W. Do ścian zewnętrznych jednowarstwowych. Lekki, ciepły. Dobra akumulacja. Izolacja akustyczna 48 dB. Paleta 60 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 188,
+    "name": "Zaprawa montażowa szybka EXPRESS 10min",
+    "description": "Zaprawa szybkowiążąca. Worek 5kg. Czas wiązania 10 minut. Wytrzymałość 20 MPa po 3h. Do szybkich montaży, kotew, napraw awaryjnych. Grubość warstwy 10-50mm. Nie skurcza się. Możliwość obciążania po 2-3h. Kolor szary.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 189,
+    "name": "Płyta OSB/2 8mm podkładowa",
+    "description": "Płyta OSB klasy 2 - do użytku wewnętrznego w warunkach suchych. Grubość 8mm. Wymiary 1250x2500mm. Do podkładów pod panele, zabudów, mebli. Lekka, ekonomiczna. Klasa emisji formaldehydu E1. Nie nadaje się do pomieszczeń wilgotnych.",
+    "image": "img/products/osb.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 190,
+    "name": "Wełna mineralna UNIVERSAL 100mm",
+    "description": "Mata uniwersalna z wełny szklanej. Lambda λ=0,038 W/(m·K). Grubość 100mm. Wymiary 120x60cm. Klasa reakcji na ogień A1. Gęstość 15 kg/m³. Do izolacji ścian, poddaszy, stropów. Sprężysta, łatwa w montażu. Hydrofobizowana. Pakiet 7,2 m².",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 191,
+    "name": "Kotwa mechaniczna rozporowa M10x120",
+    "description": "Kotwa stalowa rozporowa ocynkowana. Średnica M10, długość 120mm. Do betonu klasy C20/25. Obciążenie na wyrwanie 8 kN. Do mocowania ciężkich konstrukcji, balustrad, regałów. Z nakrętką sześciokątną. Możliwość demontażu. Opakowanie 25 szt.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 192,
+    "name": "Dachówka ceramiczna HOLENDRÓWKA naturalna",
+    "description": "Dachówka ceramiczna holenderska typu S. Wymiary: 420x240mm. Masa: 2,8 kg/szt. Pokrycie: 12-13 szt/m². Kolor naturalny czerwony. Mrozoodporność F2. Nasiąkliwość <8%. Żywotność 100+ lat. Możliwość układania na łatach 31-36cm. Gwarancja 30 lat.",
+    "image": "img/products/dachowka.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 193,
+    "name": "Farba do rur i grzejników TERMOFARBA",
+    "description": "Farba akrylowa termoodporna do 100°C. Opakowanie 0,5L, 1L. Biała satynowa. Do malowania rur centralnego ogrzewania, grzejników. Wysoka przyczepność do metalu. Nie żółknie. Wydajność 12-14 m²/l. Schnięcie 4h. Możliwość barwienia.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 194,
+    "name": "Grunt epoksydowy 2-składnikowy POD ŻYWICĘ",
+    "description": "Grunt epoksydowy do posadzek żywicznych. Opakowanie 10kg (A+B). Zużycie 200-400g/m². Do gruntowania betonowych posadzek przed wykonaniem posadzki epoksydowej lub poliuretanowej. Głęboko penetruje. Wzmacnia. Bezrozpuszczalnikowy. Schnięcie 24h.",
+    "image": "img/products/farba.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 195,
+    "name": "Gres techniczny matowy 60x60cm PORCELAIN",
+    "description": "Gres porcelanowy szkliwiony. Wymiary: 600x600x9,5mm. Klasa ścieralności PEI IV. Antypoślizgowość R10. Nasiąkliwość <0,5%. Rektyfikowany. Kolory: beton jasny, beton ciemny, kamień. Matowa powierzchnia. Do wnętrz i na tarasy. Pakiet 1,44m² (4 płyty).",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 196,
+    "name": "Klej do tapet flizelinowych VLIES",
+    "description": "Klej do tapet flizelinowych. Opakowanie 200g (proszek, po rozpuszczeniu ok. 5L). Wydajność: 25-30m². Nakładany bezpośrednio na ścianę. Szybkie schnięcie. Nie plami. Do ciężkich tapet flizelinowych. Możliwość korekty pozycji tapety. Łatwe usuwanie tapet.",
+    "image": "img/products/klej.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 197,
+    "name": "Bloczek betonowy ścienny 20cm standard",
+    "description": "Pustak betonowy ścienny. Wymiary: 200x190x380mm. Klasa wytrzymałości B15. Lambda λ=0,65 W/(m·K). Do ścian działowych, ścian piwnic. Łatwy w montażu. Możliwość tynkowania, malowania. Mrozoodporny. Izolacja akustyczna 45 dB. Paleta 72 szt.",
+    "image": "img/products/cegla.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 198,
+    "name": "Cement biały murarski CEM II/B-S 32,5R",
+    "description": "Cement murarski biały. Worek 25kg. Wytrzymałość 32,5 MPa. Do zapraw murarskich jasnych, tynków dekoracyjnych, kamienia sztucznego. Zawiera dodatek żużla. Jasny kolor umożliwia barwienie pigmentami. Klasa wytrzymałości po 28 dniach.",
+    "image": "img/products/cement.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 199,
+    "name": "Styropian parking EPS 200 DROGA",
+    "description": "Styropian o najwyższej wytrzymałości. Lambda λ=0,040 W/(m·K). Wytrzymałość CS(10)200 kPa. Grubość 10-30cm. Kolor niebieski. Do parkingów, dróg, hal, posadzek przemysłowych. Obciążenie do 2000 kg/m². Stabilny pod dużym obciążeniem.",
+    "image": "img/products/welna.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 200,
+    "name": "Profil startowy PVC z siatką 12cm",
+    "description": "Profil startowy plastikowy do ETICS. Szerokość 100mm + siatka 120mm. Długość 2,5m. Z krawędzią kroplującą. Z siatką odkomarzającą. Do montażu na cokołach. Perforowany. Zabezpiecza przed gryzoniami. Kolory: biały, grafitowy, brązowy. Pakiet 20 szt.",
+    "image": "img/products/stal.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 201,
+    "name": "Kabel skrętka miedziana 0.5m",
+    "description": "Kabel idealnie nada się do użycia w lokalnych sieciach komputerowych",
+    "image": "img/products/skretka-miedziana.webp",
+    "category": "narzedzia"
+  },
+    {
+    "id": 202,
+    "name": "Młotek zwykły",
+    "description": "Młotek do codziennego użytku jak np wbijanie gwoździ",
+    "image": "img/products/mlotek.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 203,
+    "name": "Nóż tapicerski",
+    "description": "Poręczny nóż tapicerski do pracy przy materiałach i tworzywach",
+    "image": "img/products/noz-tapicerski.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 204,
+    "name": "Kask budowlany",
+    "description": "Niezawodny i trwały kask budowlany idealnie nada się do pracy przy domu, dla niedzielnych majsterkowiczów, ale także dla zawodowych pracowników budowlanych",
+    "image": "img/products/kask.webp",
+    "category": "narzedzia"
+  },
+  {
+    "id": 205,
+    "name": "Zawiasy klasyczne wahadłowe",
+    "description": "Klasyczne zawiasy wahadłowe do mocowania mniejszych konstrukcji meblowych jak szafki i skrzynki",
+    "image": "img/products/zawiasy.webp",
+    "category": "narzedzia"
+  }
+
+
 ]

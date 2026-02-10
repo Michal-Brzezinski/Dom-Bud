@@ -4,7 +4,7 @@
 
 .hero {
     position: relative;
-    background: url('../../img/sklad.jpg') center center / cover no-repeat;
+    background: url('../../img/sklad.webp') center center / cover no-repeat;
     padding: 1rem 1.5rem 2.5rem;
     text-align: center;
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM-BUD Skład Budowlany</title>
-  <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
+  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cta.css">
@@ -35,18 +35,25 @@
   <section class="features">
     <h3 class="features__title">Dlaczego warto wybrać <span class="highlight">DOM-BUD</span>?</h3>
     <div class="features__grid">
+
       <div class="features__box">
+        <img src="/img/icons/star.svg" alt="Renoma" class="features__icon">
         <h4 class="features__box-title">Renoma</h4>
         <p class="features__box-text">Ponad 25 lat na rynku budowlanym. Nasze doświadczenie doceniły tysiące klientów z całego regionu.</p>
       </div>
+
       <div class="features__box">
+        <img src="/img/icons/shopping.svg" alt="Szeroka oferta" class="features__icon">
         <h4 class="features__box-title">Szeroka oferta</h4>
         <p class="features__box-text">Materiały budowlane, wykończeniowe i akcesoria w konkurencyjnych cenach.</p>
       </div>
+
       <div class="features__box">
+        <img src="/img/icons/handshake.svg" alt="Wsparcie" class="features__icon">
         <h4 class="features__box-title">Wsparcie</h4>
         <p class="features__box-text">Doradztwo techniczne, transport i indywidualne podejście do każdego klienta.</p>
       </div>
+
     </div>
   </section>
 
@@ -57,7 +64,7 @@
       <div class="brands__track">
 
         <?php
-        $brandsDir = __DIR__ . '/../../public/img/logos';
+        $brandsDir = __DIR__ . '/../../public_html/img/logos';
         $brandsUrl = '/img/logos';
 
         $files = glob($brandsDir . '/*.{png,jpg,webp,svg}', GLOB_BRACE);

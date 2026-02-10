@@ -42,7 +42,7 @@
                 <a href="/katalog/<?= $cat['slug'] ?>" class="category-card">
 
                     <div class="category-card__left">
-                        <img src="/img/categories/<?= $cat['slug'] ?>.jpg" alt="<?= $cat['name'] ?>">
+                        <img src="/img/categories/<?= $cat['slug'] ?>.webp" alt="<?= $cat['name'] ?>" loading="lazy">
                         <h3 class="category-card__title"><?= $cat['name'] ?></h3>
                     </div>
 

@@ -10,6 +10,7 @@
 
 .about__image {
     flex: 1;
+    background-image: url('/img/dom-bud_budynek.webp');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -46,6 +47,7 @@
 .about__content p {
     color: var(--color-text2);
     margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 .about__content ul {

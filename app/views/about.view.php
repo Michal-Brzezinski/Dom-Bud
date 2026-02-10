@@ -21,7 +21,7 @@
   <!-- Sekcja O nas -->
   <section class="about">
     <!-- Lewa połowa – zdjęcie -->
-    <div class="about__image" style="background-image: url('/img/dom-bud_budynek.webp');"></div>
+    <div class="about__image" loading="lazy"></div>
 
     <!-- Prawa połowa – tekst -->
     <div class="about__content">
@@ -48,27 +48,34 @@
   <section class="features section">
     <h3 class="features__title">Nasze wartości</h3>
     <div class="features__grid">
+
       <div class="features__box">
+        <img src="/img/icons/trust.svg" alt="Zaufanie" class="features__icon">
         <h4 class="features__box-title">Zaufanie</h4>
         <p class="features__box-text">
           Budujemy długofalowe relacje z klientami, stawiając na uczciwe doradztwo,
           przejrzyste warunki i rzetelną obsługę na każdym etapie współpracy.
         </p>
       </div>
+
       <div class="features__box">
+        <img src="/img/icons/quality.svg" alt="Jakość" class="features__icon">
         <h4 class="features__box-title">Jakość</h4>
         <p class="features__box-text">
           Oferujemy wyłącznie sprawdzone materiały budowlane od renomowanych producentów,
           spełniające aktualne normy i wymagania techniczne.
         </p>
       </div>
+
       <div class="features__box">
+        <img src="/img/icons/growth.svg" alt="Rozwój" class="features__icon">
         <h4 class="features__box-title">Rozwój</h4>
         <p class="features__box-text">
           Stale inwestujemy w nowe technologie i nowoczesne rozwiązania,
           aby oferować materiały odpowiadające aktualnym trendom i potrzebom rynku budowlanego.
         </p>
       </div>
+
     </div>
   </section>
 

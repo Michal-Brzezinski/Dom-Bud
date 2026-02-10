@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - Kontakt</title>
-  <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
+  <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp" loading="lazy">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cta.css">

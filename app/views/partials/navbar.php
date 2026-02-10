@@ -2,7 +2,7 @@
   <!-- Logo + tekst jako link do strony głównej -->
   <a href="/" class="navbar__logo">
     <span class="navbar__logo-text">DOM-BUD</span>
-    <img src="/img/dom-bud_logo.png" alt="Logo Dom-Bud" class="navbar__logo-img">
+    <img src="/img/dom-bud_logo.webp" alt="Logo Dom-Bud" class="navbar__logo-img">
   </a>
 
   <!-- Hamburger -->

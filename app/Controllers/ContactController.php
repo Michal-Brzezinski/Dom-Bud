@@ -11,13 +11,13 @@ class ContactController
 
     public function __construct()
     {
-        $this->config = require __DIR__ . '/../config/config.php';
+        $this->config = require __DIR__ . '/../Config/config.php';
         $this->mailer = new Mailer($this->config);
     }
 
     public function showForm(): void
     {
-        require __DIR__ . '/../views/contact.view.php';
+        require __DIR__ . '/../Views/contact.view.php';
     }
 
     public function handle(): void

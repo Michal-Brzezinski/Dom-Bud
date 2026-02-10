@@ -15,4 +15,4 @@ function loadEnv($path)
 loadEnv(__DIR__ . '/../.env');
 
 // Ładowanie configu
-$config = require __DIR__ . '/config/config.php';
+$config = require __DIR__ . '/Config/config.php';

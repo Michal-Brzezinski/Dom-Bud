@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - O nas</title>
-  <link rel="icon" href="/img/dom-bud_logo.png" type="image/webp">
+  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
   <link rel="stylesheet" href="/css/navbar.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/cta.css">
@@ -121,7 +121,7 @@
   <!-- Stopka -->
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <button id="scrollUp" class="scroll-up">🢁</button>
+  <button id="scrollUp" class="scroll-up">▲</button>
 
   <script type="module" src="/js/navbar.js"></script>
   <script type="module" src="/js/scroll-up.js"></script>

@@ -8,7 +8,7 @@ class CatalogController
 {
     public function index(): void
     {
-        require __DIR__ . '/../views/catalog-categories.view.php';
+        require __DIR__ . '/../Views/catalog-categories.view.php';
     }
 
     public function category(string $category): void
@@ -18,7 +18,7 @@ class CatalogController
         $categoryName = $service->getCategoryName($category);
         if ($categoryName === $category) {
             http_response_code(404);
-            require __DIR__ . '/../views/404.view.php';
+            require __DIR__ . '/../Views/404.view.php';
             return;
         }
 
@@ -38,6 +38,6 @@ class CatalogController
         // paginacja
         $products = array_slice($allProducts, ($page - 1) * $perPage, $perPage);
 
-        require __DIR__ . '/../views/catalog-category.view.php';
+        require __DIR__ . '/../Views/catalog-category.view.php';
     }
 }

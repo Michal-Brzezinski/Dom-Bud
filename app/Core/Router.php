@@ -48,7 +48,7 @@ class Router
 
         // 404
         http_response_code(404);
-        require __DIR__ . '/../views/404.view.php';
+        require __DIR__ . '/../Views/404.view.php';
     }
 
     private function call(string $controller, string $action, array $params = []): void

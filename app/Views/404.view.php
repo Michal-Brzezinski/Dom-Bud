@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Strona nie została znaleziona</title>
-    <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp" loading="lazy">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/404.css">
+    <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
+    <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/404.css') ?>">
 
 </head>
 
-<body class="site">
+<body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
     <?php include __DIR__ . '/partials/navbar.php'; ?>
 
@@ -25,13 +25,12 @@
             Sprawdź adres lub wróć na stronę główną.
         </p>
 
-        <a href="/" class="error-page__button">Wróć do strony głównej</a>
+        <a href="<?= url() ?>" class="error-page__button">Wróć do strony głównej</a>
     </section>
 
     <?php include __DIR__ . '/partials/footer.php'; ?>
 
-    <script type="module" src="/js/navbar.js"></script>
-
+    <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
 
 </body>
 

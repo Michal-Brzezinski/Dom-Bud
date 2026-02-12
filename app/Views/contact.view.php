@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - Kontakt</title>
-  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp" loading="lazy">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/cta.css">
-  <link rel="stylesheet" href="/css/scroll-up.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
+  <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
 </head>
 
-<body class="site">
+<body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
   <?php include __DIR__ . '/partials/navbar.php'; ?>
 
@@ -38,7 +38,7 @@
 
         <?php endif; ?>
 
-        <form action="/kontakt/send" method="POST">
+        <form action="<?= url('kontakt/send') ?>" method="POST">
           <label for="name">Imię i nazwisko</label>
           <input type="text" id="name" name="name" required>
 
@@ -104,11 +104,13 @@
 
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <button id="scrollUp" class="scroll-up">▲</button>
+  <button id="scrollUp" class="scroll-up">
+    <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
+  </button>
 
-  <script src="/js/contact/contact-validation.js"></script>
-  <script type="module" src="/js/navbar.js"></script>
-  <script type="module" src="/js/scroll-up.js"></script>
+  <script src="<?= asset('js/contact/contact-validation.js') ?>"></script>
+  <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
+  <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 </body>
 
 </html>

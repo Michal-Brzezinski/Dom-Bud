@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM-BUD - Katalog produktów</title>
-    <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/cta.css">
-    <link rel="stylesheet" href="/css/scroll-up.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
+    <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
 </head>
 
-<body class="site">
+<body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
     <?php include __DIR__ . '/partials/navbar.php'; ?>
 
@@ -40,10 +40,10 @@
             ];
 
             foreach ($categories as $cat): ?>
-                <a href="/katalog/<?= $cat['slug'] ?>" class="category-card">
+                <a href="<?= url('katalog/' . $cat['slug']) ?>" class="category-card">
 
                     <div class="category-card__left">
-                        <img src="/img/categories/<?= $cat['slug'] ?>.webp" alt="<?= $cat['name'] ?>" loading="lazy">
+                        <img src="<?= asset('img/categories/' . $cat['slug'] . '.webp') ?>" alt="<?= $cat['name'] ?>" loading="lazy">
                         <h3 class="category-card__title"><?= $cat['name'] ?></h3>
                     </div>
 
@@ -63,10 +63,12 @@
     <?php include __DIR__ . '/partials/cta.php'; ?>
     <?php include __DIR__ . '/partials/footer.php'; ?>
 
-    <button id="scrollUp" class="scroll-up">▲</button>
+    <button id="scrollUp" class="scroll-up">
+        <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
+    </button>
 
-    <script type="module" src="/js/scroll-up.js"></script>
-    <script type="module" src="/js/navbar.js"></script>
+    <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
+    <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
 
 </body>
 

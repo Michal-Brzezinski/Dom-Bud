@@ -9,6 +9,20 @@ class Router
         'POST' => []
     ];
 
+    private string $baseUrl = '';
+
+    public function __construct()
+    {
+        // Automatyczne wykrycie bazowego URL
+        $scriptName = $_SERVER['SCRIPT_NAME'];
+        $this->baseUrl = rtrim(dirname($scriptName), '/');
+
+        // Jeśli jesteśmy w głównym katalogu, baseUrl będzie pusty
+        if ($this->baseUrl === '\\') {
+            $this->baseUrl = '';
+        }
+    }
+
     public function get(string $path, string $controller, string $action): void
     {
         $this->routes['GET'][$this->normalize($path)] = [$controller, $action];
@@ -75,7 +89,21 @@ class Router
     private function normalize(string $path): string
     {
         $path = parse_url($path, PHP_URL_PATH);
+
+        // Usuń bazowy URL z ścieżki (jeśli aplikacja jest w podkatalogu)
+        if ($this->baseUrl !== '' && strpos($path, $this->baseUrl) === 0) {
+            $path = substr($path, strlen($this->baseUrl));
+        }
+
         $path = trim($path, '/');
         return $path;
+    }
+
+    /**
+     * Zwraca bazowy URL (pomocnicze dla widoków)
+     */
+    public function getBaseUrl(): string
+    {
+        return $this->baseUrl;
     }
 }

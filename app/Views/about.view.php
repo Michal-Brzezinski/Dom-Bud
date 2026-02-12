@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - O nas</title>
-  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/cta.css">
-  <link rel="stylesheet" href="/css/scroll-up.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
+  <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
 </head>
 
-<body class="site">
+<body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
   <!-- Nawigacja -->
   <?php include __DIR__ . '/partials/navbar.php'; ?>
@@ -50,7 +50,7 @@
     <div class="features__grid">
 
       <div class="features__box">
-        <img src="/img/icons/trust.svg" alt="Zaufanie" class="features__icon">
+        <img src="<?= asset('img/icons/trust.svg') ?>" alt="Zaufanie" class="features__icon">
         <h4 class="features__box-title">Zaufanie</h4>
         <p class="features__box-text">
           Budujemy długofalowe relacje z klientami, stawiając na uczciwe doradztwo,
@@ -59,7 +59,7 @@
       </div>
 
       <div class="features__box">
-        <img src="/img/icons/quality.svg" alt="Jakość" class="features__icon">
+        <img src="<?= asset('img/icons/quality.svg') ?>" alt="Jakość" class="features__icon">
         <h4 class="features__box-title">Jakość</h4>
         <p class="features__box-text">
           Oferujemy wyłącznie sprawdzone materiały budowlane od renomowanych producentów,
@@ -68,7 +68,7 @@
       </div>
 
       <div class="features__box">
-        <img src="/img/icons/growth.svg" alt="Rozwój" class="features__icon">
+        <img src="<?= asset('img/icons/growth.svg') ?>" alt="Rozwój" class="features__icon">
         <h4 class="features__box-title">Rozwój</h4>
         <p class="features__box-text">
           Stale inwestujemy w nowe technologie i nowoczesne rozwiązania,
@@ -121,10 +121,12 @@
   <!-- Stopka -->
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <button id="scrollUp" class="scroll-up">▲</button>
+  <button id="scrollUp" class="scroll-up">
+    <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
+  </button>
 
-  <script type="module" src="/js/navbar.js"></script>
-  <script type="module" src="/js/scroll-up.js"></script>
+  <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
+  <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 
 </body>
 

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     style.textContent = keyframes;
     document.head.appendChild(style);
 
-    track.style.animation = `brandScroll 60s linear infinite`;
+    track.style.animation = `brandScroll 30s linear infinite`;
   };
 
   images.forEach(img => {

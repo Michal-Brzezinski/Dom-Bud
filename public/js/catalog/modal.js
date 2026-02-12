@@ -7,6 +7,27 @@ import { escapeHtml } from './utils.js';
 let modalElement = null;
 let imageZoomListener = null; // Przechowywanie referencji do listenera
 
+// Pomocnicza funkcja do generowania ścieżek (zgodna z PHP asset())
+function getAssetPath(path) {
+  // Pobierz bazowy URL z atrybutu data-base-url na <body> lub użyj domyślnego
+  const baseUrl = document.body.dataset.baseUrl || '';
+  const cleanPath = path.replace(/^\/+/, ''); // Usuń początkowe slashe
+  return baseUrl + (baseUrl && !baseUrl.endsWith('/') ? '/' : '') + cleanPath;
+}
+
+// Funkcja do generowania URL routingu (jak PHP url())
+function getRouteUrl(path) {
+  const baseUrl = document.body.dataset.baseUrl || '';
+  const cleanPath = path.replace(/^\/+/, '');
+  
+  // Jeśli nie ma ścieżki, zwróć baseUrl lub '/'
+  if (!cleanPath) {
+    return baseUrl || '/';
+  }
+  
+  return baseUrl + '/' + cleanPath;
+}
+
 // Tworzenie struktury modalu
 export function createModal() {
   // Sprawdź czy modal już istnieje
@@ -28,7 +49,7 @@ export function createModal() {
       <div class="modal__body">
         <h3 class="modal__title" id="modal-title"></h3>
         <p class="modal__description" id="modal-description"></p>
-        <a href="/kontakt" class="modal__button">Zapytaj o produkt</a>
+        <a href="${getRouteUrl('kontakt')}" class="modal__button">Zapytaj o produkt</a>
       </div>
     </div>
   `;
@@ -90,7 +111,6 @@ function initImageZoom() {
 }
 
 // Otwieranie modalu
-// Otwieranie modalu
 export function openModal(product) {
   if (!modalElement) {
     createModal();
@@ -108,8 +128,14 @@ export function openModal(product) {
     imageContainer.classList.remove('modal__image-container--zoomed');
   }
 
-  // Poprawiona ścieżka do obrazka - użyj tylko /img/products/
-  modalImage.src = `/${product.image}`;  // Poprawiona ścieżka
+  // POPRAWKA: Jeśli product.image już jest pełną ścieżką (z http://),
+  // użyj jej bezpośrednio. W przeciwnym razie użyj getAssetPath()
+  if (product.image.startsWith('http://') || product.image.startsWith('https://') || product.image.startsWith('/')) {
+    modalImage.src = product.image;
+  } else {
+    modalImage.src = getAssetPath(product.image);
+  }
+  
   modalImage.alt = product.name;
   modalTitle.textContent = product.name;
   modalDescription.textContent = product.description;

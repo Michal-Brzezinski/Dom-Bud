@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM-BUD Skład Budowlany</title>
-  <link rel="icon" href="/img/dom-bud_logo.webp" type="image/webp">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/cta.css">
-  <link rel="stylesheet" href="/css/scroll-up.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
+  <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
 </head>
 
-<body class="site">
+<body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
   <?php include __DIR__ . '/partials/navbar.php'; ?>
 
@@ -25,7 +25,7 @@
         Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości.
         Wspieramy klientów indywidualnych i firmy, oferując doradztwo, transport i profesjonalną obsługę.
       </p>
-      <a href="/katalog" class="hero__button">Sprawdź ofertę</a>
+      <a href="<?= url('katalog') ?>" class="hero__button">Sprawdź ofertę</a>
     </div>
   </section>
 
@@ -34,19 +34,19 @@
     <div class="features__grid">
 
       <div class="features__box">
-        <img src="/img/icons/star.svg" alt="Renoma" class="features__icon">
+        <img src="<?= asset('img/icons/star.svg') ?>" alt="Renoma" class="features__icon">
         <h4 class="features__box-title">Renoma</h4>
         <p class="features__box-text">Ponad 25 lat na rynku budowlanym. Nasze doświadczenie doceniły tysiące klientów z całego regionu.</p>
       </div>
 
       <div class="features__box">
-        <img src="/img/icons/shopping.svg" alt="Szeroka oferta" class="features__icon">
+        <img src="<?= asset('img/icons/shopping.svg') ?>" alt="Szeroka oferta" class="features__icon">
         <h4 class="features__box-title">Szeroka oferta</h4>
         <p class="features__box-text">Materiały budowlane, wykończeniowe i akcesoria w konkurencyjnych cenach.</p>
       </div>
 
       <div class="features__box">
-        <img src="/img/icons/handshake.svg" alt="Wsparcie" class="features__icon">
+        <img src="<?= asset('img/icons/handshake.svg') ?>" alt="Wsparcie" class="features__icon">
         <h4 class="features__box-title">Wsparcie</h4>
         <p class="features__box-text">Doradztwo techniczne, transport i indywidualne podejście do każdego klienta.</p>
       </div>
@@ -61,10 +61,22 @@
       <div class="brands__track">
 
         <?php
-        $brandsDir = __DIR__ . '/../../public/img/logos';
-        $brandsUrl = '/img/logos';
+        // POPRAWIONE: Użyj $_SERVER['DOCUMENT_ROOT'] aby uzyskać fizyczną ścieżkę
+        $brandsDir = $_SERVER['DOCUMENT_ROOT'] . '/img/logos';
 
-        $files = glob($brandsDir . '/*.{webp,png,jpg,jpeg,svg}', GLOB_BRACE);
+        // Sprawdź czy katalog istnieje
+        if (!is_dir($brandsDir)) {
+          // Fallback: spróbuj ścieżki względnej od widoku
+          $brandsDir = __DIR__ . '/../public_html/img/logos';
+        }
+
+        $files = @glob($brandsDir . '/*.{webp,png,jpg,jpeg,svg}', GLOB_BRACE);
+
+        // Jeśli glob nie działa lub zwraca false, użyj pustej tablicy
+        if ($files === false) {
+          $files = [];
+        }
+
         sort($files);
 
         foreach ($files as $file) {
@@ -80,7 +92,7 @@
         ?>
 
           <div class="brands__item">
-            <img src="<?= $brandsUrl . '/' . $filename ?>" alt="<?= $alt ?>" loading="lazy">
+            <img src="<?= asset('img/logos/' . $filename) ?>" alt="<?= $alt ?>" loading="lazy">
           </div>
 
         <?php } ?>
@@ -92,11 +104,14 @@
   <?php include __DIR__ . '/partials/cta.php'; ?>
   <?php include __DIR__ . '/partials/footer.php'; ?>
 
-  <button id="scrollUp" class="scroll-up">▲</button>
+  <button id="scrollUp" class="scroll-up">
+    <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
+  </button>
 
-  <script type="module" src="/js/navbar.js"></script>
-  <script src="/js/home/brands.js"></script>
-  <script type="module" src="/js/scroll-up.js"></script>
+
+  <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
+  <script src="<?= asset('js/home/brands.js') ?>"></script>
+  <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 
 </body>
 

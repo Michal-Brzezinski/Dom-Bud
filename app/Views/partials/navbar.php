@@ -1,8 +1,8 @@
 <nav class="navbar">
   <!-- Logo + tekst jako link do strony głównej -->
-  <a href="/" class="navbar__logo">
+  <a href="<?= url() ?>" class="navbar__logo">
     <span class="navbar__logo-text">DOM-BUD</span>
-    <img src="/img/dom-bud_logo.webp" alt="Logo Dom-Bud" class="navbar__logo-img">
+    <img src="<?= asset('img/dom-bud_logo.webp') ?>" alt="Logo Dom-Bud" class="navbar__logo-img">
   </a>
 
   <!-- Hamburger -->
@@ -11,10 +11,10 @@
   </button>
 
   <ul class="navbar__menu">
-    <li><a href="/" class="navbar__link">Strona główna</a></li>
-    <li><a href="/katalog" class="navbar__link">Oferta</a></li>
-    <li><a href="/o-nas" class="navbar__link">O nas</a></li>
-    <li><a href="/kontakt" class="navbar__link">Kontakt</a></li>
+    <li><a href="<?= url() ?>" class="navbar__link">Strona główna</a></li>
+    <li><a href="<?= url('katalog') ?>" class="navbar__link">Oferta</a></li>
+    <li><a href="<?= url('o-nas') ?>" class="navbar__link">O nas</a></li>
+    <li><a href="<?= url('kontakt') ?>" class="navbar__link">Kontakt</a></li>
   </ul>
 
   <div class="navbar__social">

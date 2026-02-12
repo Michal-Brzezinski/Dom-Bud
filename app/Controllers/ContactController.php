@@ -39,14 +39,17 @@ class ContactController
         }
 
         if (!empty($errors)) {
-            header("Location: /kontakt?status=error&msg=" . urlencode(implode(" ", $errors)));
+            // POPRAWKA: Użyj url() zamiast /kontakt
+            header("Location: " . url('kontakt') . "?status=error&msg=" . urlencode(implode(" ", $errors)));
             exit;
         }
 
         if ($this->mailer->sendContactMessage($name, $email, $message)) {
-            header("Location: /kontakt?status=ok");
+            // POPRAWKA: Użyj url() zamiast /kontakt
+            header("Location: " . url('kontakt') . "?status=ok");
         } else {
-            header("Location: /kontakt?status=error");
+            // POPRAWKA: Użyj url() zamiast /kontakt
+            header("Location: " . url('kontakt') . "?status=error");
         }
     }
 }

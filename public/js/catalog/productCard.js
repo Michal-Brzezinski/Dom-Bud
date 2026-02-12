@@ -5,12 +5,21 @@
 import { escapeHtml } from './utils.js';
 import { openModal } from './modal.js';
 
+// Pomocnicza funkcja do generowania ścieżek (zgodna z PHP asset())
+function getAssetPath(path) {
+  // Pobierz bazowy URL z atrybutu data-base-url na <body> lub użyj domyślnego
+  const baseUrl = document.body.dataset.baseUrl || '';
+  const cleanPath = path.replace(/^\/+/, ''); // Usuń początkowe slashe
+  return baseUrl + (baseUrl && !baseUrl.endsWith('/') ? '/' : '') + cleanPath;
+}
+
 // Tworzenie pojedynczej karty produktu
 export function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'products__card';
 
-  const imagePath = `/${product.image}`;
+  // POPRAWKA: Użyj getAssetPath() zamiast bezwzględnej ścieżki
+  const imagePath = getAssetPath(product.image);
 
   card.innerHTML = `
     <div class="products__image-wrapper">

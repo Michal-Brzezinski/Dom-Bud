@@ -1,0 +1,45 @@
+.scroll-up {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    border: none;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.scroll-up img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.scroll-up:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .scroll-up {
+        left: 1.2rem;
+        bottom: 1.2rem;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 410px) {
+    .scroll-up {
+        left: 1.2rem;
+        bottom: 1.2rem;
+        width: 40px;
+        height: 40px;
+    }
+}

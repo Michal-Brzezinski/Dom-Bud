@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /~brzezinski.michal.151408/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php [QSA,L]

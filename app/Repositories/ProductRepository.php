@@ -8,21 +8,7 @@ class ProductRepository
 
     public function __construct()
     {
-        // POPRAWKA: Użyj względnej ścieżki która zadziała w każdym środowisku
-        // Poprzednio: __DIR__ . '/../../public/data/products.json'
-        // Problem: Nazwa katalogu 'public' jest hardcoded
-
-        // Rozwiązanie 1: Względna ścieżka od app/Repositories/
-        $this->file = __DIR__ . '/../../public_html/data/products.json';
-
-        // Rozwiązanie 2 (lepsze): Użyj document root jeśli dostępny
-        // Zadziała zarówno lokalnie jak i na hostingu
-        if (isset($_SERVER['DOCUMENT_ROOT']) && !empty($_SERVER['DOCUMENT_ROOT'])) {
-            $this->file = $_SERVER['DOCUMENT_ROOT'] . '/data/products.json';
-        } else {
-            // Fallback dla CLI lub jeśli DOCUMENT_ROOT nie jest ustawiony
-            $this->file = __DIR__ . '/../../public_html/data/products.json';
-        }
+        $this->file = __DIR__ . '/../../data/products.json';
     }
 
     private function load(): array
@@ -58,27 +44,66 @@ class ProductRepository
 
     public function sort(array $products, string $mode): array
     {
-        // Użyj Collator dla prawidłowego sortowania polskich znaków
+        // 1. Próba użycia Collator (najlepsza opcja)
         if (class_exists('Collator')) {
             $collator = new \Collator('pl_PL');
 
-            usort($products, function ($a, $b) use ($mode, $collator) {
-                $result = $collator->compare($a['name'], $b['name']);
-                return $mode === 'za' ? -$result : $result;
-            });
-        } else {
-            // Fallback: użyj setlocale i strcoll
-            $currentLocale = setlocale(LC_COLLATE, 0);
-            setlocale(LC_COLLATE, 'pl_PL.UTF-8', 'pl_PL', 'polish');
+            // Sprawdź, czy Collator faktycznie używa polskiej lokalizacji
+            $validLocale = $collator->getLocale(\Locale::VALID_LOCALE);
 
+            if (str_starts_with($validLocale, 'pl')) {
+                usort($products, function ($a, $b) use ($mode, $collator) {
+                    $result = $collator->compare($a['name'], $b['name']);
+                    return $mode === 'za' ? -$result : $result;
+                });
+
+                return $products;
+            }
+        }
+
+        // 2. Próba użycia setlocale + strcoll
+        $currentLocale = setlocale(LC_COLLATE, 0);
+        $localeSet = setlocale(LC_COLLATE, 'pl_PL.UTF-8', 'pl_PL', 'polish');
+
+        if ($localeSet !== false) {
             usort($products, function ($a, $b) use ($mode) {
                 $result = strcoll($a['name'], $b['name']);
                 return $mode === 'za' ? -$result : $result;
             });
 
-            // Przywróć poprzednią lokalizację
             setlocale(LC_COLLATE, $currentLocale);
+            return $products;
         }
+
+        // 3. Fallback: własna mapa sortowania (działa wszędzie)
+        $map = [
+            'ą' => 'a',
+            'ć' => 'c',
+            'ę' => 'e',
+            'ł' => 'l',
+            'ń' => 'n',
+            'ó' => 'o',
+            'ś' => 's',
+            'ź' => 'z',
+            'ż' => 'z',
+            'Ą' => 'A',
+            'Ć' => 'C',
+            'Ę' => 'E',
+            'Ł' => 'L',
+            'Ń' => 'N',
+            'Ó' => 'O',
+            'Ś' => 'S',
+            'Ź' => 'Z',
+            'Ż' => 'Z',
+        ];
+
+        usort($products, function ($a, $b) use ($mode, $map) {
+            $an = strtr($a['name'], $map);
+            $bn = strtr($b['name'], $map);
+
+            $result = strcmp($an, $bn);
+            return $mode === 'za' ? -$result : $result;
+        });
 
         return $products;
     }

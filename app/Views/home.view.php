@@ -61,20 +61,15 @@
       <div class="brands__track">
 
         <?php
-        // POPRAWIONE: Użyj $_SERVER['DOCUMENT_ROOT'] aby uzyskać fizyczną ścieżkę
-        $brandsDir = $_SERVER['DOCUMENT_ROOT'] . '/img/logos';
+        $brandsDir = realpath(__DIR__ . '/../../img/logos');
 
-        // Sprawdź czy katalog istnieje
-        if (!is_dir($brandsDir)) {
-          // Fallback: spróbuj ścieżki względnej od widoku
-          $brandsDir = __DIR__ . '/../public_html/img/logos';
-        }
+        $files = [];
 
-        $files = @glob($brandsDir . '/*.{webp,png,jpg,jpeg,svg}', GLOB_BRACE);
-
-        // Jeśli glob nie działa lub zwraca false, użyj pustej tablicy
-        if ($files === false) {
-          $files = [];
+        if ($brandsDir && is_dir($brandsDir)) {
+          $files = glob($brandsDir . '/*.{webp,png,jpg,jpeg,svg}', GLOB_BRACE);
+          if ($files === false) {
+            $files = [];
+          }
         }
 
         sort($files);
@@ -107,7 +102,6 @@
   <button id="scrollUp" class="scroll-up">
     <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
   </button>
-
 
   <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
   <script src="<?= asset('js/home/brands.js') ?>"></script>

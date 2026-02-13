@@ -1,0 +1,240 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    ;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    text-decoration: none;
+}
+
+.navbar__logo-img {
+    height: 3rem;
+    width: auto;
+}
+
+.navbar__logo-text {
+    font-size: 2.5rem;
+    /* większy tekst */
+    margin-top: 1.2rem;
+    font-weight: 1000;
+    color: var(--color-accent);
+    font-family: "Adumu", sans-serif;
+    -webkit-text-stroke: 0.4px #545454;
+}
+
+/* Menu desktop */
+.navbar__menu {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    /* większe odstępy */
+}
+
+.navbar__link {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1.25rem;
+    /* większy tekst */
+    font-weight: 500;
+}
+
+/* Usunięcie niebieskiego podświetlenia */
+.navbar__link:focus,
+.navbar__logo:focus,
+.social-link:focus,
+.navbar__toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hover */
+.navbar__link:hover {
+    color: var(--color-accent);
+}
+
+/* Social icons desktop */
+.navbar__social {
+    display: flex;
+    gap: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+.icon {
+    width: 2.3rem;
+    height: 2.3rem;
+    fill: var(--color-text);
+    transition: var(--transition);
+}
+
+.social-link:hover .icon {
+    fill: var(--color-accent);
+}
+
+/* Hamburger toggle */
+.navbar__toggle {
+    display: none;
+    font-size: 1.8rem;
+    /* większy */
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 0.5rem 1rem 0.5rem 1.5rem;
+    }
+
+    .navbar__logo-img {
+        height: 2rem;
+        width: auto;
+    }
+
+    .navbar__logo-text {
+        font-size: 1.85rem;
+        margin-top: 0.6rem;
+        /* większy tekst */
+        font-weight: 700;
+        color: var(--color-accent);
+    }
+
+    .icon {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-text);
+        transition: var(--transition);
+    }
+
+    .navbar__link {
+        color: var(--color-text);
+        text-decoration: none;
+        transition: var(--transition);
+        font-size: 1.1rem;
+        /* większy tekst */
+        font-weight: 500;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 810px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 0.8rem;
+    }
+
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        position: static;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        gap: 0;
+    }
+
+    .navbar__menu li {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.8rem 0;
+    }
+
+    .navbar__menu a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 1.35rem;
+        /* większy tekst mobilny */
+    }
+
+    .navbar__menu li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .navbar__menu.active {
+        display: flex;
+        margin-top: 1rem;
+    }
+
+    .navbar__social {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    .navbar__social.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar__menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar__menu a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 1.15rem;
+        /* większy tekst mobilny */
+    }
+}
+
+
+/* Bardzo małe smartfony (do 280px) */
+@media (max-width: 280px) {
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar__logo-img {
+        height: 1.8rem;
+        width: auto;
+    }
+
+    .navbar__logo-text {
+        font-size: 1.5rem;
+        /* większy tekst */
+        font-weight: 700;
+        color: var(--color-accent);
+    }
+}

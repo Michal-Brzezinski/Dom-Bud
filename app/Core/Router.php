@@ -90,14 +90,22 @@ class Router
     {
         $path = parse_url($path, PHP_URL_PATH);
 
-        // Usuń bazowy URL z ścieżki (jeśli aplikacja jest w podkatalogu)
+        // Usuń baseUrl
         if ($this->baseUrl !== '' && strpos($path, $this->baseUrl) === 0) {
             $path = substr($path, strlen($this->baseUrl));
         }
 
-        $path = trim($path, '/');
-        return $path;
+        // Usuń index.php
+        if (strpos($path, '/index.php') === 0) {
+            $path = substr($path, strlen('/index.php'));
+        }
+        if (strpos($path, 'index.php') === 0) {
+            $path = substr($path, strlen('index.php'));
+        }
+
+        return trim($path, '/');
     }
+
 
     /**
      * Zwraca bazowy URL (pomocnicze dla widoków)

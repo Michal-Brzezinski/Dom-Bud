@@ -76,7 +76,129 @@
     color: var(--color-accent);
 }
 
-/* History Section */
+/* ==========================================
+   APPROACH SECTION
+   ========================================== */
+
+.approach {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.approach__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+/* Kolumnowy układ paneli */
+.approach__column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Pojedynczy panel */
+.approach__box {
+    background: var(--color-bg2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 2rem 6rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.approach__box:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.approach__box-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.approach__box p {
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+/* Subpanele w ostatnim boxie */
+.approach__subpanels {
+    display: flex;
+    flex-wrap: wrap;
+    /* ← kluczowe */
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.approach__subpanel {
+    flex: 1 1 220px;
+    /* ← minimalna szerokość + responsywność */
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 1rem 1.2rem;
+    border-radius: var(--border-radius);
+    color: var(--color-text2);
+    line-height: 1.6;
+    text-align: center;
+    font-size: 1.1rem;
+
+    display: flex;
+    /* ← centrowanie tekstu */
+    align-items: center;
+    /* ← pionowe */
+    justify-content: center;
+    /* ← poziome */
+
+    min-height: 80px;
+    /* ← równa wysokość */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: var(--transition);
+}
+
+.approach__subpanel:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .approach__box {
+        padding: 1.5rem 2rem;
+    }
+
+    .approach__subpanels {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .approach__subpanel {
+        width: 100%;
+        flex: none;
+    }
+}
+
+@media (max-width: 610px) {
+    .approach__subpanel {
+        padding: auto;
+    }
+}
+
+/* ==========================================
+   HISTORY SECTION
+   ========================================== */
 .list {
     padding: 2rem 1.5rem;
     max-width: var(--max-width);

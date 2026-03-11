@@ -22,7 +22,7 @@
       <h2 class="hero__title">DOM-BUD</h2>
       <h3 class="hero__subtitle">Twój zaufany skład budowlany</h3>
       <p class="hero__text">
-        Od ponad 20 lat dostarczamy materiały budowlane najwyższej jakości.
+        Od ponad 25 lat dostarczamy materiały budowlane najwyższej jakości.
         Wspieramy klientów indywidualnych i firmy, oferując doradztwo, transport i profesjonalną obsługę.
       </p>
       <a href="<?= url('katalog') ?>" class="hero__button">Sprawdź ofertę</a>

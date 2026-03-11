@@ -23,12 +23,17 @@
 }
 
 .features__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
 }
 
 .features__box {
+    flex: 1 1 260px;
+    /* minimalna szerokość + responsywność */
+    max-width: 350px;
+    /* opcjonalnie, żeby nie były zbyt szerokie */
     background: var(--color-bg2);
     padding: 2rem;
     border-radius: var(--border-radius);

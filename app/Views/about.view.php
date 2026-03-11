@@ -81,6 +81,66 @@
     </div>
   </section>
 
+  <!-- Nasze podejście do klientów -->
+  <section class="approach section">
+    <h3 class="approach__title">Nasze podejście do klientów</h3>
+
+    <div class="approach__column">
+
+      <!-- Panel 1 -->
+      <div class="approach__box">
+        <h4 class="approach__box-title">Wsparcie na każdym etapie</h4>
+        <p>
+          W DOM-BUD nie ograniczamy się wyłącznie do sprzedaży materiałów.
+          Naszym celem jest realne wsparcie klientów w realizacji ich projektów.
+          Oferujemy fachowe doradztwo, pomoc w doborze systemów budowlanych
+          oraz przygotowujemy wyceny dopasowane do zakresu prac.
+        </p>
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="approach__box">
+        <h4 class="approach__box-title">Doświadczenie i znajomość rynku</h4>
+        <p>
+          Dzięki wieloletniemu doświadczeniu doskonale rozumiemy potrzeby lokalnego rynku
+          oraz specyfikę inwestycji realizowanych w naszym regionie i na terenie całej Małopolski.
+          Pomagamy zoptymalizować koszty budowy, uniknąć błędów wykonawczych
+          i dobrać rozwiązania adekwatne do budżetu oraz oczekiwań inwestora.
+        </p>
+      </div>
+
+      <!-- Panel 3 z subpanelami -->
+      <div class="approach__box">
+        <h4 class="approach__box-title">Szerokie zaplecze i logistyka</h4>
+        <p>
+          Współpracujemy z innymi składami oraz prowadzimy sklep Chem‑Bud z trzema oddziałami
+          w Nowym Sączu, działający od ponad 25 lat. Dzięki temu zapewniamy:
+        </p>
+
+        <div class="approach__subpanels">
+
+          <div class="approach__subpanel">
+            większą dostępność materiałów i szybkie uzupełnianie braków
+          </div>
+
+          <div class="approach__subpanel">
+            konkurencyjne ceny i markowych producentów
+          </div>
+
+          <div class="approach__subpanel">
+            sprawną logistykę i szybkie dostawy
+          </div>
+
+          <div class="approach__subpanel">
+            realizację zamówień niestandardowych i specjalistycznych
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Historia firmy -->
   <section class="list section">
     <h3 class="list__title">Działamy razem dla lepszych rozwiązań!</h3>

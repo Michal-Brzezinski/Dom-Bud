@@ -27,19 +27,21 @@
     <div class="about__content">
       <h2 class="about__title">Kim jesteśmy?</h2>
       <p>
-        Skład materiałów budowlanych DOM-BUD działa lokalnie w Tymbarku od ponad 13 lat,
-        będąc stałym punktem zaopatrzenia dla mieszkańców oraz wykonawców z regionu.
-        Posiadamy ponad 25 lat doświadczenia w branży budowlanej, dostarczając materiały na terenie Małopolski.
+        DOM-BUD to lokalny skład materiałów budowlanych w Tymbarku, który od ponad 13 lat
+        stanowi stały punkt zaopatrzenia dla mieszkańców regionu oraz firm wykonawczych realizujących
+        inwestycje w powiecie limanowskim i okolicach. Nasze doświadczenie w branży budowlanej sięga ponad 25 lat, co pozwala nam skutecznie wspierać zarówno klientów indywidualnych, jak i profesjonalne ekipy budowlane na każdym etapie inwestycji.
       </p>
       <p>
-        Od początku działalności stawiamy na rzetelność, uczciwe podejście
-        do klienta oraz fachowe doradztwo oparte na wieloletnim doświadczeniu.
-        Naszą misją jest dostarczanie materiałów budowlanych najwyższej jakości w przystępnych
-        cenach, pochodzących od sprawdzonych i renomowanych producentów.
+        Od początku działalności stawiamy na rzetelność, uczciwe podejście do klienta
+        oraz specjalistyczne doradztwo oparte na wieloletnim doświadczeniu.
+        Dzięki temu nasi klienci mają pewność sprawnej obsługi, dostępności materiałów
+        oraz fachowego wsparcia przy podejmowaniu decyzji zakupowych. Naszą misją jest dostarczanie materiałów budowlanych najwyższej jakości w przystępnych cenach.
       </p>
       <p>
-        Obsługujemy klientów indywidualnych, lokalnych wykonawców oraz firmy budowlane i usługowe,
-        wspierając zarówno drobne remonty, jak i większe inwestycje – od etapu planowania po realizację.
+        Specjalizujemy się w kompleksowym zaopatrzeniu budów – od materiałów konstrukcyjnych,
+        przez chemię budowlaną, systemy dociepleń, pokrycia dachowe, aż po materiały
+        wykończeniowe i akcesoria budowlane. Oferujemy produkty renomowanych producentów,
+        stawiając na jakość, trwałość oraz sprawdzone rozwiązania technologiczne.
       </p>
     </div>
   </section>

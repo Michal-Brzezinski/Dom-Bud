@@ -115,6 +115,16 @@
     <p class="list__intro">
       To nasze <span class="highlight">3D</span>, które pozwala patrzeć szerzej, działać skuteczniej i budować trwałe relacje.
     </p>
+
+    <p class="about__cta">
+      Zapraszamy do współpracy wszystkich, którzy cenią <strong>solidność</strong>,
+      <strong>terminowość</strong> i <strong>profesjonalne podejście</strong> do realizacji inwestycji.
+      Niezależnie od tego, czy planujesz budowę domu, modernizację obiektu
+      czy drobny remont – w DOM-BUD znajdziesz nie tylko materiały, ale także pełne
+      wsparcie i doświadczenie potrzebne do sprawnej realizacji Twojego projektu.
+    </p>
+
+
   </section>
 
   <!-- CTA -->

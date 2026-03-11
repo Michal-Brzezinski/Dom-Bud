@@ -1,0 +1,38 @@
+{
+  "winter": {
+    "label": "Godziny otwarcia (sezon zimowy)",
+    "note": "Podane godziny obowiązują w sezonie zimowym (do końca marca)",
+    "days": {
+      "monday_friday": {
+        "label": "Pon - Pt",
+        "hours": "7:00 - 16:00"
+      },
+      "saturday": {
+        "label": "Soboty",
+        "hours": "7:00 - 12:00"
+      },
+      "sunday": {
+        "label": "Niedziele",
+        "hours": "Nieczynne"
+      }
+    }
+  },
+  "summer": {
+    "label": "Godziny otwarcia (sezon letni)",
+    "note": "Podane godziny obowiązują w sezonie letnim (od kwietnia do września)",
+    "days": {
+      "monday_friday": {
+        "label": "Pon - Pt",
+        "hours": "7:00 - 18:00"
+      },
+      "saturday": {
+        "label": "Soboty",
+        "hours": "7:00 - 14:00"
+      },
+      "sunday": {
+        "label": "Niedziele",
+        "hours": "Nieczynne"
+      }
+    }
+  }
+}

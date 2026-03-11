@@ -86,13 +86,12 @@
 
         <hr class="contact__separator">
 
-        <h3>Godziny otwarcia</h3>
-        <p><span class="contact__label">Pon - Pt: </span><span class="contact__hours__label"> 7:00 - 16:00 </span></p>
-        <p><span class="contact__label">Soboty: </span><span class="contact__hours__label"> 7:00 - 12:00 </span></p>
-        <p><span class="contact__label">Niedziele: </span><span class="contact__hours__label"> Nieczynne </span></p>
-        <p>Podane godziny obowiązują w sezonie zimowym (do końca marca)</p>
+        <h3 id="hours-title"></h3>
+        <div id="opening-hours"></div>
+        <p id="hours-note"></p>
 
         <hr class="contact__separator">
+
 
         <h3>Dane firmowe</h3>
         <p><strong>Nazwa pełna:</strong> Firma Handlowo Usługowa Dom-Bud Piotr Tokarczyk, Krzysztof Tokarczyk Spółka Cywilna</p>
@@ -117,6 +116,7 @@
   </button>
 
   <script src="<?= asset('js/contact/contact-validation.js') ?>"></script>
+  <script src="<?= asset('js/contact/opening-hours.js') ?>"></script>
   <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
   <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 </body>

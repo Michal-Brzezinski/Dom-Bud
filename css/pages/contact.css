@@ -114,14 +114,21 @@
     width: 1.4rem;
     height: 1.4rem;
     margin-right: 0.5rem;
-    color: var(--color-accent);
+    color: var(--color-accent-light);
     flex-shrink: 0;
 }
 
 .contact__label {
     font-size: clamp(1rem, 3vw, 1.35rem);
-    font-weight: 600;
-    color: var(--color-accent);
+    font-weight: 500;
+    color: var(--color-accent-light);
+    margin-right: 0.5rem;
+}
+
+.contact__hours__label {
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-weight: 500;
+    color: var(--color-text);
     margin-right: 0.5rem;
 }
 

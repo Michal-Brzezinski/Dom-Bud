@@ -44,3 +44,11 @@
     margin: 0 auto 2rem;
     line-height: 1.7;
 }
+
+@media (max-width: 810px) {
+
+    .hero__title {
+        margin-top: 2rem;
+    }
+
+}

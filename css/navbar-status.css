@@ -1,0 +1,147 @@
+:root {
+    --glass-bg: rgba(18, 18, 18, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --accent-green: #4cd964;
+    --accent-red: #ff4d4d;
+}
+
+/* 1. GŁÓWNY KONTENER STATUSU */
+.navbar-statusbar {
+    position: absolute;
+    /* Zmienna zależna od pozycjonowania .navbar */
+    left: 0;
+    width: auto;
+    /* Poniższa linia sprawia, że status bar styka się z dolną krawędzią navbaru, 
+       jeśli navbar-statusbar jest umieszczony wewnątrz lub bezpośrednio pod .navbar */
+    top: 100%;
+    z-index: 80;
+    pointer-events: none;
+}
+
+/* Jeśli Twój .navbar ma pozycję sticky/fixed, odkomentuj poniższe: */
+/*
+.navbar { position: sticky; top: 0; z-index: 100; }
+.navbar-statusbar { position: absolute; } 
+*/
+
+/* 2. ZAKŁADKA (TAB) */
+.navbar-statusbar__tab {
+    pointer-events: auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    /* Brak górnej ramki i zaokrąglenia, by "zlać" się z navbarem */
+    border: 1px solid var(--glass-border);
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 15px 0;
+    /* Zaokrąglony tylko dolny prawy róg */
+
+    padding: 0.5rem 1.2rem;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efekt "połączenia" - subtelny cień u góry eliminujemy */
+.navbar-statusbar__tab::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--glass-bg);
+    /* Maskowanie ewentualnej szpary */
+}
+
+.status-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Kropka statusu */
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.navbar__status--open .status-dot {
+    background: var(--accent-green);
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+.navbar__status--closed .status-dot {
+    background: var(--accent-red);
+}
+
+/* Dropdown */
+.status-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.navbar-statusbar__tab.is-active .status-dropdown {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-dropdown ul {
+    padding: 0rem;
+}
+
+.status-dropdown li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    padding: 4px 0;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    gap: 20px;
+}
+
+.status-chevron {
+    width: 14px;
+    fill: #fff;
+    transition: transform 0.3s;
+}
+
+.navbar-statusbar__tab.is-active .status-chevron {
+    transform: rotate(180deg);
+}
+
+/* Dodatek do Twojego CSS */
+#store-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+}
+
+/* Elegancki separator w tekście */
+.status-sep {
+    opacity: 0.3;
+    font-weight: 300;
+    margin: 0 2px;
+}
+
+.navbar-statusbar__tab {
+    /* Upewniamy się, że tab nie jest za szeroki na starcie, 
+       ale mieści nowy, dłuższy tekst */
+    min-width: 220px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

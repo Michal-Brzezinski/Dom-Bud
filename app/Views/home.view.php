@@ -7,6 +7,7 @@
   <title>DOM-BUD Skład Budowlany</title>
   <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
   <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/navbar-status.css') ?>">
   <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
   <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
   <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
@@ -103,7 +104,7 @@
     <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
   </button>
 
-  <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
+  <script src="<?= asset('js/navbar.js') ?>"></script>
   <script src="<?= asset('js/home/brands.js') ?>"></script>
   <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 

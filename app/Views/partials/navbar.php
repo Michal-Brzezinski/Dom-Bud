@@ -1,4 +1,5 @@
 <nav class="navbar">
+
   <!-- Logo + tekst jako link do strony głównej -->
   <a href="<?= url() ?>" class="navbar__logo">
     <span class="navbar__logo-text">DOM-BUD</span>
@@ -47,4 +48,20 @@
     </a>
 
   </div>
+
+  <div class="navbar-statusbar">
+    <div class="navbar-statusbar__tab" id="status-trigger">
+      <div class="status-content">
+        <span class="status-dot"></span>
+        <span id="store-status">Sprawdzanie...</span>
+        <svg class="status-chevron" viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5z" />
+        </svg>
+      </div>
+      <div class="status-dropdown">
+        <ul id="hours-list"></ul>
+      </div>
+    </div>
+  </div>
+
 </nav>

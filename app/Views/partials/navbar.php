@@ -20,6 +20,16 @@
 
   <div class="navbar__social">
 
+    <!-- Nr telefonu -- ALE PSUJE W HAMBURGERZE USTAWIENIE IKON + NIE MA SENSU NA MAŁYCH EKRANACH>
+    <!-- <a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="contact__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.72 2.88a2 2 0 01-.45 1.86l-1.27 1.27a16.017 16.017 0 006.586 6.586l1.27-1.27a2 2 0 011.86-.45l2.88.72A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+      <p>+48 668 979 045</p>
+    </a> -->
+
+
     <!-- Google Maps (pinezka) -->
     <a href="https://www.google.com/maps/place/Dom-Bud+sk%C5%82ad+materia%C5%82%C3%B3w+budowlanych/@49.7351024,20.3116723,15.75z/data=!4m6!3m5!1s0x47161bd0bf41def9:0xed2ca2c8825aca5c!8m2!3d49.7353607!4d20.3169649!16s%2Fg%2F11y0ylwgzp?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoASAFQAw%3D%3D"
       target="_blank" class="social-link" aria-label="Lokalizacja Dom-Bud">
@@ -30,7 +40,7 @@
     </a>
 
     <!-- Facebook -->
-    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+    <a href="https://www.facebook.com/people/Dom-Bud-Materia%C5%82y-Budowlane-Tymbark/61587714012828/" target="_blank" class="social-link" aria-label="Facebook">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
         <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 
         3.657 9.128 8.438 9.878v-6.988H7.898v-2.89h2.54V9.797c0-2.507 
@@ -41,7 +51,7 @@
     </a>
 
     <!-- Instagram -->
-    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+    <a href="https://www.instagram.com/dom_bud_tymbark?igsh=bGMxajM5enNnN3Vr" target="_blank" class="social-link" aria-label="Instagram">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
         <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-2a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
       </svg>

@@ -84,6 +84,20 @@
     transition: var(--transition);
 }
 
+.contact__icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 0.5rem;
+    color: var(--color-accent-light);
+    flex-shrink: 0;
+}
+
+.navbar__social a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .social-link:hover .icon {
     fill: var(--color-accent);
 }
@@ -97,6 +111,14 @@
     border: none;
     color: var(--color-text);
     cursor: pointer;
+}
+
+@media (max-width: 1220px) {
+
+    .contact__icon,
+    .navbar__social a p {
+        display: none;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -144,6 +166,7 @@
 
     .navbar__toggle {
         display: block;
+        z-index: 90;
     }
 
     .navbar__menu {

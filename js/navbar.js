@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const statusTrigger = document.getElementById("status-trigger");
+  // Hamburger menu
+  const toggle = document.querySelector('.navbar__toggle');
+  const menu = document.querySelector('.navbar__menu');
+  const social = document.querySelector('.navbar__social');
+
+  toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      social.classList.toggle('active');
+  });  
+  
+  const statusTrigger = document.getElementById("status-trigger");
     const statusText = document.getElementById("store-status");
     const hoursList = document.getElementById("hours-list");
 

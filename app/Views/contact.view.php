@@ -117,7 +117,8 @@
 
   <script src="<?= asset('js/contact/contact-validation.js') ?>"></script>
   <script src="<?= asset('js/contact/opening-hours.js') ?>"></script>
-  <script type="module" src="<?= asset('js/navbar.js') ?>"></script>
+  <script src="<?= asset('js/navbar.js') ?>"></script>
+  <link rel="stylesheet" href="<?= asset('css/navbar-status.css') ?>">
   <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 </body>
 

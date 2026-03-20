@@ -37,14 +37,18 @@
                 <?php foreach ($products as $product): ?>
                     <div class="products__card">
                         <div class="products__image-wrapper">
-                            <img src="<?= asset($product['image']) ?>"
-                                alt="<?= htmlspecialchars($product['name']) ?>"
+                            <?php
+                            $mainImage = $product->getMainImage();
+                            $path = $mainImage ? $mainImage->path : 'img/placeholder.webp';
+                            ?>
+                            <img src="<?= asset($path) ?>"
+                                alt="<?= htmlspecialchars($product->name) ?>"
                                 class="products__image"
                                 loading="lazy">
                         </div>
                         <div class="products__content">
-                            <h3 class="products__title"><?= htmlspecialchars($product['name']) ?></h3>
-                            <p class="products__description"><?= htmlspecialchars($product['description']) ?></p>
+                            <h3 class="products__title"><?= htmlspecialchars($product->name) ?></h3>
+                            <p class="products__description"><?= htmlspecialchars($product->description) ?></p>
                             <span class="products__more">Kliknij, aby zobaczyć więcej →</span>
                         </div>
                     </div>

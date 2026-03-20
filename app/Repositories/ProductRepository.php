@@ -2,115 +2,63 @@
 
 namespace App\Repositories;
 
+use PDO;
+use App\Models\Product;
+use App\Models\ProductImage;
+
 class ProductRepository
 {
-    private string $file;
+    private PDO $pdo;
 
-    public function __construct()
+    public function __construct(PDO $pdo)
     {
-        $this->file = __DIR__ . '/../../data/products.json';
+        $this->pdo = $pdo;
     }
 
-    private function load(): array
+    public function getProductsByCategory(string $category, string $query, string $sort): array
     {
-        if (!file_exists($this->file)) {
-            // Dodaj informacyjny błąd jeśli plik nie istnieje
-            trigger_error("Plik products.json nie został znaleziony: {$this->file}", E_USER_WARNING);
+        // 1. Pobierz produkty
+        $sql = 'SELECT * FROM products WHERE category = :category';
+        $params = [':category' => $category];
+
+        if ($query !== '') {
+            $sql .= ' AND LOWER(name) LIKE :q';
+            $params[':q'] = '%' . strtolower($query) . '%';
+        }
+
+        $sql .= $sort === 'za' ? ' ORDER BY name DESC' : ' ORDER BY name ASC';
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+
+        $rows = $stmt->fetchAll();
+
+        if (!$rows) {
             return [];
         }
 
-        return json_decode(file_get_contents($this->file), true) ?? [];
-    }
-
-    public function getByCategory(string $category): array
-    {
-        return array_values(array_filter(
-            $this->load(),
-            fn($p) => $p['category'] === $category
-        ));
-    }
-
-    public function search(array $products, string $query): array
-    {
-        if ($query === '') return $products;
-
-        $q = mb_strtolower($query);
-
-        return array_values(array_filter(
-            $products,
-            fn($p) => str_contains(mb_strtolower($p['name']), $q)
-        ));
-    }
-
-    public function sort(array $products, string $mode): array
-    {
-        // 1. Próba użycia Collator (najlepsza opcja)
-        if (class_exists('Collator')) {
-            $collator = new \Collator('pl_PL');
-
-            // Sprawdź, czy Collator faktycznie używa polskiej lokalizacji
-            $validLocale = $collator->getLocale(\Locale::VALID_LOCALE);
-
-            if (str_starts_with($validLocale, 'pl')) {
-                usort($products, function ($a, $b) use ($mode, $collator) {
-                    $result = $collator->compare($a['name'], $b['name']);
-                    return $mode === 'za' ? -$result : $result;
-                });
-
-                return $products;
-            }
+        // Zamień na modele
+        $products = [];
+        foreach ($rows as $row) {
+            $products[$row['id']] = new Product($row);
         }
 
-        // 2. Próba użycia setlocale + strcoll
-        $currentLocale = setlocale(LC_COLLATE, 0);
-        $localeSet = setlocale(LC_COLLATE, 'pl_PL.UTF-8', 'pl_PL', 'polish');
+        // 2. Pobierz zdjęcia
+        $ids = array_keys($products);
+        $in = implode(',', array_fill(0, count($ids), '?'));
 
-        if ($localeSet !== false) {
-            usort($products, function ($a, $b) use ($mode) {
-                $result = strcoll($a['name'], $b['name']);
-                return $mode === 'za' ? -$result : $result;
-            });
+        $stmt = $this->pdo->prepare(
+            "SELECT * FROM product_images WHERE product_id IN ($in) ORDER BY is_main DESC, sort_order ASC"
+        );
+        $stmt->execute($ids);
 
-            setlocale(LC_COLLATE, $currentLocale);
-            return $products;
+        $images = $stmt->fetchAll();
+
+        foreach ($images as $imgRow) {
+            $image = new ProductImage($imgRow);
+            $products[$imgRow['product_id']]->addImage($image);
         }
 
-        // 3. Fallback: własna mapa sortowania (działa wszędzie)
-        $map = [
-            'ą' => 'a',
-            'ć' => 'c',
-            'ę' => 'e',
-            'ł' => 'l',
-            'ń' => 'n',
-            'ó' => 'o',
-            'ś' => 's',
-            'ź' => 'z',
-            'ż' => 'z',
-            'Ą' => 'A',
-            'Ć' => 'C',
-            'Ę' => 'E',
-            'Ł' => 'L',
-            'Ń' => 'N',
-            'Ó' => 'O',
-            'Ś' => 'S',
-            'Ź' => 'Z',
-            'Ż' => 'Z',
-        ];
-
-        usort($products, function ($a, $b) use ($mode, $map) {
-            $an = strtr($a['name'], $map);
-            $bn = strtr($b['name'], $map);
-
-            $result = strcmp($an, $bn);
-            return $mode === 'za' ? -$result : $result;
-        });
-
-        return $products;
-    }
-
-    public function paginate(array $products, int $page, int $perPage): array
-    {
-        $offset = ($page - 1) * $perPage;
-        return array_slice($products, $offset, $perPage);
+        return array_values($products);
     }
 }

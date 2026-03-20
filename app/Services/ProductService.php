@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\ProductRepository;
+use App\Core\Database;
 
 class ProductService
 {
@@ -10,8 +11,11 @@ class ProductService
 
     public function __construct()
     {
-        $this->repo = new ProductRepository();
+        $config = require __DIR__ . '/../Config/config.php';
+        $pdo = Database::getConnection($config['db']);
+        $this->repo = new ProductRepository($pdo);
     }
+
 
     public function getCategoryName(string $slug): string
     {
@@ -33,10 +37,6 @@ class ProductService
 
     public function getFilteredProducts(string $category, string $q, string $sort): array
     {
-        $products = $this->repo->getByCategory($category);
-        $products = $this->repo->search($products, $q);
-        $products = $this->repo->sort($products, $sort);
-
-        return $products;
+        return $this->repo->getProductsByCategory($category, $q, $sort);
     }
 }

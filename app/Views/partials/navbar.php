@@ -51,7 +51,7 @@
     </a>
 
     <!-- Instagram -->
-    <a href="https://www.instagram.com/dom_bud_tymbark?igsh=bGMxajM5enNnN3Vr" target="_blank" class="social-link" aria-label="Instagram">
+    <a href="https://www.instagram.com/p/DQSWnZsjOR5/" target="_blank" class="social-link" aria-label="Instagram">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
         <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.5-2a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
       </svg>

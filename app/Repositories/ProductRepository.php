@@ -15,11 +15,10 @@ class ProductRepository
         $this->pdo = $pdo;
     }
 
-    public function getProductsByCategory(string $category, string $query, string $sort): array
+    public function getProductsByCategoryId(int $categoryId, string $query, string $sort): array
     {
-        // 1. Pobierz produkty
-        $sql = 'SELECT * FROM products WHERE category = :category';
-        $params = [':category' => $category];
+        $sql = 'SELECT * FROM products WHERE category_id = :id';
+        $params = [':id' => $categoryId];
 
         if ($query !== '') {
             $sql .= ' AND LOWER(name) LIKE :q';
@@ -37,14 +36,16 @@ class ProductRepository
             return [];
         }
 
-        // Zamień na modele
         $products = [];
         foreach ($rows as $row) {
             $products[$row['id']] = new Product($row);
         }
 
-        // 2. Pobierz zdjęcia
         $ids = array_keys($products);
+        if (empty($ids)) {
+            return [];
+        }
+
         $in = implode(',', array_fill(0, count($ids), '?'));
 
         $stmt = $this->pdo->prepare(

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($categoryName) ?> - DOM-BUD</title>
+    <title><?= htmlspecialchars($category->name) ?> - DOM-BUD</title>
     <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
     <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/navbar-status.css') ?>">
@@ -16,14 +16,19 @@
     <link rel="stylesheet" href="<?= asset('css/catalog/products.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/components/modal.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/components/pagination.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/components/breadcrumb.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
     <?php include __DIR__ . '/partials/navbar.php'; ?>
 
+    <?php if (isset($breadcrumb)): ?>
+        <?php include __DIR__ . '/partials/breadcrumb.php'; ?>
+    <?php endif; ?>
+
     <section class="catalog-header">
-        <h2 class="catalog-header__title"><?= htmlspecialchars($categoryName) ?></h2>
+        <h2 class="catalog-header__title"><?= htmlspecialchars($category->name) ?></h2>
         <p class="catalog-header__text">Wybierz produkt, aby zobaczyć szczegóły.</p>
     </section>
 

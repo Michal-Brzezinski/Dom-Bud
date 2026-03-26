@@ -6,7 +6,7 @@ class Product
 {
     public int $id;
     public string $name;
-    public string $category;
+    public ?int $category_id;
     public float $price;
     public ?string $description;
     public array $properties;
@@ -17,7 +17,7 @@ class Product
     {
         $this->id = (int)$data['id'];
         $this->name = $data['name'];
-        $this->category = $data['category'];
+        $this->category_id = isset($data['category_id']) ? (int)$data['category_id'] : null;
         $this->price = (float)$data['price'];
         $this->description = $data['description'] ?? null;
         $this->properties = json_decode($data['properties'] ?? '[]', true) ?? [];

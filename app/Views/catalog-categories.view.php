@@ -12,45 +12,46 @@
     <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/components/breadcrumb.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
 
     <?php include __DIR__ . '/partials/navbar.php'; ?>
 
+    <?php if (isset($breadcrumb)): ?>
+        <?php include __DIR__ . '/partials/breadcrumb.php'; ?>
+    <?php endif; ?>
+
     <section class="catalog-header">
-        <h2 class="catalog-header__title">Katalog produktów</h2>
-        <p class="catalog-header__text">Wybierz kategorię produktów.</p>
+        <h2 class="catalog-header__title">
+            <?= $category ? htmlspecialchars($category->name) : 'Katalog produktów' ?>
+        </h2>
+
+        <p class="catalog-header__text">
+            <?= $category ? 'Wybierz kategorię produktów.' : 'Wybierz kategorię produktów.' ?>
+        </p>
     </section>
 
     <section class="products">
         <div class="categories__grid">
 
-            <?php
-            $categories = [
-                ['slug' => 'chemia-budowlana', 'name' => 'Chemia budowlana', 'desc' => 'Kleje, piany montażowe, silikony, grunty i inne produkty chemii budowlanej.'],
-                ['slug' => 'instalacje-elektryczne', 'name' => 'Instalacje elektryczne', 'desc' => 'Przewody, osprzęt elektryczny, zabezpieczenia i akcesoria instalacyjne.'],
-                ['slug' => 'instalacje-wodno-kanalizacyjne-i-wentylacyjne', 'name' => 'Instalacje wodno-kanalizacyjne i wentylacyjne', 'desc' => 'Rury, kształtki, złączki, kanały, kratki i inne elementy instalacj wodno-kanalizacyjnej i wentylacyjnej'],
-                ['slug' => 'malowanie-i-wykonczenie', 'name' => 'Malowanie i wykończenie', 'desc' => 'Farby, pędzle, wałki, taśmy malarskie oraz akcesoria do prac wykończeniowych.'],
-                ['slug' => 'materialy-konstrukcyjne', 'name' => 'Materiały konstrukcyjne', 'desc' => 'Bloczki, pustaki, cegły oraz inne ciężkie materiały budowlane.'],
-                ['slug' => 'narzedzia', 'name' => 'Narzędzia', 'desc' => 'Narzędzia ręczne i akcesoria niezbędne przy pracach budowlanych i remontowych.'],
-                ['slug' => 'odziez-i-srodki-bhp', 'name' => 'Odzież i środki BHP', 'desc' => 'Odzież robocza, rękawice, kaski oraz środki ochrony osobistej na budowie.'],
-                ['slug' => 'pokrycia-dachowe', 'name' => 'Pokrycia dachowe', 'desc' => 'Dachówki oraz akcesoria dachowe do kompleksowego wykonania dachu.'],
-                ['slug' => 'systemy-docieplen', 'name' => 'Systemy dociepleń', 'desc' => 'Kompletne systemy ociepleń budynków: styropian, wełna, kleje, siatki, tynki i akcesoria.'],
-                ['slug' => 'systemy-mocowan', 'name' => 'Systemy mocowań', 'desc' => 'Kołki, wkręty, śruby, kotwy oraz elementy montażowe do różnych zastosowań.'],
-            ];
-
-            foreach ($categories as $cat): ?>
-                <a href="<?= url('katalog/' . $cat['slug']) ?>" class="category-card">
+            <?php foreach ($categories as $cat): ?>
+                <a href="<?= url('katalog/' . $cat->slug) ?>" class="category-card">
 
                     <div class="category-card__left">
-                        <img src="<?= asset('img/categories/' . $cat['slug'] . '.webp') ?>" alt="<?= $cat['name'] ?>" loading="lazy">
-                        <h3 class="category-card__title"><?= $cat['name'] ?></h3>
+                        <img src="<?= asset($cat->image_path) ?>"
+                            alt="<?= htmlspecialchars($cat->name) ?>"
+                            loading="lazy">
+                        <h3 class="category-card__title">
+                            <?= htmlspecialchars($cat->name) ?>
+                        </h3>
                     </div>
 
                     <div class="category-card__right">
-                        <p class="category-card__description" title="<?= $cat['desc'] ?>">
-                            <?= $cat['desc'] ?>
+                        <p class="category-card__description"
+                            title="<?= htmlspecialchars($cat->description) ?>">
+                            <?= htmlspecialchars($cat->description) ?>
                         </p>
                         <span class="category-card__link">Przejdź do kategorii →</span>
                     </div>

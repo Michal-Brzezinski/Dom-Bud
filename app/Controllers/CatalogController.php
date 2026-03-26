@@ -3,41 +3,56 @@
 namespace App\Controllers;
 
 use App\Services\ProductService;
+use App\Services\CategoryService;
 
 class CatalogController
 {
     public function index(): void
     {
+        $categoryService = new CategoryService();
+        $categories = $categoryService->getRootCategories();
+
+        $category = null;
+
         require __DIR__ . '/../Views/catalog-categories.view.php';
     }
 
-    public function category(string $category): void
+    public function category(string $slug): void
     {
-        $service = new ProductService();
+        $categoryService = new CategoryService();
+        $productService  = new ProductService();
 
-        $categoryName = $service->getCategoryName($category);
-        if ($categoryName === $category) {
+        $category = $categoryService->findBySlug($slug);
+
+        if (!$category) {
             http_response_code(404);
             require __DIR__ . '/../Views/404.view.php';
             return;
         }
 
-        // parametry GET
+        $children   = $categoryService->getChildren($category->id);
+        $breadcrumb = $categoryService->getBreadcrumb($category->id);
+
+        if (!empty($children)) {
+            $categories = $children;
+            require __DIR__ . '/../Views/catalog-categories.view.php';
+            return;
+        }
+
         $page = max(1, (int)($_GET['page'] ?? 1));
         $sort = $_GET['sort'] ?? 'az';
         $q    = trim($_GET['q'] ?? '');
 
         $perPage = 20;
 
-        // pobierz przefiltrowane produkty
-        $allProducts = $service->getFilteredProducts($category, $q, $sort);
+        $allProducts = $productService->getFilteredProductsByCategoryId($category->id, $q, $sort);
 
         $total = count($allProducts);
         $totalPages = max(1, (int)ceil($total / $perPage));
 
-        // paginacja
         $products = array_slice($allProducts, ($page - 1) * $perPage, $perPage);
 
+        // przekaż do widoku: $category, $breadcrumb, $products, $page, $totalPages, $sort, $q
         require __DIR__ . '/../Views/catalog-category.view.php';
     }
 }

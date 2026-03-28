@@ -2,9 +2,14 @@
 <link rel="stylesheet" href="<?= asset('css/base/fonts.css') ?>">
 <link rel="stylesheet" href="<?= asset('css/base/base.css') ?>">
 <link rel="stylesheet" href="<?= asset('css/admin/admin.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/admin/buttons.css') ?>">
 
 <h1>Dodaj kategorię</h1>
+
+<?php if (isset($_GET['error'])): ?>
+    <div style="color: red; padding: 10px; border: 1px solid red; margin-bottom: 15px;">
+        <?= htmlspecialchars($_GET['error']) ?>
+    </div>
+<?php endif; ?>
 
 <p><a href="/admin/categories">← Wróć do listy</a></p>
 
@@ -14,6 +19,14 @@
         <label>Nazwa:</label>
         <input type="text" name="name" required>
     </div>
+
+    <label>Kategoria nadrzędna:</label>
+    <select name="parent_id">
+        <option value="">Brak (kategoria główna)</option>
+        <?php foreach ($categories as $c): ?>
+            <option value="<?= e($c->id) ?>"><?= e($c->name) ?></option>
+        <?php endforeach; ?>
+    </select>
 
     <div class="form-group">
         <label>Slug (opcjonalnie, wygeneruje się z nazwy):</label>
@@ -26,9 +39,10 @@
     </div>
 
     <div class="form-group">
-        <label>Ścieżka obrazu:</label>
-        <input type="text" name="image_path" placeholder="np. img/categories/chemia-budowlana.webp">
+        <?php include __DIR__ . '/../../partials/image-upload.php'; ?>
     </div>
 
-    <button class="btn" type="submit">Zapisz</button>
+    <button class="btn" type="submit">Zapisz jako opublikowaną</button>
 </form>
+
+<script src="<?= asset('js/admin/category-upload.js') ?>"></script>

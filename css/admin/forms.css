@@ -1,0 +1,48 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-card {
+    background: var(--color-bg2);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    margin-top: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    background: #0f0f0f;
+    color: var(--color-text);
+    transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}

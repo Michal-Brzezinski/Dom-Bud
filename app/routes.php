@@ -20,4 +20,6 @@ $router->get('admin/categories/create', 'Admin\CategoryAdminController', 'create
 $router->post('admin/categories/store', 'Admin\CategoryAdminController', 'store');
 $router->get('admin/categories/edit', 'Admin\CategoryAdminController', 'edit');
 $router->post('admin/categories/update', 'Admin\CategoryAdminController', 'update');
+$router->post('admin/categories/upload-image', 'Admin\CategoryAdminController', 'uploadImage');
 $router->post('admin/categories/delete', 'Admin\CategoryAdminController', 'delete');
+$router->post('admin/categories/publish', 'Admin\CategoryAdminController', 'publish');

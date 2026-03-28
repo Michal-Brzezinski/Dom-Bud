@@ -1,0 +1,9 @@
+a {
+    color: var(--color-accent-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+}

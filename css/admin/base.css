@@ -1,0 +1,12 @@
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 2rem;
+}
+
+.admin-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}

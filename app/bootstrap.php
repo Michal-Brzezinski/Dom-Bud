@@ -20,6 +20,12 @@ $config = require __DIR__ . '/Config/config.php';
 // Ładowanie helperów
 require __DIR__ . '/helpers.php';
 
+// ======================================
+// Ścieżka do katalogu głównego aplikacji 
+// ======================================
+define('ROOT_PATH', dirname(__DIR__));
+
+
 // Wykrycie bazowego URL aplikacji
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
 $baseUrl = rtrim(dirname($scriptName), '/');

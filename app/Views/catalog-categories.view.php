@@ -40,7 +40,7 @@
                 <a href="<?= url('katalog/' . $cat->slug) ?>" class="category-card">
 
                     <div class="category-card__left">
-                        <img src="<?= asset($cat->image_path) ?>"
+                        <img src="<?= asset($cat->getImage()) ?>"
                             alt="<?= htmlspecialchars($cat->name) ?>"
                             loading="lazy">
                         <h3 class="category-card__title">

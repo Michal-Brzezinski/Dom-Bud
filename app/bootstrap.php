@@ -17,6 +17,9 @@ loadEnv(__DIR__ . '/../.env');
 // Ładowanie configu
 $config = require __DIR__ . '/Config/config.php';
 
+// Ładowanie helperów
+require __DIR__ . '/helpers.php';
+
 // Wykrycie bazowego URL aplikacji
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
 $baseUrl = rtrim(dirname($scriptName), '/');

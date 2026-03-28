@@ -13,7 +13,7 @@ class Admin
     {
         $this->id = (int)$data['id'];
         $this->email = $data['email'];
-        $this->password = $data['password'];
+        $this->password = $data['hashed_password'];
         $this->created_at = $data['created_at'];
     }
 }

@@ -1,0 +1,28 @@
+.btn,
+.btn-danger {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn {
+    background: var(--color-accent);
+    color: #000;
+}
+
+.btn:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-text);
+}
+
+.btn-danger {
+    background: var(--color-error);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #ff1a1a;
+}

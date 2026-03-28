@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use App\Services\AuthService;
 
@@ -26,7 +26,7 @@ class AuthController
 
         $error = $_GET['error'] ?? null;
 
-        require __DIR__ . '/../Views/admin/login.view.php';
+        require __DIR__ . '/../../Views/admin/login.view.php';
     }
 
     /**

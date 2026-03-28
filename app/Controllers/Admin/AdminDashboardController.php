@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use App\Services\AuthService;
 
@@ -17,6 +17,6 @@ class AdminDashboardController
     {
         $this->auth->requireLogin();
 
-        require __DIR__ . '/../Views/admin/dashboard.view.php';
+        require __DIR__ . '/../../Views/admin/dashboard.view.php';
     }
 }

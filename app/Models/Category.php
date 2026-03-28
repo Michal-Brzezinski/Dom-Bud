@@ -20,4 +20,9 @@ class Category
         $this->description = $data['description'] ?? null;
         $this->image_path = $data['image_path'] ?? null;
     }
+
+    public function getImage()
+    {
+        return $this->image_path ?: 'img/placeholder.webp';
+    }
 }

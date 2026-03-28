@@ -1,0 +1,5 @@
+Cool, działa. Dziękuję. Teraz skupmy się na rozbudowie admin panelu tak, aby były tam możliwości operacji CRUD na produktach i kategoriach (trzeba będzie zmienić korzystanie kategorii z obrazów z uploads). Dodatkowo w momencie wprowadzania zmian na panelu admina, powinno być jakoś zabezpieczone aby klient oglądał ostatnie dane, podczas gdy admin je zmienia, to powinny się zaktualizować dopiero po zatiwerdzeniu zmian przez Admina (może nie trzeba wyłączać strony z użytku).
+Powinno generować odpowiedni path w uploadsach
+Po usunięciu kategorii pojawia się komunikat czy na pewno chce usunąć, bo wtedy także usunie wszystkie produkty wewnątrz
+
+Powinny się wysuwać propozycje z listy rozwijanej do jakiej kategorii chemy aby należał produkt i opcja przeciągania zdjęcia do okna

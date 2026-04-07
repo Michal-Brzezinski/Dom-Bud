@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Logowanie — Panel Admina</title>
     <link rel="stylesheet" href="<?= asset('css/admin/login.css') ?>">
+    <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
 </head>
 
 <body>

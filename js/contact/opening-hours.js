@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("/data/opening-hours.json")
         .then(response => response.json())
         .then(data => {
-            const hours = data.winter; // możesz zmienić na dynamiczne sezony
+            const hours = data.summer; // w razie zmiany sezonu, wystarczy tu zmienić na summer/winter
 
             document.getElementById("hours-title").textContent = hours.label;
             document.getElementById("hours-note").textContent = hours.note;

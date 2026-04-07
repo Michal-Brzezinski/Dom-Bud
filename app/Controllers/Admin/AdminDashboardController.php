@@ -17,6 +17,6 @@ class AdminDashboardController
     {
         $this->auth->requireLogin();
 
-        require __DIR__ . '/../../Views/admin/dashboard.view.php';
+        require ROOT_PATH . '/app/Views/admin/dashboard.view.php';
     }
 }

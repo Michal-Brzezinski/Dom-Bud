@@ -3,11 +3,17 @@
 namespace App\Services;
 
 use App\Repositories\CategoryRepository;
+use App\Repositories\ProductRepository;
+use App\Repositories\ProductImageRepository;
+use App\Services\ProductAdminService;
 
 class CategoryAdminService
 {
     // Używamy Dependency Injection zamiast tworzyć połączenie wewnątrz
-    public function __construct(private CategoryRepository $repo) {}
+    public function __construct(
+        private CategoryRepository $repo,
+        private ?ProductAdminService $productService = null
+    ) {}
 
     public function all()
     {
@@ -39,33 +45,39 @@ class CategoryAdminService
         return $this->repo->create($data);
     }
 
+    // ============ helpers ============
+
     private function wouldCreateCycle(int $categoryId, ?int $newParentId): bool
     {
-        if ($newParentId === null) {
-            return false;
-        }
-
-        if ($newParentId === $categoryId) {
-            return true;
-        }
-
-        $current = $newParentId;
-
-        while ($current !== null) {
-            if ($current === $categoryId) {
+        while ($newParentId !== null) {
+            if ($newParentId === $categoryId) {
                 return true;
             }
 
-            $parent = $this->repo->find($current);
-            if (!$parent) {
-                break;
-            }
-
-            $current = $parent->parent_id;
+            $parent = $this->repo->find($newParentId);
+            $newParentId = $parent?->parent_id;
         }
 
         return false;
     }
+
+    private function deleteCategoryImages($category): void
+    {
+        if (!$category) return;
+
+        if ($category->image_path) {
+            $path = ROOT_PATH . '/' . ltrim($category->image_path, '/');
+            if (is_file($path)) unlink($path);
+        }
+
+        if ($category->draft_image_path && $category->draft_image_path !== $category->image_path) {
+            $draftPath = ROOT_PATH . '/' . ltrim($category->draft_image_path, '/');
+            if (is_file($draftPath)) unlink($draftPath);
+        }
+    }
+
+    // =========================
+
 
     public function update(int $id, array $data)
     {
@@ -76,7 +88,7 @@ class CategoryAdminService
 
         $newParent = $data['parent_id'] === '' ? null : (int)$data['parent_id'];
         if ($this->wouldCreateCycle($id, $newParent)) {
-            throw new \Exception("Nie można ustawić kategorii jako rodzica własnego potomka.");
+            throw new \Exception("Nie można ustawić kategorii podrzędnej jako swojej kategorii nadrzędnej.");
         }
 
         $slug = empty($data['slug']) ? $this->generateSlug($data['name']) : $data['slug'];
@@ -136,6 +148,32 @@ class CategoryAdminService
         return $this->repo->delete($id);
     }
 
+    public function deleteRecursive(int $id): void
+    {
+        $category = $this->repo->find($id);
+        if (!$category) return;
+
+        // 1. Rekurencyjnie usuń podkategorie
+        $children = $this->repo->findChildren($category->id);
+        foreach ($children as $child) {
+            $this->deleteRecursive($child->id);
+        }
+
+        // 2. Usuń produkty z tej kategorii
+        if ($this->productService) {
+            $products = $this->productService->getByCategory($category->id);
+            foreach ($products as $product) {
+                $this->productService->delete($product->id);
+            }
+        }
+
+        // 3. Usuń obrazki kategorii
+        $this->deleteCategoryImages($category);
+
+        // 4. Usuń kategorię
+        $this->repo->delete($category->id);
+    }
+
     // Prosty helper do generowania sluga
     private function generateSlug(string $text): string
     {
@@ -145,5 +183,82 @@ class CategoryAdminService
         $text = trim($text, '-');
         $text = preg_replace('~-+~', '-', $text);
         return strtolower($text);
+    }
+
+    public function uploadCategoryImage(array $file, string $slug, ?string $currentPath = null): string
+    {
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            throw new \Exception('Błąd przesyłania pliku');
+        }
+
+        // Sprawdzenie obrazu i pobranie MIME
+        $info = @getimagesize($file['tmp_name']);
+        if (!$info) {
+            throw new \Exception('Plik nie jest obrazem lub format nieobsługiwany');
+        }
+        $mimeType = $info['mime'];
+
+        // Dozwolone typy
+        $allowedMimes = ['image/jpeg', 'image/png', 'image/webp'];
+        if (!in_array($mimeType, $allowedMimes)) {
+            throw new \Exception('Nieprawidłowy format pliku');
+        }
+
+        // Limit rozmiaru (2MB)
+        if ($file['size'] > 2 * 1024 * 1024) {
+            throw new \Exception('Plik jest za duży (max 2MB)');
+        }
+
+        // Usuwanie starego pliku
+        if ($currentPath) {
+            $old = ROOT_PATH . '/' . ltrim($currentPath, '/');
+            // zabezpieczenie przed path traversal
+            if (strpos(realpath($old), realpath(ROOT_PATH . '/uploads/categories')) === 0 && is_file($old)) {
+                @unlink($old);
+            }
+        }
+
+        // Bezpieczny slug
+        $safeSlug = preg_replace('/[^a-z0-9-]/', '-', strtolower($slug));
+        $safeSlug = trim($safeSlug, '-') ?: 'kategoria';
+
+        $year = date('Y');
+        $month = date('m');
+
+        $dir = ROOT_PATH . "/uploads/categories/$year/$month/";
+        if (!is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
+
+        // Rozszerzenie
+        $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+        if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+            // dopasowanie do MIME, jeśli rozszerzenie nietypowe
+            switch ($mimeType) {
+                case 'image/jpeg':
+                    $ext = 'jpg';
+                    break;
+                case 'image/png':
+                    $ext = 'png';
+                    break;
+                case 'image/webp':
+                    $ext = 'webp';
+                    break;
+                default:
+                    $ext = 'jpg';
+            }
+        }
+
+        // Generowanie unikalnej nazwy
+        $hash = substr(md5(uniqid('', true)), 0, 8);
+        $filename = "{$safeSlug}_{$hash}.{$ext}";
+
+        $path = $dir . $filename;
+
+        if (!move_uploaded_file($file['tmp_name'], $path)) {
+            throw new \Exception('Błąd zapisu pliku');
+        }
+
+        return "uploads/categories/$year/$month/$filename";
     }
 }

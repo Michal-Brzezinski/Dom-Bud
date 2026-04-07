@@ -1,8 +1,14 @@
+/* BASE (globalne rzeczy NAJPIERW) */
+@import url('../base/variables.css');
+@import url('../base/fonts.css');
+@import url('../base/base.css');
+
+/* ADMIN CORE */
 @import url('base.css');
-@import url('buttons.css');
 @import url('typography.css');
 @import url('links.css');
-@import url('table.css');
+@import url('buttons.css');
 @import url('forms.css');
+@import url('table.css');
 @import url('image-upload.css');
 @import url('utilities.css');

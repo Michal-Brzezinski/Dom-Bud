@@ -45,10 +45,29 @@ class Router
             return;
         }
 
+        // Najpierw bardziej szczegółowe (z mniejszą liczbą parametrów)
+        uksort($this->routes[$method], function ($a, $b) {
+            return substr_count($a, '{') <=> substr_count($b, '{');
+        });
+
         // 2. Obsługa tras dynamicznych typu katalog/{category}
         foreach ($this->routes[$method] as $route => $handler) {
             if (strpos($route, '{') !== false) {
-                $regex = preg_replace('#\{[^/]+\}#', '([^/]+)', $route);
+
+                $regex = preg_replace_callback(
+                    '#\{([^}:]+)(?::([^}]+))?\}#',
+                    function ($matches) {
+                        // jeśli jest regex np. {slug:[a-z0-9-]+}
+                        if (isset($matches[2])) {
+                            return '(' . $matches[2] . ')';
+                        }
+
+                        // zwykły parametr {slug}
+                        return '([^/]+)';
+                    },
+                    $route
+                );
+
                 $regex = "#^" . $regex . "$#";
 
                 if (preg_match($regex, $path, $matches)) {

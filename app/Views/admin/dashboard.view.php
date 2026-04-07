@@ -1,8 +1,6 @@
-<link rel="stylesheet" href="<?= asset('css/base/variables.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/base/fonts.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/base/base.css') ?>">
 <link rel="stylesheet" href="<?= asset('css/admin/admin.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/admin/buttons.css') ?>">
+<title>Panel administratora</title>
+<link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
 
 <div class="admin-wrapper">
     <div class="admin-card">

@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="<?= asset('css/base/variables.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/base/fonts.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/base/base.css') ?>">
+<link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
+<title>Dodaj kategorię</title>
 <link rel="stylesheet" href="<?= asset('css/admin/admin.css') ?>">
 
 <h1>Dodaj kategorię</h1>

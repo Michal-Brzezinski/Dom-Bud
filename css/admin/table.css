@@ -5,11 +5,13 @@
     border: 1px solid var(--color-border);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     margin-top: 2rem;
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 700px;
 }
 
 thead {
@@ -28,37 +30,32 @@ td {
     padding: 1rem;
     border-bottom: 1px solid var(--color-border);
     color: var(--color-text2);
+    vertical-align: middle !important; /* nadpisuje utilities.css */
 }
 
 tr:hover td {
     background: #1a1a1a;
 }
 
-/* TABLE ACTIONS */
-
-td.actions {
+td .actions-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-}
-
-td.actions form {
+    gap: 0.75rem;
     margin: 0;
 }
 
-td.actions .btn,
-td.actions .btn-danger {
-    white-space: nowrap;
+td .actions-wrapper form {
+    margin: 0;
+    padding: 0;
 }
 
-/* RESPONSIVE TABLE */
-
-.table-card {
-    overflow-x: auto;
+td .actions-wrapper .btn,
+td .actions-wrapper .btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;    /* jednakowa minimalna szerokość */
+    padding: 0.5rem 1rem;
+    line-height: 1;
+    box-sizing: border-box;
 }
-
-table {
-    min-width: 700px;
-}
-
-

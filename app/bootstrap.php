@@ -55,3 +55,5 @@ function asset(string $path): string
 {
     return url($path);
 }
+
+session_start();

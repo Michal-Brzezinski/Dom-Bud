@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("/data/opening-hours.json")
         .then(res => res.json())
         .then(data => {
-            const hours = data.winter.days;
+            const hours = data.summer.days; // w razie zmiany sezonu, wystarczy tu zmienić na summer/winter
             
             // Renderowanie listy wewnątrz dropdowna
             const daysMap = [

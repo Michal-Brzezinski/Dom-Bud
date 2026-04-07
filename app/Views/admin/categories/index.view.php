@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="<?= asset('css/base/variables.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/base/fonts.css') ?>">
-<link rel="stylesheet" href="<?= asset('css/base/base.css') ?>">
+<link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
+<title>Kategorie</title>
 <link rel="stylesheet" href="<?= asset('css/admin/admin.css') ?>">
 
 <div class="admin-container">
@@ -20,7 +19,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>Zdjęcie</th>
                     <th>Nazwa</th>
                     <th>Slug</th>
                     <th>Status</th>
@@ -30,7 +29,11 @@
             <tbody>
                 <?php foreach ($categories as $cat): ?>
                     <tr>
-                        <td><?= e($cat->id) ?></td>
+                        <td>
+                            <?php if ($cat->image_path): ?>
+                                <img src="/<?= e($cat->image_path) ?>" style="width:60px; height:auto;">
+                            <?php endif; ?>
+                        </td>
                         <td><?= e($cat->name) ?></td>
                         <td><?= e($cat->slug) ?></td>
                         <td>
@@ -40,14 +43,33 @@
                                 <span style="color: green;">Opublikowana</span>
                             <?php endif; ?>
                         </td>
-                        <td class="actions">
-                            <a class="btn" href="/admin/categories/edit?id=<?= $cat->id ?>">Edytuj</a>
+                        <td>
+                            <div class="actions-wrapper">
+                                <a class="btn" href="/admin/categories/<?= e($cat->slug) ?>/edit">Edytuj</a>
 
-                            <form class="inline" method="post" action="/admin/categories/delete"
-                                onsubmit="return confirm('Usunąć kategorię i wszystkie produkty?');">
-                                <input type="hidden" name="id" value="<?= $cat->id ?>">
-                                <button class="btn-danger" type="submit">Usuń</button>
-                            </form>
+                                <?php
+                                $hasChildren = false;
+                                foreach ($categories as $c2) {
+                                    if ($c2->parent_id === $cat->id) {
+                                        $hasChildren = true;
+                                        break;
+                                    }
+                                }
+                                ?>
+
+                                <?php if (!$hasChildren): ?>
+                                    <a class="btn" href="/admin/categories/<?= e($cat->slug) ?>/products">
+                                        Produkty
+                                    </a>
+                                <?php endif; ?>
+
+
+                                <form class="inline" method="post" action="/admin/categories/delete"
+                                    onsubmit="return confirm('Usunąć kategorię i wszystkie produkty?');">
+                                    <input type="hidden" name="id" value="<?= $cat->id ?>">
+                                    <button class="btn-danger" type="submit">Usuń</button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>

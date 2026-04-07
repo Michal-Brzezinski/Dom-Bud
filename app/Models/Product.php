@@ -9,7 +9,10 @@ class Product
     public ?int $category_id;
     public float $price;
     public ?string $description;
+    public string $category_slug;
     public array $properties;
+    public string $slug;
+    public ?string $main_image_path = null;
     /** @var ProductImage[] */
     public array $images = [];
 
@@ -20,6 +23,9 @@ class Product
         $this->category_id = isset($data['category_id']) ? (int)$data['category_id'] : null;
         $this->price = (float)$data['price'];
         $this->description = $data['description'] ?? null;
+        $this->category_slug = $data['category_slug'] ?? '';
+        $this->main_image_path = $data['main_image_path'] ?? null;
+        $this->slug = $data['slug'] ?? null;
         $this->properties = json_decode($data['properties'] ?? '[]', true) ?? [];
     }
 

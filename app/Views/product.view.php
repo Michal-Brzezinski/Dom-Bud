@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="<?= asset('css/common/_import.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/catalog/_import.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/product/product.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/catalog/product/product.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">

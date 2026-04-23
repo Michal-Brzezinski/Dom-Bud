@@ -49,6 +49,10 @@
 
           <button type="submit" class="contact__button cta__button">Wyślij</button>
         </form>
+
+        <section class="map section">
+          <iframe id="contact-map" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
       </div>
 
       <!-- DANE KONTAKTOWE -->
@@ -98,10 +102,6 @@
         <p><strong>NIP:</strong> 734 366 15 26</p>
         <p><strong>REGON:</strong> 542775632</p>
       </div>
-  </section>
-
-  <section class="map section">
-    <iframe id="contact-map" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
   <?php include __DIR__ . '/partials/footer.php'; ?>

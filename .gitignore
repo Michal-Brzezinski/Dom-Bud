@@ -1,3 +1,9 @@
 # Zmienne środowiskowe i hasła
 .env
 /vendor/
+
+.venv
+
+generate-password.php
+
+INFO.md

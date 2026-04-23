@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="<?= asset('css/common/scroll-up.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/catalog/catalog-controls.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/catalog/products.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/components/modal.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/components/pagination.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/components/breadcrumb.css') ?>">
@@ -40,7 +39,7 @@
                 <div class="products__error">Brak produktów w tej kategorii.</div>
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
-                    <div class="products__card">
+                    <a href="<?= url('katalog/' . $category->slug . '/' . $product->slug) ?>" class="products__card">
                         <div class="products__image-wrapper">
                             <?php
                             $mainImage = $product->getMainImage();
@@ -56,7 +55,7 @@
                             <p class="products__description"><?= htmlspecialchars($product->description) ?></p>
                             <span class="products__more">Kliknij, aby zobaczyć więcej →</span>
                         </div>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
@@ -81,7 +80,6 @@
         <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
     </button>
 
-    <script type="module" src="<?= asset('js/catalog/category-products.js') ?>"></script>
     <script src="<?= asset('js/navbar.js') ?>"></script>
     <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 

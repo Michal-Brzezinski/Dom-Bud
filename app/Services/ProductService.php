@@ -20,4 +20,14 @@ class ProductService
     {
         return $this->repo->getProductsByCategoryId($categoryId, $q, $sort);
     }
+
+    public function findBySlug(string $slug)
+    {
+        return $this->repo->findBySlug($slug);
+    }
+
+    public function getImages(int $productId): array
+    {
+        return $this->repo->getImages($productId);
+    }
 }

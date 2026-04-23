@@ -55,4 +55,43 @@ class CatalogController
         // przekaż do widoku: $category, $breadcrumb, $products, $page, $totalPages, $sort, $q
         require __DIR__ . '/../Views/catalog-category.view.php';
     }
+
+    public function product(string $categorySlug, string $productSlug): void
+    {
+        $categoryService = new CategoryService();
+        $productService  = new ProductService();
+
+        // Pobierz kategorię
+        $category = $categoryService->findBySlug($categorySlug);
+        if (!$category) {
+            http_response_code(404);
+            require __DIR__ . '/../Views/404.view.php';
+            return;
+        }
+
+        // Pobierz produkt
+        $product = $productService->findBySlug($productSlug);
+        if (!$product || $product->category_id !== $category->id) {
+            http_response_code(404);
+            require __DIR__ . '/../Views/404.view.php';
+            return;
+        }
+
+        // Pobierz breadcrumb
+        $breadcrumb = $categoryService->getBreadcrumb($category->id);
+
+        // Pobierz zdjęcia
+        $images = $productService->getImages($product->id);
+
+        // Dekoduj properties JSON
+        $properties = $product->properties ?? [];
+
+        $breadcrumb[] = (object)[
+            'id'   => $product->id,
+            'name' => $product->name,
+            'slug' => $product->slug
+        ];
+
+        require __DIR__ . '/../Views/product.view.php';
+    }
 }

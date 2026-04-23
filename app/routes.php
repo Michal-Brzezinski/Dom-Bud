@@ -6,6 +6,8 @@ $router->get('o-nas', 'AboutController', 'index');
 $router->get('katalog', 'CatalogController', 'index');
 $router->get('katalog/{category}', 'CatalogController', 'category');
 
+$router->get('katalog/{category}/{product}', 'CatalogController', 'product');
+
 $router->get('kontakt', 'ContactController', 'showForm');
 $router->post('kontakt/send', 'ContactController', 'handle');
 

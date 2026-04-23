@@ -196,4 +196,15 @@ class ProductRepository
 
         return $row ? new Product($row) : null;
     }
+
+    public function getImages(int $productId): array
+    {
+        $stmt = $this->pdo->prepare("
+        SELECT * FROM product_images 
+        WHERE product_id = ? 
+        ORDER BY is_main DESC, sort_order ASC
+    ");
+        $stmt->execute([$productId]);
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, \App\Models\ProductImage::class);
+    }
 }

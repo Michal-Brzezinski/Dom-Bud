@@ -270,3 +270,5 @@ W razie pytań lub problemów, otwórz issue na GitHubie.
 - Formularz kontaktowy z PHPMailer
 - Pełna responsywność
 - Obsługa polskich znaków w sortowaniu
+
+This project uses the Swiper library (https://swiperjs.com/) licensed under the MIT License for product image sliders.

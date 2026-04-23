@@ -10,10 +10,12 @@
         <?php foreach ($breadcrumb as $item): ?>
             <span class="breadcrumb-separator">›</span>
 
-            <?php if ($item->id === $last->id): ?>
+            <?php $slug = $item->slug ?? null; ?>
+
+            <?php if ($item === $last): ?>
                 <span><?= htmlspecialchars($item->name) ?></span>
             <?php else: ?>
-                <a href="<?= url('katalog/' . $item->slug) ?>">
+                <a href="<?= url('katalog/' . $slug) ?>">
                     <?= htmlspecialchars($item->name) ?>
                 </a>
             <?php endif; ?>

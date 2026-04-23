@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - O nas</title>
   <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
-  <link rel="stylesheet" href="<?= asset('css/navbar.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/cta.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/scroll-up.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/navbar.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/side-panel.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/footer.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/cta.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/scroll-up.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">

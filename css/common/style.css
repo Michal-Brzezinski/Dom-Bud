@@ -4,29 +4,29 @@
    ========================================== */
 
 /* BASE - Fundamenty */
-@import 'base/variables.css';
-@import 'base/fonts.css';
-@import 'base/base.css';
+@import '../base/variables.css';
+@import '../base/fonts.css';
+@import '../base/base.css';
 
 /* LAYOUT - Główne sekcje layoutu */
-@import 'layout/hero.css';
-@import 'layout/features.css';
-@import 'layout/brands.css';
+@import '../layout/hero.css';
+@import '../layout/features.css';
+@import '../layout/brands.css';
 
 /* COMPONENTS - Komponenty wielokrotnego użytku */
-@import 'components/buttons.css';
-@import 'components/modal.css';
-@import 'components/pagination.css';
+@import '../components/buttons.css';
+@import '../components/modal.css';
+@import '../components/pagination.css';
 
 /* CATALOG - Sekcje katalogowe */
-@import 'catalog/catalog-header.css';
-@import 'catalog/catalog-controls.css';
-@import 'catalog/categories.css';
-@import 'catalog/products.css';
+@import '../catalog/catalog-header.css';
+@import '../catalog/catalog-controls.css';
+@import '../catalog/categories.css';
+@import '../catalog/products.css';
 
 /* PAGES - Style specyficzne dla stron */
-@import 'pages/about.css';
-@import 'pages/contact.css';
+@import '../pages/about.css';
+@import '../pages/contact.css';
 
 /* EXTERNAL - Osobne pliki które już istnieją */
 /* Te pliki są ładowane bezpośrednio w HTML */

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Strona nie została znaleziona</title>
     <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
-    <link rel="stylesheet" href="<?= asset('css/footer.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/404.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/common/footer.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/common/404.css') ?>">
 
 </head>
 

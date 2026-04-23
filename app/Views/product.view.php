@@ -10,13 +10,8 @@
     <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="<?= asset('css/common/navbar.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/side-panel.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/footer.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/cta.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/scroll-up.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/components/breadcrumb.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/common/_import.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/catalog/_import.css') ?>">
     <link rel="stylesheet" href="<?= asset('css/product/product.css') ?>">
 </head>
 

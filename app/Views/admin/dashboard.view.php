@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?= asset('css/admin/admin.css') ?>">
+<link rel="stylesheet" href="<?= asset('css/admin/_import.css') ?>">
 <title>Panel administratora</title>
 <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
 

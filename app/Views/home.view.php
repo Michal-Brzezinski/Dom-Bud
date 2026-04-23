@@ -6,12 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM-BUD Skład Budowlany</title>
   <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
-  <link rel="stylesheet" href="<?= asset('css/common/navbar.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/side-panel.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/footer.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/cta.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/scroll-up.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/_import.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/pages/home/_import.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">

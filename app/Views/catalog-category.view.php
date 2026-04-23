@@ -6,16 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($category->name) ?> - DOM-BUD</title>
     <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
-    <link rel="stylesheet" href="<?= asset('css/common/navbar.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/side-panel.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/footer.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/cta.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/scroll-up.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/catalog/catalog-controls.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/components/modal.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/components/pagination.css') ?>">
-    <link rel="stylesheet" href="<?= asset('css/components/breadcrumb.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/common/_import.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/catalog/_import.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">

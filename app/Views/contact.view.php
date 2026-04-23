@@ -6,12 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOMBUD - Kontakt</title>
   <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
-  <link rel="stylesheet" href="<?= asset('css/common/navbar.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/side-panel.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/footer.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/cta.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/scroll-up.css') ?>">
-  <link rel="stylesheet" href="<?= asset('css/common/style.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/common/_import.css') ?>">
+  <link rel="stylesheet" href="<?= asset('css/pages/contact.css') ?>">
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
@@ -50,7 +46,7 @@
           <button type="submit" class="contact__button cta__button">Wyślij</button>
         </form>
 
-        <section class="map section">
+        <section class="map-section">
           <iframe id="contact-map" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
       </div>

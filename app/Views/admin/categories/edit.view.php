@@ -1,6 +1,6 @@
 <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
 <title>Edytuj kategorię</title>
-<link rel="stylesheet" href="<?= asset('css/admin/admin.css') ?>">
+<link rel="stylesheet" href="<?= asset('css/admin/_import.css') ?>">
 
 <div class="admin-container">
 

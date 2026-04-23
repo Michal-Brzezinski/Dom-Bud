@@ -1,96 +1,193 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger menu
-  const toggle = document.querySelector('.navbar__toggle');
-  const menu = document.querySelector('.navbar__menu');
-  const social = document.querySelector('.navbar__social');
 
-  toggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      social.classList.toggle('active');
-  });  
-  
-  const statusTrigger = document.getElementById("status-trigger");
-    const statusText = document.getElementById("store-status");
-    const hoursList = document.getElementById("hours-list");
+    /* ============================================
+       HAMBURGER
+    ============================================ */
+    const toggle = document.querySelector('.navbar__toggle');
+    const menu = document.querySelector('.navbar__menu');
+    const social = document.querySelector('.navbar__social');
 
-    statusTrigger.addEventListener("click", () => {
-        statusTrigger.classList.toggle("is-active");
+    if (toggle && menu && social) {
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            social.classList.toggle('active');
+        });
+    }
+
+    /* ============================================
+       STATUS W NAVBARZE
+    ============================================ */
+    const statusBox   = document.querySelector(".navbar-status");
+    const statusText  = document.getElementById("store-status");
+
+    /* ============================================
+       PANEL BOCZNY
+    ============================================ */
+    const panel       = document.getElementById("store-panel");
+    const overlay     = document.getElementById("store-panel-overlay");
+    const trigger     = document.getElementById("status-trigger");
+    const closeBtn    = document.getElementById("panel-close");
+
+    // Otwieranie panelu — tylko desktop
+    if (trigger && panel && overlay && window.innerWidth >= 1280) {
+        trigger.addEventListener("click", () => {
+            panel.classList.add("active");
+            overlay.classList.add("active");
+        });
+    }
+
+    // Zamknięcie panelu
+    function closePanel() {
+        if (panel)   panel.classList.remove("active");
+        if (overlay) overlay.classList.remove("active");
+    }
+
+    if (closeBtn)  closeBtn.addEventListener("click", closePanel);
+    if (overlay)   overlay.addEventListener("click", closePanel);
+
+    /* ============================================
+       JEŚLI NIE MA STATUSU — KOŃCZYMY
+    ============================================ */
+    if (!statusBox || !statusText) {
+        return;
+    }
+
+    /* ============================================
+       POBIERANIE DANYCH
+    ============================================ */
+    Promise.all([
+        fetch("/data/opening-hours.json").then(r => r.json()),
+        fetch("/data/store-data.json").then(r => r.json())
+    ])
+    .then(([hoursData, storeData]) => {
+        const hours = hoursData.summer || hoursData; // fallback, gdyby nie było "summer"
+
+        renderPanel(storeData, hours);
+        computeStatus(hours);
+    })
+    .catch(err => {
+        console.error("Błąd ładowania danych:", err);
+        statusText.textContent = "Błąd ładowania danych";
     });
 
-    fetch("/data/opening-hours.json")
-        .then(res => res.json())
-        .then(data => {
-            const hours = data.summer.days; // w razie zmiany sezonu, wystarczy tu zmienić na summer/winter
-            
-            // Renderowanie listy wewnątrz dropdowna
-            const daysMap = [
-                { key: 'monday_friday', label: hours.monday_friday.label },
-                { key: 'saturday', label: hours.saturday.label },
-                { key: 'sunday', label: hours.sunday.label }
-            ];
-            hoursList.innerHTML = daysMap.map(day => `
-                <li><span>${day.label}</span><span>${hours[day.key].hours}</span></li>
-            `).join('');
+    /* ============================================
+       STATUS OTWARTE / ZAMKNIĘTE
+    ============================================ */
+    function computeStatus(hours) {
+        if (!hours || !hours.days) {
+            statusText.textContent = "Brak danych o godzinach";
+            return;
+        }
 
-            // LOGIKA STATUSU
-            const now = new Date();
-            const dayNum = now.getDay(); // 0-niedziela, 1-pon, itd.
-            const currentTime = now.getHours() * 60 + now.getMinutes();
+        const now         = new Date();
+        const dayNum      = now.getDay();
+        const currentTime = now.getHours() * 60 + now.getMinutes();
 
-            // Pobieramy dane dla dzisiaj, jutra i poniedziałku (na wypadek weekendu)
-            const schedule = [
-                hours.sunday.hours,         // 0
-                hours.monday_friday.hours,  // 1
-                hours.monday_friday.hours,  // 2
-                hours.monday_friday.hours,  // 3
-                hours.monday_friday.hours,  // 4
-                hours.monday_friday.hours,  // 5
-                hours.saturday.hours        // 6
-            ];
+        const schedule = [
+            hours.days.sunday.hours,
+            hours.days.monday_friday.hours,
+            hours.days.monday_friday.hours,
+            hours.days.monday_friday.hours,
+            hours.days.monday_friday.hours,
+            hours.days.monday_friday.hours,
+            hours.days.saturday.hours
+        ];
 
-            const todayHours = schedule[dayNum];
+        const todayHours = schedule[dayNum];
 
-            if (todayHours.toLowerCase().includes("nieczynne")) {
-                // Jeśli dziś niedziela/wolne, sprawdź kiedy poniedziałek
-                const [monOpen] = hours.monday_friday.hours.split(" - ");
-                setOffline(`Zamknięte • otwarcie w pon. o ${monOpen}`);
-            } else {
-                const [openStr, closeStr] = todayHours.split(" - ");
-                const openMin = timeToMin(openStr);
-                const closeMin = timeToMin(closeStr);
+        if (!todayHours || typeof todayHours !== "string") {
+            statusText.textContent = "Brak danych dzisiaj";
+            return;
+        }
 
-                if (currentTime >= openMin && currentTime < closeMin) {
-                    // OTWARTE
-                    setOnline(`Otwarte do ${closeStr}`);
-                } else if (currentTime < openMin) {
-                    // JESZCZE ZAMKNIĘTE (rano)
-                    setOffline(`Zamknięte • otwarcie o ${openStr}`);
-                } else {
-                    // JUŻ ZAMKNIĘTE (wieczorem)
-                    let nextDay = (dayNum + 1) % 7;
-                    let nextOpenStr = schedule[nextDay].split(" - ")[0];
-                    
-                    if (nextOpenStr.toLowerCase().includes("nieczynne")) {
-                         setOffline(`Zamknięte • zapraszamy w pon. o 07:00`);
-                    } else {
-                         setOffline(`Zamknięte • otwarcie jutro o ${nextOpenStr}`);
-                    }
-                }
-            }
-        });
+        if (todayHours.toLowerCase().includes("nieczynne")) {
+            setClosed("Zamknięte");
+            return;
+        }
 
-    function timeToMin(timeStr) {
-        const [h, m] = timeStr.split(":").map(Number);
+        const [openStr, closeStr] = todayHours.split(" - ");
+        const openMin  = timeToMin(openStr);
+        const closeMin = timeToMin(closeStr);
+
+        if (isNaN(openMin) || isNaN(closeMin)) {
+            statusText.textContent = "Błędny format godzin";
+            return;
+        }
+
+        if (currentTime >= openMin && currentTime < closeMin) {
+            setOpen(`Otwarte do ${closeStr}`);
+        } else {
+            setClosed("Zamknięte");
+        }
+    }
+
+    function timeToMin(str) {
+        const [h, m] = str.split(":").map(Number);
         return h * 60 + m;
     }
 
-    function setOnline(msg) {
-        statusText.innerHTML = msg.replace("•", "<span class='status-sep'>|</span>");
-        statusTrigger.classList.add("navbar__status--open");
+    function setOpen(msg) {
+        statusBox.classList.remove("closed");
+        statusBox.classList.add("open");
+        statusText.textContent = msg;
+
+        // status w panelu
+        const panelStatusText = document.getElementById("panel-status-text");
+        const panelDot        = panelStatusText
+            ? panelStatusText.parentElement.querySelector(".status-dot")
+            : null;
+
+        if (panelStatusText) panelStatusText.textContent = msg;
+        if (panelDot)        panelDot.style.background = "var(--status-green)";
     }
 
-    function setOffline(msg) {
-        statusText.innerHTML = msg.replace("•", "<span class='status-sep'>|</span>");
-        statusTrigger.classList.add("navbar__status--closed");
+    function setClosed(msg) {
+        statusBox.classList.remove("open");
+        statusBox.classList.add("closed");
+        statusText.textContent = msg;
+
+        // status w panelu
+        const panelStatusText = document.getElementById("panel-status-text");
+        const panelDot        = panelStatusText
+            ? panelStatusText.parentElement.querySelector(".status-dot")
+            : null;
+
+        if (panelStatusText) panelStatusText.textContent = msg;
+        if (panelDot)        panelDot.style.background = "var(--status-red)";
     }
+
+    /* ============================================
+       RENDER PANELU BOCZNEGO
+    ============================================ */
+    function renderPanel(store, hours) {
+        if (!store || !hours) return;
+
+        const nameEl   = document.getElementById("panel-store-name");
+        const addrEl   = document.getElementById("panel-address");
+        const phoneEl  = document.getElementById("panel-phone");
+        const mapEl    = document.getElementById("panel-map");
+        const offerBtn = document.getElementById("panel-offer-btn");
+        const hoursEl  = document.getElementById("panel-hours");
+
+        if (nameEl)   nameEl.textContent  = store.name || "";
+        if (addrEl)   addrEl.textContent  = store.address || "";
+        if (phoneEl)  phoneEl.textContent = store.phone || "";
+
+        if (mapEl && store.location && store.location.maps_embed) {
+            mapEl.src = store.location.maps_embed;
+        }
+
+        if (offerBtn && store.links && store.links.offer) {
+            offerBtn.href = store.links.offer;
+        }
+
+        if (hoursEl && hours.days) {
+            hoursEl.innerHTML = `
+                <li><span>Pon - Pt</span><span>${hours.days.monday_friday.hours}</span></li>
+                <li><span>Soboty</span><span>${hours.days.saturday.hours}</span></li>
+                <li><span>Niedziele</span><span>${hours.days.sunday.hours}</span></li>
+            `;
+        }
+    }
+
 });

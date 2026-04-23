@@ -22,20 +22,18 @@
 
     <div class="contact__grid">
 
+      <!-- FORMULARZ -->
       <div class="contact__form">
 
         <?php if (isset($_GET['status'])): ?>
-
           <?php
           $translated = $_GET['status'] === 'ok'
             ? "Wiadomość została wysłana."
             : "Wystąpił błąd podczas wysyłania wiadomości.";
           ?>
-
           <div class="form__message <?= $_GET['status'] === 'ok' ? 'success' : 'error' ?>">
             <?= $translated ?>
           </div>
-
         <?php endif; ?>
 
         <form action="<?= url('kontakt/send') ?>" method="POST">
@@ -52,7 +50,7 @@
         </form>
       </div>
 
-      <!-- Dane kontaktowe -->
+      <!-- DANE KONTAKTOWE -->
       <div class="contact__info">
         <h3>Dane kontaktowe</h3>
 
@@ -62,7 +60,7 @@
               d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.72 2.88a2 2 0 01-.45 1.86l-1.27 1.27a16.017 16.017 0 006.586 6.586l1.27-1.27a2 2 0 011.86-.45l2.88.72A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
           <span class="contact__label">Tel:</span>
-          <span class="contact__value">+48 668 979 045</span>
+          <span class="contact__value phone"></span>
         </div>
 
         <div class="contact__item">
@@ -71,7 +69,7 @@
               d="M3 8l9 6 9-6M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
           </svg>
           <span class="contact__label">Email:</span>
-          <span class="contact__value">info@dombudtymbark.pl</span>
+          <span class="contact__value email"></span>
         </div>
 
         <div class="contact__item">
@@ -81,7 +79,7 @@
             <circle cx="12" cy="9" r="2.5" />
           </svg>
           <span class="contact__label">Adres:</span>
-          <span class="contact__value">Tymbark 736, 34-650 Tymbark</span>
+          <span class="contact__value address"></span>
         </div>
 
         <hr class="contact__separator">
@@ -91,7 +89,6 @@
         <p id="hours-note"></p>
 
         <hr class="contact__separator">
-
 
         <h3>Dane firmowe</h3>
         <p><strong>Nazwa pełna:</strong> Firma Handlowo Usługowa Dom-Bud Piotr Tokarczyk, Krzysztof Tokarczyk Spółka Cywilna</p>
@@ -103,10 +100,7 @@
   </section>
 
   <section class="map section">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.123456789!2d20.634!3d49.563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715f123456789%3A0xabcdef123456789!2sTymbark%20736%2C%2034-650%20Tymbark!5e0!3m2!1spl!2spl!4v1700000000000"
-      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
+    <iframe id="contact-map" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
   <?php include __DIR__ . '/partials/footer.php'; ?>
@@ -115,10 +109,8 @@
     <img src="<?= asset('img/icons/arrow-up.svg') ?>" alt="Scroll up" />
   </button>
 
-  <script src="<?= asset('js/contact/contact-validation.js') ?>"></script>
-  <script src="<?= asset('js/contact/opening-hours.js') ?>"></script>
+  <script src="<?= asset('js/contact/contact.js') ?>"></script>
   <script src="<?= asset('js/navbar.js') ?>"></script>
-  <link rel="stylesheet" href="<?= asset('css/navbar-status.css') ?>">
   <script type="module" src="<?= asset('js/scroll-up.js') ?>"></script>
 </body>
 

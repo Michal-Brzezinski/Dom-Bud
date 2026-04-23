@@ -1,17 +1,21 @@
-/* Navbar */
+/* ============================================================
+   NAVBAR — GŁÓWNY KONTENER
+============================================================ */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
     padding: 0.5rem 2rem;
-    ;
     background: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
     position: relative;
-    flex-wrap: wrap;
+    z-index: 100;
 }
 
-/* Logo */
+/* ============================================================
+   LOGO
+============================================================ */
 .navbar__logo {
     display: flex;
     align-items: center;
@@ -21,12 +25,10 @@
 
 .navbar__logo-img {
     height: 3rem;
-    width: auto;
 }
 
 .navbar__logo-text {
     font-size: 2.5rem;
-    /* większy tekst */
     margin-top: 1.2rem;
     font-weight: 1000;
     color: var(--color-accent);
@@ -34,47 +36,76 @@
     -webkit-text-stroke: 0.4px #545454;
 }
 
-/* Menu desktop */
+/* ============================================================
+   STATUS (OTWARTE / ZAMKNIĘTE)
+============================================================ */
+.navbar-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 2rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background .25s ease;
+}
+
+.navbar-status:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.navbar-status.open .status-dot {
+    background: #4cd964;
+    box-shadow: 0 0 6px #4cd964;
+}
+
+.navbar-status.closed .status-dot {
+    background: #ff4d4d;
+}
+
+/* ============================================================
+   MENU — WYŚRODKOWANE ABSOLUTNIE
+============================================================ */
 .navbar__menu {
     display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    gap: 2rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem;
-    /* większe odstępy */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar__link {
     color: var(--color-text);
     text-decoration: none;
-    transition: var(--transition);
     font-size: 1.25rem;
-    /* większy tekst */
     font-weight: 500;
+    transition: var(--transition);
 }
 
-/* Usunięcie niebieskiego podświetlenia */
-.navbar__link:focus,
-.navbar__logo:focus,
-.social-link:focus,
-.navbar__toggle:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-/* Hover */
 .navbar__link:hover {
     color: var(--color-accent);
 }
 
-/* Social icons desktop */
+/* ============================================================
+   SOCIAL IKONY
+============================================================ */
 .navbar__social {
     display: flex;
     gap: 1.4rem;
-    margin-top: 0.5rem;
+    margin-left: auto;
 }
 
 .icon {
@@ -84,115 +115,228 @@
     transition: var(--transition);
 }
 
-.contact__icon {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-right: 0.5rem;
-    color: var(--color-accent-light);
-    flex-shrink: 0;
-}
-
-.navbar__social a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .social-link:hover .icon {
     fill: var(--color-accent);
 }
 
-/* Hamburger toggle */
+/* ============================================================
+   HAMBURGER
+============================================================ */
 .navbar__toggle {
     display: none;
     font-size: 1.8rem;
-    /* większy */
     background: none;
     border: none;
     color: var(--color-text);
     cursor: pointer;
+    z-index: 90;
 }
 
-@media (max-width: 1220px) {
+/* ============================================================
+   PANEL BOCZNY — OVERLAY
+============================================================ */
+#store-panel-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 2000;
+}
 
-    .contact__icon,
-    .navbar__social a p {
-        display: none;
+#store-panel-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ============================================================
+   PANEL BOCZNY — GŁÓWNY BLOK
+============================================================ */
+#store-panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 420px;
+    height: 100vh;
+    background: #111;
+    border-left: 1px solid rgba(255,255,255,0.12);
+    box-shadow: -4px 0 20px rgba(0,0,0,0.4);
+    padding: 32px;
+    transition: right .35s ease;
+    z-index: 3000;
+    overflow-y: auto;
+}
+
+#store-panel.active {
+    right: 0;
+}
+
+/* ============================================================
+   PANEL — KRZYŻYK
+============================================================ */
+#panel-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 3.8rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color .25s ease, transform .25s ease;
+}
+
+#panel-close:hover {
+    color: var(--color-accent);
+    transform: scale(1.15);
+}
+
+/* ============================================================
+   PANEL — NAGŁÓWEK
+============================================================ */
+#panel-store-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   PANEL — STATUS
+============================================================ */
+.panel-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.panel-status .status-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+/* ============================================================
+   PANEL — SEKCJE
+============================================================ */
+.panel-section {
+    margin-bottom: 1.8rem;
+}
+
+.panel-section h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--color-accent-light);
+}
+
+.panel-section p,
+.panel-section ul {
+    color: #ddd;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.panel-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel-section ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ============================================================
+   PANEL — PRZYCISK
+============================================================ */
+.panel-offer-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 0.5rem 1.2rem;
+    background: var(--color-accent);
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background .3s;
+}
+
+.panel-offer-btn:hover {
+    background: var(--color-accent-hover);
+}
+
+/* ============================================================
+   RESPONSYWNOŚĆ
+============================================================ */
+@media (max-width: 1279px) {
+    .desktop-only {
+        display: none !important;
     }
 }
 
 @media (max-width: 1024px) {
-
     .navbar {
         padding: 0.5rem 1rem 0.5rem 1.5rem;
     }
 
     .navbar__logo-img {
         height: 2rem;
-        width: auto;
     }
 
     .navbar__logo-text {
         font-size: 1.85rem;
         margin-top: 0.6rem;
-        /* większy tekst */
         font-weight: 700;
-        color: var(--color-accent);
     }
 
     .icon {
         width: 2rem;
         height: 2rem;
-        fill: var(--color-text);
-        transition: var(--transition);
     }
 
     .navbar__link {
-        color: var(--color-text);
-        text-decoration: none;
-        transition: var(--transition);
         font-size: 1.1rem;
-        /* większy tekst */
-        font-weight: 500;
     }
 }
 
-/* MOBILE */
-@media (max-width: 810px) {
+@media (max-width: 890px) {
     .navbar {
         justify-content: space-between;
+        flex-wrap: wrap;
         padding: 0.8rem;
     }
 
     .navbar__toggle {
         display: block;
-        z-index: 90;
     }
 
     .navbar__menu {
         display: none;
         flex-direction: column;
-        position: static;
-        transform: none;
         width: 100%;
         text-align: center;
         gap: 0;
+        position: static;
+        transform: none;
+    }
+
+    .navbar__menu.active {
+        display: flex;
+        margin-top: 1rem;
     }
 
     .navbar__menu li {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 0.8rem 0;
-    }
-
-    .navbar__menu a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 1.35rem;
-        /* większy tekst mobilny */
+        position: relative;
     }
 
     .navbar__menu li:not(:last-child)::after {
@@ -203,12 +347,7 @@
         transform: translateX(-50%);
         width: 85%;
         height: 1px;
-        background: rgba(255, 255, 255, 0.15);
-    }
-
-    .navbar__menu.active {
-        display: flex;
-        margin-top: 1rem;
+        background: rgba(255,255,255,0.15);
     }
 
     .navbar__social {
@@ -217,6 +356,7 @@
         width: 100%;
         margin-top: 2rem;
         gap: 2rem;
+        margin-left: 0;
     }
 
     .navbar__social.active {
@@ -226,38 +366,25 @@
 
 @media (max-width: 480px) {
     .navbar__menu {
-        position: static;
-        transform: none;
-        width: 100%;
         justify-content: center;
     }
 
-    .navbar__menu a {
-        display: block;
-        width: 100%;
-        text-align: center;
+    .navbar__link {
         font-size: 1.15rem;
-        /* większy tekst mobilny */
     }
 }
 
-
-/* Bardzo małe smartfony (do 280px) */
 @media (max-width: 280px) {
-
     .navbar {
         padding: 1rem;
     }
 
     .navbar__logo-img {
         height: 1.8rem;
-        width: auto;
     }
 
     .navbar__logo-text {
         font-size: 1.5rem;
-        /* większy tekst */
         font-weight: 700;
-        color: var(--color-accent);
     }
 }

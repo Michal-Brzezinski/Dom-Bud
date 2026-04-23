@@ -99,6 +99,28 @@
     color: var(--color-accent);
 }
 
+
+/* ============================================
+   TELEFON W NAVBARZE (desktop ≥1280px)
+============================================ */
+.navbar__phone {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-block: auto;
+}
+
+.navbar__phone a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.navbar__phone a:hover {
+    color: var(--color-accent-hover);
+}
+
+
 /* ============================================================
    SOCIAL IKONY
 ============================================================ */
@@ -135,6 +157,12 @@
 /* ============================================================
    RESPONSYWNOŚĆ
 ============================================================ */
+@media (max-width: 1330px) {
+    .status-desktop-only {
+        display: none !important;
+    }
+}
+
 @media (max-width: 1279px) {
     .desktop-only {
         display: none !important;

@@ -7,7 +7,7 @@
   </a>
 
   <!-- STATUS (desktop ≥1280px) -->
-  <div class="navbar-status desktop-only" id="status-trigger">
+  <div class="navbar-status status-desktop-only" id="status-trigger">
     <span class="status-dot"></span>
     <span id="store-status">Sprawdzanie...</span>
   </div>
@@ -25,6 +25,10 @@
 
   <!-- SOCIAL -->
   <div class="navbar__social">
+
+    <div class="navbar__phone desktop-only">
+      <a id="navbar-phone"></a>
+    </div>
 
     <a href="https://www.google.com/maps/place/Dom-Bud+sk%C5%82ad+materia%C5%82%C3%B3w+budowlanych/"
       target="_blank" class="social-link" aria-label="Lokalizacja Dom-Bud">

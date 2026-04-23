@@ -188,6 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><span>Niedziele</span><span>${hours.days.sunday.hours}</span></li>
             `;
         }
+
+        const navbarPhone = document.getElementById("navbar-phone");
+        
+        if (navbarPhone && store.phone) {
+            navbarPhone.textContent = store.phone;
+        }
     }
 
 });

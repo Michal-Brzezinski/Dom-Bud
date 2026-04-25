@@ -1,6 +1,7 @@
 <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
 <title>Edytuj produkt</title>
 <link rel="stylesheet" href="<?= asset('css/admin/_import.css') ?>">
+<link rel="stylesheet" href="<?= asset('css/admin/products/properties.css') ?>">
 
 <div class="admin-container">
 
@@ -39,8 +40,11 @@
         </div>
 
         <div class="form-group">
-            <label>Właściwości (JSON):</label>
-            <textarea name="properties"><?= e(json_encode($product->properties, JSON_UNESCAPED_UNICODE)) ?></textarea>
+            <label>Właściwości:</label>
+            <?php
+            $propertiesJson = json_encode($product->properties, JSON_UNESCAPED_UNICODE);
+            include ROOT_PATH . "/app/Views/partials/admin/product-properties.php";
+            ?>
         </div>
 
     </form>
@@ -91,6 +95,7 @@
         </div>
 
         <script src="<?= asset('js/admin/product-upload.js') ?>"></script>
+        <script src="<?= asset('js/admin/product-properties.js') ?>"></script>
 
     </div>
 

@@ -1,0 +1,24 @@
+.properties-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.property-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.property-key,
+.property-value {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#add-property-btn {
+    margin-top: 10px;
+}

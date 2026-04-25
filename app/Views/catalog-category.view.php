@@ -23,8 +23,6 @@
         <p class="catalog-header__text">Wybierz produkt, aby zobaczyć szczegóły.</p>
     </section>
 
-    <?php include __DIR__ . '/partials/catalog-controls.php'; ?>
-
     <section class="products">
         <div class="products__grid">
             <?php if (empty($products)): ?>

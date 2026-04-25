@@ -7,7 +7,7 @@
   <title>DOMBUD - O nas</title>
   <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp">
   <link rel="stylesheet" href="<?= asset('css/common/_import.css') ?>">
-  <link rel="stylesheet" href='<?= asset('css/pages/about.css') ?>'>
+  <link rel="stylesheet" href='<?= asset('css/pages/about/_import.css') ?>'>
 </head>
 
 <body class="site" data-base-url="<?= htmlspecialchars($GLOBALS['baseUrl'] ?? '') ?>">
@@ -78,7 +78,6 @@
     </div>
   </section>
 
-  <!-- Nasze podejście do klientów -->
   <section class="approach section">
     <h3 class="approach__title">Nasze podejście do klientów</h3>
 
@@ -86,52 +85,57 @@
 
       <!-- Panel 1 -->
       <div class="approach__box">
-        <h4 class="approach__box-title">Wsparcie na każdym etapie</h4>
-        <p>
-          W DOM-BUD nie ograniczamy się wyłącznie do sprzedaży materiałów.
-          Naszym celem jest realne wsparcie klientów w realizacji ich projektów.
-          Oferujemy fachowe doradztwo, pomoc w doborze systemów budowlanych
-          oraz przygotowujemy wyceny dopasowane do zakresu prac.
-        </p>
+        <div class="approach__media">
+          <img src="<?= asset('img/approach/approach1.webp') ?>" alt="Wsparcie na każdym etapie">
+        </div>
+
+        <div class="approach__text">
+          <h4 class="approach__box-title">Wsparcie na każdym etapie</h4>
+          <p>
+            W DOM-BUD nie ograniczamy się wyłącznie do sprzedaży materiałów.
+            Naszym celem jest realne wsparcie klientów w realizacji ich projektów.
+            Oferujemy fachowe doradztwo, pomoc w doborze systemów budowlanych
+            oraz przygotowujemy wyceny dopasowane do zakresu prac.
+          </p>
+        </div>
       </div>
 
       <!-- Panel 2 -->
       <div class="approach__box">
-        <h4 class="approach__box-title">Doświadczenie i znajomość rynku</h4>
-        <p>
-          Dzięki wieloletniemu doświadczeniu doskonale rozumiemy potrzeby lokalnego rynku
-          oraz specyfikę inwestycji realizowanych w naszym regionie i na terenie całej Małopolski.
-          Pomagamy zoptymalizować koszty budowy, uniknąć błędów wykonawczych
-          i dobrać rozwiązania adekwatne do budżetu oraz oczekiwań inwestora.
-        </p>
+        <div class="approach__media">
+          <img src="<?= asset('img/approach/approach2.webp') ?>" alt="Doświadczenie i znajomość rynku">
+        </div>
+
+        <div class="approach__text">
+          <h4 class="approach__box-title">Doświadczenie i znajomość rynku</h4>
+          <p>
+            Dzięki wieloletniemu doświadczeniu doskonale rozumiemy potrzeby lokalnego rynku
+            oraz specyfikę inwestycji realizowanych w naszym regionie i na terenie całej Małopolski.
+            Pomagamy zoptymalizować koszty budowy, uniknąć błędów wykonawczych
+            i dobrać rozwiązania adekwatne do budżetu oraz oczekiwań inwestora.
+          </p>
+        </div>
       </div>
 
-      <!-- Panel 3 z subpanelami -->
+      <!-- Panel 3 -->
       <div class="approach__box">
-        <h4 class="approach__box-title">Szerokie zaplecze i logistyka</h4>
-        <p>
-          Współpracujemy z innymi składami oraz prowadzimy sklep Chem‑Bud z trzema oddziałami
-          w Nowym Sączu, działający od ponad 25 lat. Dzięki temu zapewniamy:
-        </p>
+        <div class="approach__media">
+          <img src="<?= asset('img/approach/approach3.webp') ?>" alt="Szerokie zaplecze i logistyka">
+        </div>
 
-        <div class="approach__subpanels">
+        <div class="approach__text">
+          <h4 class="approach__box-title">Szerokie zaplecze i logistyka</h4>
+          <p>
+            Współpracujemy z innymi składami oraz prowadzimy sklep Chem‑Bud z trzema oddziałami
+            w Nowym Sączu, działający od ponad 25 lat. Dzięki temu zapewniamy:
+          </p>
 
-          <div class="approach__subpanel">
-            większą dostępność materiałów i szybkie uzupełnianie braków
-          </div>
-
-          <div class="approach__subpanel">
-            konkurencyjne ceny i markowych producentów
-          </div>
-
-          <div class="approach__subpanel">
-            sprawną logistykę i szybkie dostawy
-          </div>
-
-          <div class="approach__subpanel">
-            realizację zamówień niestandardowych i specjalistycznych
-          </div>
-
+          <ul class="approach__list">
+            <li>większą dostępność materiałów i szybkie uzupełnianie braków</li>
+            <li>konkurencyjne ceny i markowych producentów</li>
+            <li>sprawną logistykę i szybkie dostawy</li>
+            <li>realizację zamówień niestandardowych i specjalistycznych</li>
+          </ul>
         </div>
       </div>
 

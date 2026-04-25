@@ -1,0 +1,17 @@
+/* Plik: common/base/base.css (dodaj na końcu) */
+
+.section {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section:not(:first-of-type)::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 0 auto 2.5rem auto;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
+    opacity: 0.6;
+}

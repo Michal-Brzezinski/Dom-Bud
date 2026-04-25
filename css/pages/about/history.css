@@ -1,0 +1,74 @@
+.list {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.list__title {
+    margin-bottom: 2rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.list__intro {
+    max-width: 60rem;
+    margin: 0 auto 3rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--color-text2);
+}
+
+.list__intro .highlight,
+.list__year .highlight {
+    color: var(--color-accent-light);
+}
+
+.list__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.list__card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background: var(--color-bg2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.list__card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.list__year {
+    min-width: 10rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .list__card {
+        flex-direction: column;
+        gap: 1.1rem;
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .list__card {
+        gap: 0.5rem;
+        padding: 1.5rem;
+    }
+}

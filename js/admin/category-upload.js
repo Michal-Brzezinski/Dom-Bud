@@ -1,14 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dropzone = document.getElementById("dropzone");
-    const previewImg = document.getElementById("preview-img");
-    const imagePathInput = document.getElementById("draft_image_path");
+
+    const dropzone         = document.getElementById("dropzone");
+    const previewImg       = document.getElementById("preview-img");
+    const imagePathInput   = document.getElementById("draft_image_path");
     const currentPathInput = document.getElementById("current_image_path");
+    const removeBtn        = document.getElementById("remove-image-btn");
+
+    // Jeśli nie ma dropzone → nic nie rób
+    if (!dropzone) return;
 
     const uploadFile = (file) => {
         if (!file) return;
 
         const formData = new FormData();
-
         formData.append("image", file);
 
         const slugInput = document.querySelector("input[name='slug']");
@@ -35,11 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then((data) => {
             if (data.success) {
-                imagePathInput.value = data.path;
-                currentPathInput.value = data.path;
 
-                previewImg.src = "/" + data.path;
-                previewImg.style.display = "block";
+                if (imagePathInput) imagePathInput.value = data.path;
+                if (currentPathInput) currentPathInput.value = data.path;
+
+                if (previewImg) {
+                    previewImg.src = "/" + data.path;
+                    previewImg.style.display = "block";
+                }
+
+                if (removeBtn) {
+                    removeBtn.style.display = "inline-block";
+                }
+
             } else {
                 alert(data.error || "Błąd uploadu");
             }
@@ -80,4 +92,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const file = e.dataTransfer.files[0];
         if (file) uploadFile(file);
     });
+
+    if (removeBtn) {
+        removeBtn.addEventListener("click", () => {
+            if (previewImg) {
+                previewImg.src = "";
+                previewImg.style.display = "none";
+            }
+
+            if (imagePathInput) imagePathInput.value = "";
+            if (currentPathInput) currentPathInput.value = "";
+
+            removeBtn.style.display = "none";
+        });
+    }
 });

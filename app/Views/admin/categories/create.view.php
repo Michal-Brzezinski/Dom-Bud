@@ -1,6 +1,7 @@
 <link rel="icon" href="<?= asset('img/dom-bud_logo.webp') ?>" type="image/webp" loading="lazy">
 <title>Dodaj kategorię</title>
 <link rel="stylesheet" href="<?= asset('css/admin/_import.css') ?>">
+<link rel="stylesheet" href="<?= asset('css/admin/categories-view/_import.css') ?>">
 
 <h1>Dodaj kategorię</h1>
 
@@ -38,7 +39,12 @@
     </div>
 
     <div class="form-group">
+        <?php
+        $draftImage = null;
+        $publishedImage = null;
+        ?>
         <?php include __DIR__ . '/../../partials/image-upload.php'; ?>
+
     </div>
 
     <button class="btn" type="submit" name="action" value="publish">Zapisz jako opublikowaną</button>

@@ -14,16 +14,6 @@
 
     <a class="btn-outline" href="/admin/categories">← Wróć do listy</a>
 
-    <?php if ($category->has_draft): ?>
-        <div class="info_card">
-            <strong>Uwaga:</strong> Edytujesz obecnie niezapisaną wersję roboczą.
-            <form class="inline" method="post" action="/admin/categories/publish" style="display:inline-block; margin-left:10px;">
-                <input type="hidden" name="id" value="<?= e($category->id) ?>">
-                <button class="btn" type="submit" style="padding: 5px 10px; font-size:12px;">Opublikuj ten szkic</button>
-            </form>
-        </div>
-    <?php endif; ?>
-
     <form method="post" action="/admin/categories/update" class="admin-card">
 
         <input type="hidden" name="id" value="<?= e($category->id) ?>">
@@ -64,7 +54,13 @@
             <?php include __DIR__ . '/../../partials/image-upload.php'; ?>
         </div>
 
-        <button class="btn" type="submit">Zapisz jako wersję roboczą</button>
+        <button class="btn" type="submit" name="save_draft" value="1">
+            Zapisz jako wersję roboczą
+        </button>
+
+        <button class="btn" type="submit" name="publish_now" value="1">
+            Opublikuj zmiany
+        </button>
     </form>
 
 </div>

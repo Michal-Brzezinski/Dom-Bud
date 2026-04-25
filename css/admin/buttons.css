@@ -26,3 +26,45 @@
 .btn-danger:hover {
     background: #ff1a1a;
 }
+
+/* ============================================================
+   Doklejka do buttons.css — nowe warianty
+   Wkleić na końcu istniejącego buttons.css
+   (lub zaimportować osobno przez _import.css)
+   ============================================================ */
+
+/* Mały rozmiar — używany w tabeli */
+.btn--sm {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem;
+    min-width: 68px;
+}
+
+/* Wypełniony złotem — główny CTA (np. "Dodaj kategorię") */
+.btn--primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-accent);
+    color: #000;
+    font-weight: 700;
+    border: none;
+}
+
+.btn--primary:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-text);
+}
+
+/* Obramowany — drugorzędna akcja (np. "Produkty") */
+.btn--secondary {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid rgba(200,168,75,0.4);
+}
+
+.btn--secondary:hover {
+    background: rgba(200,168,75,0.1);
+    color: var(--color-accent-hover);
+    border-color: var(--color-accent);
+}

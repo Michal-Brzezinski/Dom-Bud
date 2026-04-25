@@ -1,12 +1,13 @@
 /* BASE (globalne rzeczy NAJPIERW) */
-@import url('../../css/common/base/_import.css');
+@import '../../css/common/base/_import.css';
 
 /* ADMIN CORE */
-@import url('base.css');
-@import url('typography.css');
-@import url('links.css');
-@import url('buttons.css');
-@import url('forms.css');
-@import url('table.css');
-@import url('image-upload.css');
-@import url('utilities.css');
+@import 'base.css';
+@import 'typography.css';
+@import 'links.css';
+@import 'buttons.css';
+@import 'forms.css';
+@import 'table.css';
+@import 'image-upload.css';
+@import 'utilities.css';
+@import 'categories-tree.css';

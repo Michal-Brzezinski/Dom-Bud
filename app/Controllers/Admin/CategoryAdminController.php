@@ -8,7 +8,6 @@ use App\Repositories\CategoryRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\ProductImageRepository;
 use App\Services\ProductAdminService;
-
 use App\Core\Database;
 
 class CategoryAdminController
@@ -20,21 +19,25 @@ class CategoryAdminController
     {
         $this->auth = new AuthService();
 
-        // Inicjalizacja zależności (DI)
-        $config = require ROOT_PATH . '/app/Config/config.php'; // Dopasuj ścieżkę do configu!
-        $pdo = Database::getConnection($config['db']);
+        $config = require ROOT_PATH . '/app/Config/config.php';
+        $pdo    = Database::getConnection($config['db']);
 
         $categoryRepo = new CategoryRepository($pdo);
         $productRepo  = new ProductRepository($pdo);
         $imageRepo    = new ProductImageRepository($pdo);
+
         $productAdmin = new ProductAdminService($productRepo, $imageRepo);
+
         $this->categories = new CategoryAdminService($categoryRepo, $productAdmin);
     }
 
     public function index()
     {
         $this->auth->requireLogin();
-        $categories = $this->categories->all();
+
+        // Spłaszczone drzewo z poziomami
+        $categoriesFlat = $this->categories->getTreeFlat();
+
         require ROOT_PATH . '/app/Views/admin/categories/index.view.php';
     }
 
@@ -50,26 +53,29 @@ class CategoryAdminController
         $this->auth->requireLogin();
 
         try {
+            $isPublish = ($_POST['action'] ?? '') === 'publish';
+
             $data = [
-                'name' => $_POST['name'] ?? '',
-                'slug' => $_POST['slug'] ?? '',
-                'description' => $_POST['description'] ?? null,
-                'image_path' => $_POST['draft_image_path'] ?? null,
-                'parent_id' => $_POST['parent_id'] ?? null,
-                'is_published' => isset($_POST['is_published']) ? 1 : 0
+                'name'         => $_POST['name'] ?? '',
+                'slug'         => $_POST['slug'] ?? '',
+                'description'  => $_POST['description'] ?? null,
+                'image_path'   => $_POST['draft_image_path'] ?? null,
+                'parent_id'    => $_POST['parent_id'] ?? null,
+                'is_published' => $isPublish ? 1 : 0
             ];
 
             $this->categories->create($data);
+
             header('Location: /admin/categories');
         } catch (\Exception $e) {
             header('Location: /admin/categories/create?error=' . urlencode('Wystąpił błąd podczas dodawania.'));
         }
     }
 
-
     public function edit()
     {
         $this->auth->requireLogin();
+
         $category = $this->categories->find((int)$_GET['id']);
         if (!$category) {
             header('Location: /admin/categories');
@@ -94,8 +100,6 @@ class CategoryAdminController
         require ROOT_PATH . '/app/Views/admin/categories/edit.view.php';
     }
 
-
-
     public function update()
     {
         $this->auth->requireLogin();
@@ -104,19 +108,33 @@ class CategoryAdminController
             $id = (int)$_POST['id'];
 
             $data = [
-                'name' => $_POST['name'] ?? '',
-                'slug' => $_POST['slug'] ?? '',
-                'description' => $_POST['description'] ?? null,
+                'name'            => $_POST['name'] ?? '',
+                'slug'            => $_POST['slug'] ?? '',
+                'description'     => $_POST['description'] ?? null,
                 'draft_image_path' => $_POST['draft_image_path'] ?? null,
-                'parent_id' => $_POST['parent_id'] ?? null
+                'parent_id'       => $_POST['parent_id'] ?? null
             ];
 
+            if (isset($_POST['publish_now'])) {
+
+                // 1. Zapisz draft
+                $this->categories->update($id, $data);
+
+                // 2. Opublikuj
+                $this->categories->publish($id);
+
+                header('Location: /admin/categories');
+                return;
+            }
+
             $this->categories->update($id, $data);
+
             header('Location: /admin/categories');
         } catch (\Exception $e) {
-            header('Location: /admin/categories/edit?id=' . $_POST['id'] . '&error=' . urlencode($e->getMessage()));
+            header('Location: /admin/categories/edit?id=' . $id . '&error=' . urlencode($e->getMessage()));
         }
     }
+
 
     public function delete()
     {
@@ -146,13 +164,11 @@ class CategoryAdminController
 
             echo json_encode([
                 'success' => true,
-                'path' => $path
+                'path'    => $path
             ]);
         } catch (\Exception $e) {
             http_response_code(400);
-            echo json_encode([
-                'error' => $e->getMessage()
-            ]);
+            echo json_encode(['error' => $e->getMessage()]);
         }
     }
 

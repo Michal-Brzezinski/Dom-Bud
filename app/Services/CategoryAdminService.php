@@ -3,13 +3,10 @@
 namespace App\Services;
 
 use App\Repositories\CategoryRepository;
-use App\Repositories\ProductRepository;
-use App\Repositories\ProductImageRepository;
 use App\Services\ProductAdminService;
 
 class CategoryAdminService
 {
-    // Używamy Dependency Injection zamiast tworzyć połączenie wewnątrz
     public function __construct(
         private CategoryRepository $repo,
         private ?ProductAdminService $productService = null
@@ -37,7 +34,6 @@ class CategoryAdminService
 
     public function create(array $data)
     {
-        // Jeśli slug jest pusty, generujemy go z nazwy
         if (empty($data['slug'])) {
             $data['slug'] = $this->generateSlug($data['name']);
         }
@@ -45,7 +41,84 @@ class CategoryAdminService
         return $this->repo->create($data);
     }
 
-    // ============ helpers ============
+    // =========================
+    // Drzewo kategorii do widoku
+    // =========================
+
+    /**
+     * Zwraca spłaszczone drzewo kategorii z informacją o poziomie zagnieżdżenia.
+     *
+     * Każdy element:
+     * [
+     *   'cat'            => Category,
+     *   'depth'          => int,
+     *   'children_count' => int
+     * ]
+     */
+    public function getTreeFlat(): array
+    {
+        $all = $this->repo->getAll(); // zwraca tablicę Category
+        $tree = $this->buildTree($all);
+
+        $flat = [];
+        $this->flattenTree($tree, 0, $flat);
+
+        return $flat;
+    }
+
+    /**
+     * Buduje drzewo z płaskiej listy Category.
+     *
+     * Zwraca tablicę węzłów:
+     * [
+     *   [
+     *     'cat'      => Category,
+     *     'children' => [ ... ]
+     *   ],
+     *   ...
+     * ]
+     */
+    private function buildTree(array $categories, ?int $parentId = null): array
+    {
+        $branch = [];
+
+        foreach ($categories as $cat) {
+            $catParentId = $cat->parent_id !== null ? (int)$cat->parent_id : null;
+
+            if ($catParentId === $parentId) {
+                $branch[] = [
+                    'cat'      => $cat,
+                    'children' => $this->buildTree($categories, (int)$cat->id),
+                ];
+            }
+        }
+
+        return $branch;
+    }
+
+    /**
+     * Spłaszcza drzewo do listy z poziomem zagnieżdżenia.
+     */
+    private function flattenTree(array $nodes, int $depth, array &$flat): void
+    {
+        foreach ($nodes as $node) {
+            $cat      = $node['cat'];
+            $children = $node['children'] ?? [];
+            $flat[] = [
+                'cat'            => $cat,
+                'depth'          => $depth,
+                'children_count' => count($children),
+            ];
+
+            if (!empty($children)) {
+                $this->flattenTree($children, $depth + 1, $flat);
+            }
+        }
+    }
+
+    // =========================
+    // Helpers
+    // =========================
 
     private function wouldCreateCycle(int $categoryId, ?int $newParentId): bool
     {
@@ -76,9 +149,6 @@ class CategoryAdminService
         }
     }
 
-    // =========================
-
-
     public function update(int $id, array $data)
     {
         $category = $this->repo->find($id);
@@ -94,12 +164,12 @@ class CategoryAdminService
         $slug = empty($data['slug']) ? $this->generateSlug($data['name']) : $data['slug'];
 
         $payload = [
-            'draft_name' => $data['name'],
-            'draft_slug' => $slug,
+            'draft_name'        => $data['name'],
+            'draft_slug'        => $slug,
             'draft_description' => $data['description'] ?? null,
-            'draft_image_path' => $data['draft_image_path'] ?: $category->draft_image_path,
-            'draft_parent_id' => $newParent,
-            'has_draft' => 1,
+            'draft_image_path'  => $data['draft_image_path'] ?: $category->draft_image_path,
+            'draft_parent_id'   => $newParent,
+            'has_draft'         => 1,
         ];
 
         return $this->repo->updateDraft($id, $payload);
@@ -113,32 +183,50 @@ class CategoryAdminService
     public function publish(int $id)
     {
         $category = $this->repo->find($id);
-        if (!$category || !$category->has_draft) {
-            throw new \Exception("Brak wersji roboczej do opublikowania.");
+        if (!$category) {
+            throw new \Exception("Kategoria nie istnieje.");
         }
 
+        // Jeśli nie ma draftu → utwórz go automatycznie
+        if (!$category->has_draft) {
+            $payload = [
+                'draft_name'        => $category->name,
+                'draft_slug'        => $category->slug,
+                'draft_description' => $category->description,
+                'draft_image_path'  => $category->image_path,
+                'draft_parent_id'   => $category->parent_id,
+                'has_draft'         => 1,
+            ];
+
+            $this->repo->updateDraft($id, $payload);
+
+            // Pobierz ponownie zaktualizowaną kategorię
+            $category = $this->repo->find($id);
+        }
+
+        // Teraz publikacja działa zawsze
         $payload = [
-            'name' => $category->draft_name,
-            'slug' => $category->draft_slug,
+            'name'        => $category->draft_name,
+            'slug'        => $category->draft_slug,
             'description' => $category->draft_description,
-            'image_path' => $category->draft_image_path,
-            'parent_id' => $category->draft_parent_id,
+            'image_path'  => $category->draft_image_path,
+            'parent_id'   => $category->draft_parent_id,
         ];
 
         return $this->repo->publish($id, $payload);
     }
+
 
     public function delete(int $id)
     {
         $category = $this->repo->find($id);
 
         if ($category) {
-            // Usuwamy główny obrazek, jeśli istnieje
             if ($category->image_path) {
                 $path = ROOT_PATH . '/' . $category->image_path;
                 if (is_file($path)) unlink($path);
             }
-            // Usuwamy również obrazek z draftu (aby nie powstał wyciek plików na dysku)
+
             if ($category->draft_image_path && $category->draft_image_path !== $category->image_path) {
                 $draftPath = ROOT_PATH . '/' . $category->draft_image_path;
                 if (is_file($draftPath)) unlink($draftPath);
@@ -153,13 +241,11 @@ class CategoryAdminService
         $category = $this->repo->find($id);
         if (!$category) return;
 
-        // 1. Rekurencyjnie usuń podkategorie
         $children = $this->repo->findChildren($category->id);
         foreach ($children as $child) {
             $this->deleteRecursive($child->id);
         }
 
-        // 2. Usuń produkty z tej kategorii
         if ($this->productService) {
             $products = $this->productService->getByCategory($category->id);
             foreach ($products as $product) {
@@ -167,14 +253,10 @@ class CategoryAdminService
             }
         }
 
-        // 3. Usuń obrazki kategorii
         $this->deleteCategoryImages($category);
-
-        // 4. Usuń kategorię
         $this->repo->delete($category->id);
     }
 
-    // Prosty helper do generowania sluga
     private function generateSlug(string $text): string
     {
         $text = preg_replace('~[^\pL\d]+~u', '-', $text);
@@ -191,38 +273,32 @@ class CategoryAdminService
             throw new \Exception('Błąd przesyłania pliku');
         }
 
-        // Sprawdzenie obrazu i pobranie MIME
         $info = @getimagesize($file['tmp_name']);
         if (!$info) {
             throw new \Exception('Plik nie jest obrazem lub format nieobsługiwany');
         }
         $mimeType = $info['mime'];
 
-        // Dozwolone typy
         $allowedMimes = ['image/jpeg', 'image/png', 'image/webp'];
         if (!in_array($mimeType, $allowedMimes)) {
             throw new \Exception('Nieprawidłowy format pliku');
         }
 
-        // Limit rozmiaru (2MB)
         if ($file['size'] > 2 * 1024 * 1024) {
             throw new \Exception('Plik jest za duży (max 2MB)');
         }
 
-        // Usuwanie starego pliku
         if ($currentPath) {
             $old = ROOT_PATH . '/' . ltrim($currentPath, '/');
-            // zabezpieczenie przed path traversal
             if (strpos(realpath($old), realpath(ROOT_PATH . '/uploads/categories')) === 0 && is_file($old)) {
                 @unlink($old);
             }
         }
 
-        // Bezpieczny slug
         $safeSlug = preg_replace('/[^a-z0-9-]/', '-', strtolower($slug));
         $safeSlug = trim($safeSlug, '-') ?: 'kategoria';
 
-        $year = date('Y');
+        $year  = date('Y');
         $month = date('m');
 
         $dir = ROOT_PATH . "/uploads/categories/$year/$month/";
@@ -230,10 +306,8 @@ class CategoryAdminService
             mkdir($dir, 0755, true);
         }
 
-        // Rozszerzenie
         $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
         if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
-            // dopasowanie do MIME, jeśli rozszerzenie nietypowe
             switch ($mimeType) {
                 case 'image/jpeg':
                     $ext = 'jpg';
@@ -249,11 +323,9 @@ class CategoryAdminService
             }
         }
 
-        // Generowanie unikalnej nazwy
-        $hash = substr(md5(uniqid('', true)), 0, 8);
+        $hash     = substr(md5(uniqid('', true)), 0, 8);
         $filename = "{$safeSlug}_{$hash}.{$ext}";
-
-        $path = $dir . $filename;
+        $path     = $dir . $filename;
 
         if (!move_uploaded_file($file['tmp_name'], $path)) {
             throw new \Exception('Błąd zapisu pliku');

@@ -38,10 +38,16 @@ class CategoryRepository
 
     public function findBySlug(string $slug): ?Category
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM categories WHERE slug = :slug");
-        $stmt->execute(['slug' => $slug]);
+        $stmt = $this->pdo->prepare("SELECT * FROM categories WHERE slug = ?");
+        $stmt->execute([$slug]);
 
-        return $this->map($stmt->fetch());
+        $row = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if (!$row) {
+            return null;
+        }
+
+        return $this->map($row);
     }
 
     public function findChildren(int $parentId): array
@@ -184,6 +190,21 @@ class CategoryRepository
         return $this->map($stmt->fetch());
     }
 
+    public function findPublishedChildren(int $parentId): array
+    {
+        $stmt = $this->pdo->prepare("
+        SELECT *
+        FROM categories
+        WHERE parent_id = :parent_id
+          AND is_published = 1
+        ORDER BY name ASC
+    ");
+
+        $stmt->execute(['parent_id' => $parentId]);
+
+        return $this->mapAll($stmt->fetchAll());
+    }
+
     public function publish(int $id, array $data): void
     {
         $stmt = $this->pdo->prepare('
@@ -193,6 +214,7 @@ class CategoryRepository
                 description = :description,
                 image_path = :image_path,
                 parent_id = :parent_id,
+                is_published = 1,
                 draft_name = NULL,
                 draft_slug = NULL,
                 draft_description = NULL,

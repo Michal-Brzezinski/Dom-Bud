@@ -1,0 +1,45 @@
+/* ============================================================
+   components/page-header.css
+   Nagłówek strony z tytułem i przyciskiem CTA
+   ============================================================ */
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.page-header__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.page-header__left h1 {
+    margin-bottom: 0;
+}
+
+.page-header__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--color-text-muted, #777);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: var(--transition);
+}
+
+.page-header__back:hover {
+    color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

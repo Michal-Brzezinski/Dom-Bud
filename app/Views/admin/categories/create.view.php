@@ -41,7 +41,11 @@
         <?php include __DIR__ . '/../../partials/image-upload.php'; ?>
     </div>
 
-    <button class="btn" type="submit">Zapisz jako opublikowaną</button>
+    <button class="btn" type="submit" name="action" value="publish">Zapisz jako opublikowaną</button>
+    <button class="btn" type="submit" name="action" value="store">Zapisz jako szkic</button>
+
+
+
 </form>
 
 <script src="<?= asset('js/admin/category-upload.js') ?>"></script>

@@ -10,7 +10,8 @@ class CatalogController
     public function index(): void
     {
         $categoryService = new CategoryService();
-        $categories = $categoryService->getRootCategories();
+        $categories = $categoryService->getPublishedRootCategories();
+
 
         $category = null;
 
@@ -30,7 +31,7 @@ class CatalogController
             return;
         }
 
-        $children   = $categoryService->getChildren($category->id);
+        $children = $categoryService->getPublishedChildren($category->id);
         $breadcrumb = $categoryService->getBreadcrumb($category->id);
 
         if (!empty($children)) {

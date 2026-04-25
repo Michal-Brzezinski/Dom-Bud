@@ -1,0 +1,202 @@
+/* ============================================================
+   components/category-tree.css
+   Wizualne drzewo kategorii: wcięcia, łączniki, ikony, miniaturki
+   ============================================================ */
+
+/* --- Tabela kategorii ------------------------------------- */
+.cat-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.cat-table thead th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    color: var(--color-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Meta-info nad tabelą (liczba kategorii) */
+.table-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0 0.85rem 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 0;
+    font-size: 0.78rem;
+    color: var(--color-text-muted, #777);
+    letter-spacing: 0.02em;
+}
+
+.table-meta__sep {
+    opacity: 0.35;
+}
+
+/* --- Wiersze i głębokość ---------------------------------- */
+.cat-row {
+    transition: background 0.12s ease;
+}
+
+.cat-row td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text2);
+    vertical-align: middle;
+}
+
+.cat-row:last-child td {
+    border-bottom: none;
+}
+
+.cat-row:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Kolorowy pasek lewej krawędzi wg głębokości */
+.cat-row.depth-0 > td:first-child { box-shadow: inset 3px 0 0 var(--color-accent); }
+.cat-row.depth-1 > td:first-child { box-shadow: inset 3px 0 0 rgba(200,168,75,0.4); }
+.cat-row.depth-2 > td:first-child { box-shadow: inset 3px 0 0 rgba(200,168,75,0.18); }
+.cat-row.depth-3 > td:first-child { box-shadow: inset 3px 0 0 rgba(200,168,75,0.08); }
+
+/* Subtelne tło dla zagnieżdżonych */
+.cat-row.depth-1 { background: rgba(255,255,255,0.012); }
+.cat-row.depth-2 { background: rgba(255,255,255,0.02); }
+.cat-row.depth-3 { background: rgba(255,255,255,0.03); }
+
+/* --- Miniaturka ------------------------------------------- */
+.cat-thumb {
+    width: 72px;
+}
+
+.cat-thumb img {
+    width: 52px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius) / 2);
+    border: 1px solid var(--color-border);
+    display: block;
+}
+
+.cat-thumb__placeholder {
+    width: 52px;
+    height: 40px;
+    border-radius: calc(var(--border-radius) / 2);
+    border: 1px dashed var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-border);
+}
+
+/* --- Nazwa z wcięciem ------------------------------------- */
+.cat-name__inner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Kontener linii wcięcia */
+.cat-indent {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Pionowa linia kontynuacji (dla każdego poziomu powyżej bieżącego) */
+.cat-indent__line {
+    display: inline-block;
+    width: 18px;
+    height: 36px;
+    border-left: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+/* L-kształtny łącznik do rodzica */
+.cat-indent__connector {
+    display: inline-block;
+    width: 18px;
+    height: 36px;
+    border-left: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 16px;
+    border-bottom-left-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* Ikona folderu / strzałki */
+.cat-icon {
+    flex-shrink: 0;
+    opacity: 0.5;
+    color: var(--color-accent);
+}
+
+.depth-0 .cat-icon { opacity: 0.85; }
+.depth-1 .cat-icon { opacity: 0.6; }
+
+/* Tekst nazwy */
+.cat-name__text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.depth-0 .cat-name__text {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.depth-2 .cat-name__text,
+.depth-3 .cat-name__text {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-text2);
+}
+
+/* Liczba podkategorii (badge) */
+.cat-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+}
+
+.cat-badge--children {
+    background: rgba(200,168,75,0.12);
+    color: var(--color-accent);
+    border: 1px solid rgba(200,168,75,0.28);
+}
+
+/* --- Slug ------------------------------------------------- */
+.cat-slug code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.76rem;
+    color: var(--color-text-muted, #888);
+    background: rgba(255,255,255,0.04);
+    padding: 0.18rem 0.45rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    letter-spacing: 0.01em;
+}
+
+/* --- Ukrywanie kolumny na małych ekranach ----------------- */
+@media (max-width: 900px) {
+    .cat-slug {
+        display: none;
+    }
+}

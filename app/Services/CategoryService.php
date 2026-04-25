@@ -35,4 +35,14 @@ class CategoryService
     {
         return $this->repo->getBreadcrumb($id);
     }
+
+    public function getPublishedRootCategories(): array
+    {
+        return $this->repo->getPublishedRoot();
+    }
+
+    public function getPublishedChildren(int $id): array
+    {
+        return $this->repo->findPublishedChildren($id);
+    }
 }

@@ -6,9 +6,19 @@
 
     <h1>Dodaj produkt do kategorii: <?= e($category->name) ?></h1>
 
-    <p><a href="/admin/products?category_id=<?= e($category->id) ?>">← Wróć do listy produktów</a></p>
+    <p>
+        <a href="/admin/products?category_id=<?= e($category->id) ?>">
+            ← Wróć do listy produktów
+        </a>
+    </p>
 
-    <!-- FORMULARZ DODAWANIA PRODUKTU -->
+    <?php if (isset($_GET['error'])): ?>
+        <div class="error_card">
+            <?= e($_GET['error']) ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- FORMULARZ PRODUKTU -->
     <form id="product-create-form" method="post" action="/admin/products/store" class="admin-card">
 
         <input type="hidden" name="category_id" value="<?= e($category->id) ?>">
@@ -33,21 +43,36 @@
             <textarea name="properties" placeholder='np. {"waga":"500g","kolor":"szary"}'></textarea>
         </div>
 
+        <!-- HIDDEN: ID zdjęcia głównego (tymczasowego) -->
+        <input type="hidden" name="temp_main_image" id="temp_main_image">
+
     </form>
 
-    <h3>Zdjęcia produktu</h3>
+    <!-- ZDJĘCIA PRODUKTU (TRYB CREATE) -->
+    <h2>Zdjęcia produktu</h2>
 
-    <div id="product-dropzone-temp" class="dropzone">
-        Kliknij lub przeciągnij pliki tutaj
+    <div class="admin-card">
+
+        <div id="temp-images-preview" class="product-images-grid"></div>
+
+        <h3>Dodaj nowe zdjęcia</h3>
+
+        <div id="product-dropzone-temp"
+            data-category-id="<?= e($category->id) ?>"
+            class="dropzone">
+            Kliknij lub przeciągnij pliki tutaj
+        </div>
+
+        <script>
+            const TEMP_SESSION_ID = "<?= session_id() ?>";
+        </script>
+        <script src="<?= asset('js/admin/product-upload-temp.js') ?>"></script>
+
     </div>
 
-    <div id="temp-images-preview" class="product-images-grid"></div>
-
-    <!-- PRZYCISK NA DOLE, ALE WYSYŁA FORMULARZ POWYŻEJ -->
+    <br><br>
     <button class="btn" type="submit" form="product-create-form">
         Zapisz produkt
     </button>
-
-    <script src="<?= asset('js/admin/product-upload-temp.js') ?>"></script>
 
 </div>

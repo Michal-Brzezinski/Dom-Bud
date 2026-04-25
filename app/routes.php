@@ -44,3 +44,6 @@ $router->post('admin/products/update', 'Admin\ProductAdminController', 'update')
 $router->post('admin/products/delete', 'Admin\ProductAdminController', 'delete');
 $router->post('admin/products/upload-image', 'Admin\ProductAdminController', 'uploadImage');
 $router->post('admin/products/upload-image-temp', 'Admin\ProductAdminController', 'uploadImageTemp');
+$router->post('admin/products/delete-temp-image', 'Admin\ProductAdminController', 'deleteTempImage');
+$router->post('admin/products/set-temp-main-image', 'Admin\ProductAdminController', 'setTempMainImage');
+$router->get('admin/products/list-temp-images', 'Admin\ProductAdminController', 'listTempImages');

@@ -130,11 +130,19 @@ class ProductAdminService
             mkdir($fullDir, 0777, true);
         }
 
-        // wybieramy numer zdjęcia 1–5
-        $numbers = array_map(fn($img) => (int)preg_replace('/\D/', '', pathinfo($img->path, PATHINFO_FILENAME)), $existing);
-        $next = 1;
+        // 🔥 WYCIĄGAMY TYLKO KOŃCOWY NUMER Z NAZWY PLIKU
+        $numbers = [];
 
-        while (in_array($next, $numbers)) {
+        foreach ($existing as $img) {
+            $name = pathinfo($img->path, PATHINFO_FILENAME); // np. "nowy-produkt-2-hehe1"
+
+            if (preg_match('/(\d+)$/', $name, $m)) {
+                $numbers[] = (int)$m[1]; // tylko końcówka, np. "1"
+            }
+        }
+
+        $next = 1;
+        while (in_array($next, $numbers, true)) {
             $next++;
         }
 
@@ -146,7 +154,6 @@ class ProductAdminService
         $path = "$dir/$filename";
         $fullPath = ROOT_PATH . "/$path";
 
-        // nadpisywanie
         if (file_exists($fullPath)) {
             unlink($fullPath);
         }
@@ -155,10 +162,9 @@ class ProductAdminService
             throw new \Exception("Nie udało się zapisać pliku");
         }
 
-        // zapis do bazy
         $this->images->create($productId, [
-            'path' => $path,
-            'is_main' => 0,
+            'path'       => $path,
+            'is_main'    => 0,
             'sort_order' => $next
         ]);
 
@@ -192,7 +198,9 @@ class ProductAdminService
         $sessionId = session_id();
         $tmpDir = ROOT_PATH . "/uploads/tmp/products/$sessionId";
 
-        if (!is_dir($tmpDir)) {
+        $tempImages = $_SESSION['temp_images'] ?? [];
+
+        if (empty($tempImages)) {
             return;
         }
 
@@ -205,29 +213,42 @@ class ProductAdminService
             mkdir($finalDir, 0777, true);
         }
 
-        $files = glob("$tmpDir/*");
+        $main = $_SESSION['temp_main_image'] ?? null;
 
         $counter = 1;
 
-        foreach ($files as $file) {
+        foreach ($tempImages as $filename) {
             if ($counter > 5) break;
 
-            $ext = pathinfo($file, PATHINFO_EXTENSION);
+            $source = "$tmpDir/$filename";
+
+            if (!is_file($source)) {
+                continue;
+            }
+
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
             $newName = "{$slug}{$counter}.{$ext}";
             $newPath = "$finalDir/$newName";
 
-            rename($file, $newPath);
+            rename($source, $newPath);
 
             $this->images->create($productId, [
-                'path' => "uploads/products/$year/$month/$slug/$newName",
-                'is_main' => $counter === 1 ? 1 : 0,
+                'path'       => "uploads/products/$year/$month/$slug/$newName",
+                'is_main'    => ($filename === $main) ? 1 : 0,
                 'sort_order' => $counter
             ]);
 
             $counter++;
         }
 
-        // usuń katalog tymczasowy
-        rmdir($tmpDir);
+        if (is_dir($tmpDir)) {
+            foreach (glob("$tmpDir/*") as $f) {
+                @unlink($f);
+            }
+            @rmdir($tmpDir);
+        }
+
+        unset($_SESSION['temp_images']);
+        unset($_SESSION['temp_main_image']);
     }
 }

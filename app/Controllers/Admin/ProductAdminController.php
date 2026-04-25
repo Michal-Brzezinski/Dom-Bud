@@ -287,11 +287,10 @@ class ProductAdminController
         }
 
         $sessionId = session_id();
-        $dir = "uploads/tmp/products/$sessionId";
-        $fullDir = ROOT_PATH . "/$dir";
+        $dir = ROOT_PATH . "/uploads/tmp/products/$sessionId";
 
-        if (!is_dir($fullDir)) {
-            mkdir($fullDir, 0777, true);
+        if (!is_dir($dir)) {
+            mkdir($dir, 0777, true);
         }
 
         $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
@@ -302,16 +301,22 @@ class ProductAdminController
             return;
         }
 
-        // generujemy unikalną nazwę tymczasową
         $filename = uniqid("tmp_") . "." . $ext;
         $path = "$dir/$filename";
 
-        if (!move_uploaded_file($_FILES['image']['tmp_name'], ROOT_PATH . "/$path")) {
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $path)) {
             echo json_encode(['error' => 'Nie udało się zapisać pliku']);
             return;
         }
 
-        echo json_encode(['success' => true, 'path' => $path]);
+        // ZAPIS DO SESJI
+        if (!isset($_SESSION['temp_images'])) {
+            $_SESSION['temp_images'] = [];
+        }
+
+        $_SESSION['temp_images'][] = $filename;
+
+        echo json_encode(['success' => true, 'filename' => $filename]);
     }
 
     // ============================
@@ -356,5 +361,59 @@ class ProductAdminController
 
         // TODO: implementacja zapisu produktu
         echo "TODO: storeBySlug()";
+    }
+
+    public function deleteTempImage()
+    {
+        $this->auth->requireLogin();
+        header('Content-Type: application/json; charset=utf-8');
+
+        $sessionId = session_id();
+        $filename = $_POST['filename'] ?? null;
+
+        if (!$filename) {
+            echo json_encode(['error' => 'Brak nazwy pliku']);
+            return;
+        }
+
+        $path = ROOT_PATH . "/uploads/tmp/products/$sessionId/$filename";
+
+        if (is_file($path)) {
+            unlink($path);
+        }
+
+        $_SESSION['temp_images'] = array_values(
+            array_filter($_SESSION['temp_images'] ?? [], fn($f) => $f !== $filename)
+        );
+
+        echo json_encode(['success' => true]);
+    }
+
+    public function setTempMainImage()
+    {
+        $this->auth->requireLogin();
+        header('Content-Type: application/json; charset=utf-8');
+
+        $filename = $_POST['filename'] ?? null;
+
+        if (!$filename) {
+            echo json_encode(['error' => 'Brak nazwy pliku']);
+            return;
+        }
+
+        $_SESSION['temp_main_image'] = $filename;
+
+        echo json_encode(['success' => true]);
+    }
+
+    public function listTempImages()
+    {
+        $this->auth->requireLogin();
+        header('Content-Type: application/json; charset=utf-8');
+
+        echo json_encode([
+            'images' => $_SESSION['temp_images'] ?? [],
+            'main'   => $_SESSION['temp_main_image'] ?? null
+        ]);
     }
 }

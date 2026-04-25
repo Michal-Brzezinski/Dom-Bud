@@ -55,7 +55,7 @@
         <?php
         include __DIR__ . '/partials/pagination.php';
         pagination(
-            url('katalog/' . $category),
+            url('katalog/' . $category->slug),
             $page,
             $totalPages,
             ['sort' => $sort, 'q' => $q]

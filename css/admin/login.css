@@ -15,7 +15,7 @@ body {
     /* Tło: obraz z przyciemnieniem */
     background:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('/img/dom-bud_logo.webp') no-repeat center center fixed;
+        url('/img/adminBG.webp') no-repeat center center fixed;
     background-size: cover;
     color: #eee;
 }
@@ -68,7 +68,7 @@ body {
 }
 
 .login-form input:focus {
-    border-color: #00bfff;
+    border-color: #ffd21f;
     outline: none;
     background: #333;
 }
@@ -78,7 +78,7 @@ button {
     width: 100%;
     margin-top: 20px;
     padding: 12px;
-    background: #00bfff;
+    background: #ef8c29;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -88,7 +88,7 @@ button {
 }
 
 button:hover {
-    background: #009ace;
+    background: #ffd21f;
     transform: translateY(-2px);
 }
 

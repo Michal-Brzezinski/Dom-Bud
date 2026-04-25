@@ -47,3 +47,5 @@ $router->post('admin/products/upload-image-temp', 'Admin\ProductAdminController'
 $router->post('admin/products/delete-temp-image', 'Admin\ProductAdminController', 'deleteTempImage');
 $router->post('admin/products/set-temp-main-image', 'Admin\ProductAdminController', 'setTempMainImage');
 $router->get('admin/products/list-temp-images', 'Admin\ProductAdminController', 'listTempImages');
+
+$router->post('admin/products/clear-temp', 'Admin\ProductAdminController', 'clearTemp');

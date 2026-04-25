@@ -8,7 +8,7 @@
     <h1>Dodaj produkt do kategorii: <?= e($category->name) ?></h1>
 
     <p>
-        <a href="/admin/products?category_id=<?= e($category->id) ?>">
+        <a href="/admin/products?category_id=<?= e($category->id) ?>" class="back-link">
             ← Wróć do listy produktów
         </a>
     </p>
@@ -72,6 +72,7 @@
         </script>
         <script src="<?= asset('js/admin/product-upload-temp.js') ?>"></script>
         <script src="<?= asset('js/admin/product-properties.js') ?>"></script>
+        <script src="<?= asset('js/admin/clear-tmp.js') ?>"></script>
 
     </div>
 

@@ -416,4 +416,27 @@ class ProductAdminController
             'main'   => $_SESSION['temp_main_image'] ?? null
         ]);
     }
+
+    public function clearTemp()
+    {
+        $this->auth->requireLogin();
+        header('Content-Type: application/json; charset=utf-8');
+
+        $sessionId = session_id();
+        $tmpDir = ROOT_PATH . "/uploads/tmp/products/$sessionId";
+
+        // usuń pliki
+        if (is_dir($tmpDir)) {
+            foreach (glob("$tmpDir/*") as $f) {
+                @unlink($f);
+            }
+            @rmdir($tmpDir);
+        }
+
+        // usuń sesję
+        unset($_SESSION['temp_images']);
+        unset($_SESSION['temp_main_image']);
+
+        echo json_encode(['success' => true]);
+    }
 }

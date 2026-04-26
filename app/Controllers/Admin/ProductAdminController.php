@@ -281,6 +281,8 @@ class ProductAdminController
         $this->auth->requireLogin();
         header('Content-Type: application/json; charset=utf-8');
 
+        // SESJA JEST JUŻ STARTOWANA W bootstrap.php → NIE RUSZAMY JEJ TUTAJ
+
         if (!isset($_FILES['image']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK) {
             echo json_encode(['error' => 'Brak pliku lub błąd uploadu']);
             return;
@@ -309,14 +311,17 @@ class ProductAdminController
             return;
         }
 
-        // ZAPIS DO SESJI
         if (!isset($_SESSION['temp_images'])) {
             $_SESSION['temp_images'] = [];
         }
 
         $_SESSION['temp_images'][] = $filename;
 
-        echo json_encode(['success' => true, 'filename' => $filename]);
+        echo json_encode([
+            'success' => true,
+            'filename' => $filename,
+            'session'  => $sessionId,
+        ]);
     }
 
     // ============================
@@ -386,7 +391,7 @@ class ProductAdminController
             array_filter($_SESSION['temp_images'] ?? [], fn($f) => $f !== $filename)
         );
 
-        echo json_encode(['success' => true]);
+        echo json_encode(['success' => true, 'session' => $sessionId]);
     }
 
     public function setTempMainImage()
@@ -394,6 +399,7 @@ class ProductAdminController
         $this->auth->requireLogin();
         header('Content-Type: application/json; charset=utf-8');
 
+        $sessionId = session_id();
         $filename = $_POST['filename'] ?? null;
 
         if (!$filename) {
@@ -403,7 +409,7 @@ class ProductAdminController
 
         $_SESSION['temp_main_image'] = $filename;
 
-        echo json_encode(['success' => true]);
+        echo json_encode(['success' => true, 'session' => $sessionId]);
     }
 
     public function listTempImages()
@@ -411,9 +417,12 @@ class ProductAdminController
         $this->auth->requireLogin();
         header('Content-Type: application/json; charset=utf-8');
 
+        $sessionId = session_id();
+
         echo json_encode([
-            'images' => $_SESSION['temp_images'] ?? [],
-            'main'   => $_SESSION['temp_main_image'] ?? null
+            'images'  => $_SESSION['temp_images'] ?? [],
+            'main'    => $_SESSION['temp_main_image'] ?? null,
+            'session' => $sessionId,
         ]);
     }
 
@@ -425,7 +434,6 @@ class ProductAdminController
         $sessionId = session_id();
         $tmpDir = ROOT_PATH . "/uploads/tmp/products/$sessionId";
 
-        // usuń pliki
         if (is_dir($tmpDir)) {
             foreach (glob("$tmpDir/*") as $f) {
                 @unlink($f);
@@ -433,10 +441,8 @@ class ProductAdminController
             @rmdir($tmpDir);
         }
 
-        // usuń sesję
-        unset($_SESSION['temp_images']);
-        unset($_SESSION['temp_main_image']);
+        unset($_SESSION['temp_images'], $_SESSION['temp_main_image']);
 
-        echo json_encode(['success' => true]);
+        echo json_encode(['success' => true, 'session' => $sessionId]);
     }
 }

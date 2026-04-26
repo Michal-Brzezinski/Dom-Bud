@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!dropzone || !preview) return;
 
     const refreshImages = () => {
-        fetch("/admin/products/list-temp-images")
+        fetch("/admin/products/list-temp-images", {
+            credentials: "include"
+        })
             .then(res => res.json())
             .then(data => {
                 preview.innerHTML = "";
@@ -27,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         badge.classList.add("badge-main");
                         badge.textContent = "Główne";
                         wrapper.appendChild(badge);
+
+                        // USTAWIAMY WARTOŚĆ INPUTA W FORMULARZU
+                        mainInput.value = filename;
                     }
 
                     const btnMain = document.createElement("button");
@@ -35,8 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     btnMain.onclick = () => {
                         fetch("/admin/products/set-temp-main-image", {
                             method: "POST",
-                            body: new URLSearchParams({ filename })
-                        }).then(() => refreshImages());
+                            body: new URLSearchParams({ filename }),
+                            credentials: "include"
+                        }).then(() => {
+                            mainInput.value = filename; // ZAPIS DO FORMULARZA
+                            refreshImages();
+                        });
                     };
                     wrapper.appendChild(btnMain);
 
@@ -46,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     btnDelete.onclick = () => {
                         fetch("/admin/products/delete-temp-image", {
                             method: "POST",
-                            body: new URLSearchParams({ filename })
+                            body: new URLSearchParams({ filename }),
+                            credentials: "include"
                         }).then(() => refreshImages());
                     };
                     wrapper.appendChild(btnDelete);
@@ -62,16 +72,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         fetch("/admin/products/upload-image-temp", {
             method: "POST",
-            body: formData
+            body: formData,
+            credentials: "include"
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                refreshImages();
-            } else {
-                alert(data.error);
-            }
-        });
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    refreshImages();
+                } else {
+                    alert(data.error);
+                }
+            });
     };
 
     dropzone.addEventListener("click", () => {

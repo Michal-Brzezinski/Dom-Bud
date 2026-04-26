@@ -9,7 +9,7 @@
 
         <div class="admin-actions">
             <a href="/admin/categories" class="btn btn-primary">
-                Zarządzaj kategoriami
+                Zarządzaj kategoriami i produktami
             </a>
 
             <a href="/admin/logout" class="btn btn-danger">

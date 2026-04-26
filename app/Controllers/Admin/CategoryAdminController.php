@@ -139,7 +139,7 @@ class CategoryAdminController
     public function delete()
     {
         $this->auth->requireLogin();
-        $this->categories->delete((int)$_POST['id']);
+        $this->categories->deleteRecursive((int)$_POST['id']);
         header('Location: /admin/categories');
     }
 

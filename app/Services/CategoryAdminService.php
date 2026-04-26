@@ -138,14 +138,20 @@ class CategoryAdminService
     {
         if (!$category) return;
 
-        if ($category->image_path) {
+        // usuń główne zdjęcie
+        if (!empty($category->image_path)) {
             $path = ROOT_PATH . '/' . ltrim($category->image_path, '/');
-            if (is_file($path)) unlink($path);
+            if (is_file($path)) {
+                unlink($path);
+            }
         }
 
-        if ($category->draft_image_path && $category->draft_image_path !== $category->image_path) {
+        // usuń zdjęcie draftu, jeśli inne
+        if (!empty($category->draft_image_path) && $category->draft_image_path !== $category->image_path) {
             $draftPath = ROOT_PATH . '/' . ltrim($category->draft_image_path, '/');
-            if (is_file($draftPath)) unlink($draftPath);
+            if (is_file($draftPath)) {
+                unlink($draftPath);
+            }
         }
     }
 
@@ -219,18 +225,11 @@ class CategoryAdminService
 
     public function delete(int $id)
     {
+        // NIE usuwa produktów ani podkategorii — tylko obrazki i kategorię
         $category = $this->repo->find($id);
 
         if ($category) {
-            if ($category->image_path) {
-                $path = ROOT_PATH . '/' . $category->image_path;
-                if (is_file($path)) unlink($path);
-            }
-
-            if ($category->draft_image_path && $category->draft_image_path !== $category->image_path) {
-                $draftPath = ROOT_PATH . '/' . $category->draft_image_path;
-                if (is_file($draftPath)) unlink($draftPath);
-            }
+            $this->deleteCategoryImages($category);
         }
 
         return $this->repo->delete($id);
@@ -241,11 +240,13 @@ class CategoryAdminService
         $category = $this->repo->find($id);
         if (!$category) return;
 
+        // 1. Usuń wszystkie podkategorie rekurencyjnie
         $children = $this->repo->findChildren($category->id);
         foreach ($children as $child) {
             $this->deleteRecursive($child->id);
         }
 
+        // 2. Usuń wszystkie produkty w tej kategorii
         if ($this->productService) {
             $products = $this->productService->getByCategory($category->id);
             foreach ($products as $product) {
@@ -253,7 +254,10 @@ class CategoryAdminService
             }
         }
 
+        // 3. Usuń zdjęcia kategorii
         $this->deleteCategoryImages($category);
+
+        // 4. Usuń kategorię
         $this->repo->delete($category->id);
     }
 

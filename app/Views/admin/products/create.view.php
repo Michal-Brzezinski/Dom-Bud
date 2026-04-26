@@ -8,7 +8,7 @@
     <h1>Dodaj produkt do kategorii: <?= e($category->name) ?></h1>
 
     <p>
-        <a href="/admin/products?category_id=<?= e($category->id) ?>" class="back-link">
+        <a href="/admin/categories/<?= e($category->slug) ?>/products" class="back-link">
             ← Wróć do listy produktów
         </a>
     </p>
@@ -23,6 +23,9 @@
     <form id="product-create-form" method="post" action="/admin/products/store" class="admin-card">
 
         <input type="hidden" name="category_id" value="<?= e($category->id) ?>">
+
+        <!-- HIDDEN: ID zdjęcia głównego (tymczasowego) -->
+        <input type="hidden" name="temp_main_image" id="temp_main_image">
 
         <div class="form-group">
             <label>Nazwa produktu:</label>
@@ -46,9 +49,6 @@
             include ROOT_PATH . "/app/Views/partials/admin/product-properties.php";
             ?>
         </div>
-
-        <!-- HIDDEN: ID zdjęcia głównego (tymczasowego) -->
-        <input type="hidden" name="temp_main_image" id="temp_main_image">
 
     </form>
 

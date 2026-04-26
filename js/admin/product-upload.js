@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         fetch("/admin/products/upload-image", {
             method: "POST",
-            body: formData
+            body: formData,
+            credentials: "include"
         })
         .then(res => res.json())
         .then(data => {
@@ -58,7 +59,8 @@ document.querySelectorAll(".js-set-main").forEach(btn => {
 
         fetch("/admin/products/upload-image", {
             method: "POST",
-            body: formData
+            body: formData,
+            credentials: "include"
         })
         .then(res => res.json())
         .then(data => {
@@ -79,7 +81,8 @@ document.querySelectorAll(".js-delete-image").forEach(btn => {
 
         fetch("/admin/products/upload-image", {
             method: "POST",
-            body: formData
+            body: formData,
+            credentials: "include"
         })
         .then(res => res.json())
         .then(data => {

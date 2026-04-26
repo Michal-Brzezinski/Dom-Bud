@@ -1,0 +1,57 @@
+/* Wrapper wewnątrz tr */
+.cat-row-wrapper {
+    padding: 0;
+}
+
+.cat-row-inner {
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.cat-row-inner--collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Ukrywanie całego wiersza */
+.cat-row--hidden {
+    display: none;
+}
+
+/* Ikona toggle */
+.cat-toggle {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.cat-toggle:hover {
+    background: #eee;
+}
+
+.cat-toggle svg {
+    transition: transform 0.25s ease;
+}
+
+.cat-toggle--open svg {
+    transform: rotate(90deg);
+}
+
+/* Usuwa linię pod każdym wierszem wewnętrznej tabeli */
+.cat-inner-table td {
+    border-bottom: none !important;
+}
+
+/* Usuwa ewentualne linie z samej tabeli */
+.cat-inner-table {
+    border-collapse: collapse !important;
+    border: none !important;
+}
